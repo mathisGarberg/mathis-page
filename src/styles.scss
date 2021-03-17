@@ -1,14 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 @import "./styles/styles-variables";
 @import "./styles/styles-reset";
 
@@ -21,3 +10,34 @@ $custom-typography: mat-typography-config(
 );
 
 @include mat-core($custom-typography);
+
+@import "./themes/default-theme.scss";
+@import "./themes/light-theme.scss";
+@import "./themes/dark-theme.scss";
+@import "./themes/nature-theme.scss";
+
+@import "styles/styles-reset.scss-theme";
+
+@mixin custom-components-theme($theme) {
+  @include mathis-styles-reset-theme($theme);
+}
+
+.default-theme {
+  @include angular-material-theme($mathis-theme);
+  @include custom-components-theme($mathis-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($mathis-light-theme);
+  @include custom-components-theme($mathis-light-theme);
+}
+
+.dark-theme {
+  @include angular-material-theme($mathis-dark-theme);
+  @include custom-components-theme($mathis-dark-theme);
+}
+
+.nature-theme {
+  @include angular-material-theme($mathis-nature-theme);
+  @include custom-components-theme($mathis-nature-theme);
+}

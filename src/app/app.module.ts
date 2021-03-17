@@ -5,9 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    // angular
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+
+    // material
+    MatSidenavModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

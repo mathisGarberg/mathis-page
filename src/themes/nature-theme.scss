@@ -1,0 +1,9 @@
+$mathis-nature-primary: mat-palette($mat-brown, 700, 300, 900);
+$mathis-nature-accent: mat-palette($mat-deep-purple, 300);
+$mathis-nature-warn: mat-palette($mat-red, 600);
+
+$mathis-nature-theme: mat-light-theme(
+  $mathis-nature-primary,
+  $mathis-nature-accent,
+  $mathis-nature-warn
+);
