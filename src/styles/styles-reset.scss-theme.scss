@@ -1,0 +1,50 @@
+@import "~@angular/material/theming";
+
+@mixin mathis-styles-reset-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  a {
+    color: mat-color($foreground, text);
+
+    &:hover {
+      color: mat-color($accent);
+      transition: 0.4s;
+    }
+  }
+
+  code {
+    color: mat-color($accent, lighter-contrast);
+    background-color: mat-color($accent, lighter);
+  }
+
+  .form-field-with-background {
+    .mat-form-field-outline {
+      background-color: mat-color($accent, default-contrast);
+      border-radius: 5px;
+    }
+  }
+
+  .form-field-no-label {
+    .mat-form-field-flex {
+      margin-top: 0;
+    }
+    .mat-form-field-outline {
+      top: 0;
+    }
+    .mat-form-field-infix {
+      border-top: 0;
+    }
+  }
+  .ice-search-form-field {
+    .mat-form-field-wrapper {
+      padding: 0;
+      margin: 0;
+    }
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      top: 0;
+    }
+  }
+}
