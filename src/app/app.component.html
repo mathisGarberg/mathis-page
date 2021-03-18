@@ -1,7 +1,38 @@
-<div [class]="'theme-wrapper dark-theme'">
+<div [class]="'theme-wrapper light-theme'">
   <div class="content">
     <span>{{ title }} app is running!</span>
   </div>
 
-  <router-outlet></router-outlet>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="push">
+      <div class="branding">
+        <img [src]="logo" width="48" height="48" />
+        <span data-testid="title">Mathis Garberg</span>
+      </div>
+      <mat-nav-list>
+        <a
+          mat-list-item
+          *ngFor="let item of navigationSideMenu"
+          [attr.aria-label]="item.label"
+          [routerLink]="[item.link]"
+          routerLinkActive="active"
+          (click)="sidenav.close()"
+        >
+          {{ item.label }}
+        </a>
+        <a
+          mat-list-item
+          href="https://github.com/mathisGarberg"
+          aria-label="Github"
+          target="_blank"
+          rel="noopener"
+        >
+          Github
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content cdkScrollable>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
