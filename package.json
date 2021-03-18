@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cypress": "concurrently \"ng serve\" \"cypress open\"",
+    "cypress-headless": "npx cypress --headless --browser chrome"
   },
   "private": true,
   "dependencies": {
