@@ -33,6 +33,29 @@
     </mat-sidenav>
     <mat-sidenav-content cdkScrollable>
       <router-outlet></router-outlet>
+
+      <footer class="footer">
+        <div class="row">
+          <div class="col-sm-12 links">
+            <a
+              *ngFor="let mediaContent of mediaContents"
+              [href]="mediaContent.link"
+              [attr.aria-label]="mediaContent.name"
+              target="_blank"
+              rel="noopener"
+            >
+              <fa-icon [icon]="['fab', mediaContent.icon]"></fa-icon>
+              <span>&nbsp; {{ mediaContent.name }}</span>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 signature">
+            &#169; <span class="year">{{ currentYear }}</span> - Mathis Garberg.
+            Built with the MEAN-stack. A continuous work in progress.
+          </div>
+        </div>
+      </footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
