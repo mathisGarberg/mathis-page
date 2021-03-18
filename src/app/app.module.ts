@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from 'src/shared/shared.module';
+import { CoreModule } from 'src/core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { SharedModule } from 'src/shared/shared.module';
 
     // shared and core
     SharedModule,
+    CoreModule,
 
     // material
     MatSidenavModule,
