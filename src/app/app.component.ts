@@ -1,3 +1,5 @@
+import browser from 'browser-detect';
+
 import { Component } from '@angular/core';
 import { WebFlowPaths } from 'src/core/enums/paths';
 
@@ -46,4 +48,8 @@ export class AppComponent {
       icon: 'unsplash',
     },
   ];
+
+  private static isIEorEdgeOrSafari() {
+    return ['ie', 'edge', 'safari'].includes(browser().name);
+  }
 }
