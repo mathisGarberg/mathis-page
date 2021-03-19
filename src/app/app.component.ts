@@ -49,7 +49,7 @@ export class AppComponent {
     },
   ];
 
-  private static isIEorEdgeOrSafari() {
+  static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
   }
 }

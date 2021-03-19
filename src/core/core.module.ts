@@ -11,6 +11,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from './core.state';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { environment } from 'src/environments/environment';
+import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-has-loaded-once.guard';
+import { AuthEffects } from './states/auth/auth.effects';
 
 @NgModule({
   declarations: [],
@@ -26,7 +28,7 @@ import { environment } from 'src/environments/environment';
       },
     }),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffects]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
@@ -36,14 +38,8 @@ import { environment } from 'src/environments/environment';
   providers: [],
   exports: [],
 })
-export class CoreModule {
-  constructor(
-    @Optional()
-    @SkipSelf()
-    parentModule: CoreModule
-  ) {
-    if (parentModule) {
-      throw new Error('CoreModule is already loaded. Import only in AppModule');
-    }
+export class CoreModule extends EnsureModuleLoadedOnceGuard {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    super(parentModule);
   }
 }
