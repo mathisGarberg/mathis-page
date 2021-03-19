@@ -1,8 +1,4 @@
 <div [class]="'theme-wrapper dark-theme'">
-  <div class="content">
-    <span>{{ title }} app is running!</span>
-  </div>
-
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="push">
       <div class="branding">
@@ -32,30 +28,34 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content cdkScrollable>
-      <router-outlet></router-outlet>
+      <div class="wrapper">
+        <div class="content">
+          <router-outlet></router-outlet>
+        </div>
 
-      <footer class="footer">
-        <div class="row">
-          <div class="col-sm-12 links">
-            <a
-              *ngFor="let mediaContent of mediaContents"
-              [href]="mediaContent.link"
-              [attr.aria-label]="mediaContent.name"
-              target="_blank"
-              rel="noopener"
-            >
-              <fa-icon [icon]="['fab', mediaContent.icon]"></fa-icon>
-              <span>&nbsp; {{ mediaContent.name }}</span>
-            </a>
+        <footer class="footer">
+          <div class="row">
+            <div class="col-sm-12 links">
+              <a
+                *ngFor="let mediaContent of mediaContents"
+                [href]="mediaContent.link"
+                [attr.aria-label]="mediaContent.name"
+                target="_blank"
+                rel="noopener"
+              >
+                <fa-icon [icon]="['fab', mediaContent.icon]"></fa-icon>
+                <span>&nbsp; {{ mediaContent.name }}</span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 signature">
-            &#169; <span class="year">{{ currentYear }}</span> - Mathis Garberg.
-            Built with the MEAN-stack. A continuous work in progress.
+          <div class="row">
+            <div class="col-12 signature">
+              &#169; <span class="year">{{ currentYear }}</span> - Mathis
+              Garberg. Built with the MEAN-stack. A continuous work in progress.
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

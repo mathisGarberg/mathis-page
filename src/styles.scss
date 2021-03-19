@@ -18,8 +18,12 @@ $custom-typography: mat-typography-config(
 
 @import "styles/styles-reset.scss-theme";
 
+@import "./app/app.component.scss-theme";
+
 @mixin custom-components-theme($theme) {
   @include mathis-styles-reset-theme($theme);
+
+  @include mathis-app-component-theme($theme);
 }
 
 .default-theme {
