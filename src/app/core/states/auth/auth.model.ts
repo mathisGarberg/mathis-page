@@ -20,13 +20,13 @@ export interface Credentials {
 export const generateCredentials = (): Credentials => {
   return {
     email: faker.internet.email(),
-    password: faker.internet.password(),
+    password: faker.internet.password()
   };
 };
 
 export const generateUser = (): User => {
   return {
     email: faker.internet.email(),
-    token: 'Bearer 123456',
+    token: 'Bearer 123456'
   };
 };

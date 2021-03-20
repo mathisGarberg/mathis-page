@@ -2,7 +2,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import {
   HttpClientModule,
   HttpClient,
-  HTTP_INTERCEPTORS,
+  HTTP_INTERCEPTORS
 } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -30,15 +30,15 @@ import { SettingsEffects } from './states/settings/settings.effects';
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true,
-      },
+        strictActionImmutability: true
+      }
     }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([AuthEffects, SettingsEffects]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-          name: 'mathis-page',
+          name: 'mathis-page'
         }),
 
     // 3rd party
@@ -46,12 +46,12 @@ import { SettingsEffects } from './states/settings/settings.effects';
       loader: {
         provide: TranslateLoader,
         useFactory: translateBrowserLoaderFactory,
-        deps: [HttpClient, TransferState],
-      },
-    }),
+        deps: [HttpClient, TransferState]
+      }
+    })
   ],
   providers: [TransferState],
-  exports: [TranslateModule],
+  exports: [TranslateModule]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

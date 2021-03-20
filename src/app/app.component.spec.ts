@@ -13,7 +13,7 @@ import { selectAuthState } from './core/core.state';
 import {
   selectEffectiveTheme,
   selectSettingsLanguage,
-  selectSettingsStickyHeader,
+  selectSettingsStickyHeader
 } from './core/states/settings/settings.selectors';
 
 describe('AppComponent', () => {
@@ -31,10 +31,10 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatListModule,
         MatToolbarModule,
-        SharedModule,
+        SharedModule
       ],
       declarations: [AppComponent],
-      providers: [provideMockStore()],
+      providers: [provideMockStore()]
     }).compileComponents();
 
     store = TestBed.inject(MockStore);

@@ -6,7 +6,7 @@ import {
   OnDestroy,
   OnInit,
   PLATFORM_ID,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
@@ -19,12 +19,12 @@ import { AppState, selectAuthState } from './core/core.state';
 import { WebFlowPaths } from './core/enums/paths';
 import {
   ActionSettingsChangeAnimationsPageDisabled,
-  ActionSettingsChangeLanguage,
+  ActionSettingsChangeLanguage
 } from './core/states/settings/settings.actions';
 import {
   selectEffectiveTheme,
   selectSettingsLanguage,
-  selectSettingsStickyHeader,
+  selectSettingsStickyHeader
 } from './core/states/settings/settings.selectors';
 import { ActionAuthLogout } from './core/states/auth/auth.actions';
 import { mediaContents } from './core/data/media-contents';
@@ -32,7 +32,7 @@ import { mediaContents } from './core/data/media-contents';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   static isBrowser = new Subject<boolean>();
@@ -50,11 +50,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   navigation = [
     { link: WebFlowPaths.About, label: 'app.menu.about' },
     { link: WebFlowPaths.Projects, label: 'app.menu.projects' },
-    { link: WebFlowPaths.Contact, label: 'app.menu.contact' },
+    { link: WebFlowPaths.Contact, label: 'app.menu.contact' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: WebFlowPaths.Settings, label: 'app.menu.settings' },
+    { link: WebFlowPaths.Settings, label: 'app.menu.settings' }
   ];
   mediaContents = mediaContents;
 
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     if (AppComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
         ActionSettingsChangeAnimationsPageDisabled({
-          isPageAnimationsDisabled: true,
+          isPageAnimationsDisabled: true
         })
       );
     }

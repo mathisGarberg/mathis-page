@@ -4,7 +4,7 @@ import {
   ActionAuthLogin,
   ActionAuthLoginFailed,
   ActionAuthLoginSuccess,
-  ActionAuthLogout,
+  ActionAuthLogout
 } from './auth.actions';
 
 describe('Auth Reducer', () => {
@@ -27,7 +27,7 @@ describe('Auth Reducer', () => {
 
       expect(result).toEqual({
         ...initialAuthState,
-        isLoadingAuth: true,
+        isLoadingAuth: true
       });
     });
 
@@ -39,7 +39,7 @@ describe('Auth Reducer', () => {
         expect(result).toEqual({
           ...initialAuthState,
           isAuthenticated: true,
-          user,
+          user
         });
       });
     });
@@ -53,7 +53,7 @@ describe('Auth Reducer', () => {
         expect(result).toEqual({
           ...initialAuthState,
           error,
-          isLoadingAuth: false,
+          isLoadingAuth: false
         });
       });
     });

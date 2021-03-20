@@ -20,8 +20,8 @@ describe('AuthService', () => {
       providers: [
         { provide: HttpClient, useValue: { get: () => {}, post: () => {} } },
         { provide: LocalStorageService, useValue: { getItem: () => {} } },
-        AuthService,
-      ],
+        AuthService
+      ]
     });
 
     localstorage = TestBed.inject(LocalStorageService);

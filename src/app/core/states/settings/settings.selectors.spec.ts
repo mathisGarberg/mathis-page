@@ -12,7 +12,7 @@ import {
   selectSettingsLanguage,
   selectSettingsState,
   selectSettingsStickyHeader,
-  selectTheme,
+  selectTheme
 } from './settings.selectors';
 
 const createState = ({
@@ -26,7 +26,7 @@ const createState = ({
   hasPageAnimations = true,
   isPageAnimationsDisabled = false,
   hasElementsAnimations = true,
-  hour = 8,
+  hour = 8
 } = {}) => ({
   settings: {
     language,
@@ -39,8 +39,8 @@ const createState = ({
     hasPageAnimations,
     isPageAnimationsDisabled,
     hasElementsAnimations,
-    hour,
-  },
+    hour
+  }
 });
 
 describe('Settings Selectors', () => {

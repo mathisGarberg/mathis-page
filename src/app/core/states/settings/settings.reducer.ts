@@ -9,12 +9,12 @@ import {
   ActionSettingsChangeLanguage,
   ActionSettingsChangeStickyHeader,
   ActionSettingsChangeTheme,
-  ActionSettingsChangeOperatingSystemMode,
+  ActionSettingsChangeOperatingSystemMode
 } from './settings.actions';
 import {
   LIGHT_MODE_THEME,
   NIGHT_MODE_THEME,
-  SettingsState,
+  SettingsState
 } from './settings.model';
 
 export const initialSettingsState: SettingsState = {
@@ -28,7 +28,7 @@ export const initialSettingsState: SettingsState = {
   hasElementsAnimations: true,
   nightTheme: NIGHT_MODE_THEME,
   lightTheme: LIGHT_MODE_THEME,
-  hour: 0,
+  hour: 0
 };
 
 export const settingsReducer = createReducer(
@@ -48,12 +48,12 @@ export const settingsReducer = createReducer(
     (state, { isPageAnimationsDisabled }) => ({
       ...state,
       isPageAnimationsDisabled,
-      hasPageAnimations: false,
+      hasPageAnimations: false
     })
   ),
   on(ActionSettingsChangeAutoNightMode, (state, { isAutoNightMode }) => ({
     ...state,
     isOsMode: false,
-    isAutoNightMode,
+    isAutoNightMode
   }))
 );

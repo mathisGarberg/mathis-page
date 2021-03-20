@@ -1,24 +1,24 @@
-@import "./styles/styles-variables";
-@import "./styles/styles-reset";
+@import './styles/styles-variables';
+@import './styles/styles-reset';
 
-@import "~@angular/material/theming";
+@import '~@angular/material/theming';
 
 $custom-typography: mat-typography-config(
-  $font-family: "Roboto, monospace",
+  $font-family: 'Roboto, monospace',
   $headline: mat-typography-level(32px, 48px, 700),
-  $body-1: mat-typography-level(16px, 24px, 500),
+  $body-1: mat-typography-level(16px, 24px, 500)
 );
 
 @include mat-core($custom-typography);
 
-@import "./themes/default-theme.scss";
-@import "./themes/light-theme.scss";
-@import "./themes/dark-theme.scss";
-@import "./themes/nature-theme.scss";
+@import './themes/default-theme.scss';
+@import './themes/light-theme.scss';
+@import './themes/dark-theme.scss';
+@import './themes/nature-theme.scss';
 
-@import "styles/styles-reset.scss-theme";
+@import 'styles/styles-reset.scss-theme';
 
-@import "./app/app.component.scss-theme";
+@import './app/app.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include mathis-styles-reset-theme($theme);

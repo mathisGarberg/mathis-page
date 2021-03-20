@@ -3,5 +3,5 @@ export enum StatusCode {
   NotFound = 404,
   Conflict = 409,
   Gone = 410,
-  Unknown = 0,
+  Unknown = 0
 }

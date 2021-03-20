@@ -1,7 +1,7 @@
 import {
   ActionReducerMap,
   MetaReducer,
-  createFeatureSelector,
+  createFeatureSelector
 } from '@ngrx/store';
 import { RouterStateUrl } from './router/custom-serializer';
 
@@ -14,7 +14,7 @@ import { SettingsState } from './states/settings/settings.model';
 export const reducers: ActionReducerMap<any> = {
   router: routerReducer,
   auth: authReducer,
-  settings: settingsReducer,
+  settings: settingsReducer
 };
 
 export const metaReducers: MetaReducer<AppState>[] = [];

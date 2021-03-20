@@ -6,12 +6,12 @@ import {
   ActionSettingsChangeHour,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeStickyHeader,
-  ActionSettingsChangeTheme,
+  ActionSettingsChangeTheme
 } from './settings.actions';
 import {
   LIGHT_MODE_THEME,
   NIGHT_MODE_THEME,
-  SettingsState,
+  SettingsState
 } from './settings.model';
 import { initialSettingsState, settingsReducer } from './settings.reducer';
 
@@ -27,7 +27,7 @@ describe('SettingsReducer', () => {
     hasPageAnimations: true,
     isPageAnimationsDisabled: false,
     hasElementsAnimations: true,
-    hour: 0,
+    hour: 0
   };
 
   describe('undefined action', () => {
@@ -60,7 +60,7 @@ describe('SettingsReducer', () => {
   describe('[Settings] Change Auto Night Mode', () => {
     it('should update change auto night mode', () => {
       const action = ActionSettingsChangeAutoNightMode({
-        isAutoNightMode: true,
+        isAutoNightMode: true
       });
       const state = settingsReducer(TEST_SETTINGS_STATE, action);
 
@@ -80,7 +80,7 @@ describe('SettingsReducer', () => {
   describe('[Settings] Change Animation Page', () => {
     it('should update change animations page', () => {
       const action = ActionSettingsChangeAnimationsPage({
-        hasPageAnimations: true,
+        hasPageAnimations: true
       });
       const state = settingsReducer(TEST_SETTINGS_STATE, action);
 
@@ -91,7 +91,7 @@ describe('SettingsReducer', () => {
   describe('[Settings] Change Animation Page Disabled', () => {
     it('should update change animations page disabled', () => {
       const action = ActionSettingsChangeAnimationsPageDisabled({
-        isPageAnimationsDisabled: true,
+        isPageAnimationsDisabled: true
       });
       const state = settingsReducer(TEST_SETTINGS_STATE, action);
 
@@ -102,7 +102,7 @@ describe('SettingsReducer', () => {
   describe('[Settings] Change Animation Elements', () => {
     it('should update change animation elements', () => {
       const action = ActionSettingsChangeAnimationElements({
-        hasElementsAnimations: true,
+        hasElementsAnimations: true
       });
       const state = settingsReducer(TEST_SETTINGS_STATE, action);
 

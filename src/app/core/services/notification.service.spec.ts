@@ -11,7 +11,7 @@ describe('NotificationsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [NoopAnimationsModule],
-      providers: [NotificationService, MatSnackBar, Overlay],
+      providers: [NotificationService, MatSnackBar, Overlay]
     });
     service = TestBed.inject<NotificationService>(NotificationService);
   });

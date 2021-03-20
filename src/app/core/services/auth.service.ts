@@ -13,7 +13,7 @@ export interface LoginResponse {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
   static BASE_URL = '/api/v1';
@@ -29,8 +29,8 @@ export class AuthService {
       {
         user: {
           email,
-          password,
-        },
+          password
+        }
       }
     );
   }

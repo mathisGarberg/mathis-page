@@ -4,5 +4,5 @@ export enum WebFlowPaths {
   Projects = '/static/projects',
   Contact = '/static/contact',
   Admin = '/static/admin',
-  Settings = '/settings',
+  Settings = '/settings'
 }

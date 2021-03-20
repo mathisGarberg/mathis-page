@@ -5,14 +5,14 @@ import {
   ActionAuthLoginSuccess,
   ActionAuthLoginFailed,
   ActionAuthLogin,
-  ActionAuthLogout,
+  ActionAuthLogout
 } from './auth.actions';
 import {
   tap,
   map,
   switchMap,
   catchError,
-  withLatestFrom,
+  withLatestFrom
 } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Store, select, Action } from '@ngrx/store';
@@ -47,10 +47,10 @@ export class AuthEffects {
           map(({ user }: LoginResponse) =>
             ActionAuthLoginSuccess({
               token: user.token,
-              email,
+              email
             })
           ),
-          catchError((error) => of(ActionAuthLoginFailed(error)))
+          catchError(error => of(ActionAuthLoginFailed(error)))
         )
       )
     )

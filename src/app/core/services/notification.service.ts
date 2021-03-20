@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class NotificationService {
   constructor(
@@ -15,7 +15,7 @@ export class NotificationService {
       message,
       {
         duration: 2000,
-        panelClass: 'default-notification-overlay',
+        panelClass: 'default-notification-overlay'
       },
       isHandset
     );
@@ -26,7 +26,7 @@ export class NotificationService {
       message,
       {
         duration: 10000,
-        panelClass: 'info-notification-overlay',
+        panelClass: 'info-notification-overlay'
       },
       isHandset
     );
@@ -37,7 +37,7 @@ export class NotificationService {
       message,
       {
         duration: 2000,
-        panelClass: 'success-notification-overlay',
+        panelClass: 'success-notification-overlay'
       },
       isHandset
     );
@@ -48,7 +48,7 @@ export class NotificationService {
       message,
       {
         duration: 2500,
-        panelClass: 'warning-notification-overlay',
+        panelClass: 'warning-notification-overlay'
       },
       isHandset
     );
@@ -59,7 +59,7 @@ export class NotificationService {
       message,
       {
         duration: 3000,
-        panelClass: 'error-notification-overlay',
+        panelClass: 'error-notification-overlay'
       },
       isHandset
     );

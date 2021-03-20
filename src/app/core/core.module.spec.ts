@@ -5,7 +5,7 @@ import { CoreModule } from './core.module';
 describe(`CoreModule`, () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule],
+      imports: [CoreModule]
     });
   });
 

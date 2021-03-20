@@ -4,7 +4,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import {
   makeStateKey,
   StateKey,
-  TransferState,
+  TransferState
 } from '@angular/platform-browser';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +21,7 @@ export class TranslateBrowserLoader implements TranslateLoader {
     // First we are looking for the translations in transfer-state,
     // if none found, http load as fallback
     if (data) {
-      return new Observable((observer) => {
+      return new Observable(observer => {
         observer.next(data);
         observer.complete();
       });

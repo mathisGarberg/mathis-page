@@ -11,11 +11,11 @@ import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import {
   LIGHT_MODE_THEME,
   NIGHT_MODE_THEME,
-  SettingsState,
+  SettingsState
 } from './settings.model';
 import {
   ActionSettingsChangeAnimationElements,
-  ActionSettingsChangeTheme,
+  ActionSettingsChangeTheme
 } from './settings.actions';
 import { LocalStorageService } from '../../local-storage/local-storage.service';
 import { AnimationsService } from '../../animations/animations.service';
@@ -45,31 +45,31 @@ describe('SettingsEffects', () => {
     hasPageAnimations: true,
     isPageAnimationsDisabled: false,
     hasElementsAnimations: true,
-    hour: 0,
+    hour: 0
   };
 
   beforeEach(() => {
     router = {
       routerState: {
-        snapshot: {},
+        snapshot: {}
       },
       events: {
-        pipe() {},
-      },
+        pipe() {}
+      }
     };
     localStorageService = jasmine.createSpyObj('LocalStorageService', [
-      'setItem',
+      'setItem'
     ]);
     overlayContainer = jasmine.createSpyObj('OverlayContainer', [
-      'getContainerElement',
+      'getContainerElement'
     ]);
     animationsService = jasmine.createSpyObj('AnimationsService', [
-      'updateRouteAnimationType',
+      'updateRouteAnimationType'
     ]);
     translateService = jasmine.createSpyObj('TranslateService', ['use']);
     store = jasmine.createSpyObj('store', ['pipe']);
     ngZone = jasmine.createSpyObj('mockNgZone', ['run', 'runOutsideAngular']);
-    ngZone.run.and.callFake((fn) => fn());
+    ngZone.run.and.callFake(fn => fn());
   });
 
   describe('PersistSettings$', () => {
@@ -106,7 +106,7 @@ describe('SettingsEffects', () => {
         store.pipe.and.returnValue(of(true));
 
         const animationAction = ActionSettingsChangeAnimationElements({
-          hasElementsAnimations: false,
+          hasElementsAnimations: false
         });
         const source = cold('a', { a: animationAction });
         const actions = new Actions(source);
@@ -124,7 +124,7 @@ describe('SettingsEffects', () => {
           ([action]) => {
             expect(action).toEqual({
               hasElementsAnimations: false,
-              type: '[Settings] Change Animation Elements',
+              type: '[Settings] Change Animation Elements'
             });
             expect(
               animationsService.updateRouteAnimationType

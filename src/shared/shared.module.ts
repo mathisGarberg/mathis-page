@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   FontAwesomeModule,
-  FaIconLibrary,
+  FaIconLibrary
 } from '@fortawesome/angular-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -16,12 +16,12 @@ import {
   faInstagram,
   faYoutube,
   faUnsplash,
-  faAngular,
+  faAngular
 } from '@fortawesome/free-brands-svg-icons';
 
 @NgModule({
   imports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule],
-  exports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule],
+  exports: [CommonModule, FormsModule, ReactiveFormsModule, FontAwesomeModule]
 })
 export class SharedModule {
   constructor(faIconLibrary: FaIconLibrary) {

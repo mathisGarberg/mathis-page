@@ -5,7 +5,7 @@ import { SharedModule } from './shared.module';
 describe(`SharedModule`, () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule],
+      imports: [SharedModule]
     });
   });
 

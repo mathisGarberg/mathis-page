@@ -23,7 +23,7 @@ import {
   ActionAuthLogin,
   ActionAuthLoginFailed,
   ActionAuthLoginSuccess,
-  ActionAuthLogout,
+  ActionAuthLogout
 } from './auth.actions';
 
 const scheduler = new TestScheduler((actual, expected) =>
@@ -40,15 +40,15 @@ describe('AuthEffects', () => {
 
   const user = {
     email: 'anakin@disney.com',
-    token: 'Bearer 123456',
+    token: 'Bearer 123456'
   };
   const credentials = {
     email: 'anakin@disney.com',
-    password: 'password',
+    password: 'password'
   };
   const error = new HttpErrorResponse({
     error: 'error',
-    status: StatusCode.BadRequest,
+    status: StatusCode.BadRequest
   });
 
   beforeEach(() => {
@@ -57,41 +57,41 @@ describe('AuthEffects', () => {
         isAuthenticated: false,
         user: null,
         error: null,
-        isLoadingAuth: false,
-      } as AuthState,
+        isLoadingAuth: false
+      } as AuthState
     };
 
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
         HttpClientTestingModule,
-        MatSnackBarModule,
+        MatSnackBarModule
       ],
       providers: [
         AuthEffects,
         provideMockActions(() => actions$),
-        provideMockStore({ initialState: initialAuthState }),
-      ],
+        provideMockStore({ initialState: initialAuthState })
+      ]
     });
 
     store = TestBed.inject(Store) as MockStore<AuthState>;
     authService = jasmine.createSpyObj('AuthService', ['login']);
     localStorageService = jasmine.createSpyObj('LocalStorageService', [
       'setItem',
-      'removeItem',
+      'removeItem'
     ]);
     notificationService = jasmine.createSpyObj('NotificationService', [
       'error',
-      'success',
+      'success'
     ]);
     router = {
       routerState: {
-        snapshot: {},
+        snapshot: {}
       },
       events: {
-        pipe() {},
+        pipe() {}
       },
-      navigate: jasmine.createSpy('navigate'),
+      navigate: jasmine.createSpy('navigate')
     };
   });
 
@@ -139,14 +139,14 @@ describe('AuthEffects', () => {
   });
 
   describe('Login$', () => {
-    it('should return ActionAuthLoginSuccess action, with the user, on success', (done) => {
+    it('should return ActionAuthLoginSuccess action, with the user, on success', done => {
       scheduler.run(({ cold, expectObservable }) => {
         const action = ActionAuthLogin(credentials);
         const outcome = ActionAuthLoginSuccess(user);
 
         const values = {
           a: action,
-          b: outcome,
+          b: outcome
         };
 
         const source = cold('a', values);
@@ -173,14 +173,14 @@ describe('AuthEffects', () => {
       });
     });
 
-    it('should return ActionAuthLoginFailed action, with an error, on failure', (done) => {
+    it('should return ActionAuthLoginFailed action, with an error, on failure', done => {
       scheduler.run(({ cold, expectObservable }) => {
         const action = ActionAuthLogin(credentials);
         const outcome = ActionAuthLoginFailed({ error });
 
         const values = {
           a: action,
-          b: outcome,
+          b: outcome
         };
 
         const source = cold('a', values);

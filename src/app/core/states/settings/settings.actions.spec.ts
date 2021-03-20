@@ -8,14 +8,14 @@ import {
   ActionSettingsChangeLanguage,
   ActionSettingsChangeOperatingSystemMode,
   ActionSettingsChangeStickyHeader,
-  ActionSettingsChangeTheme,
+  ActionSettingsChangeTheme
 } from './settings.actions';
 
 describe('Settings Actions', () => {
   describe('[Settings] Change Theme', () => {
     it('should create ActionSettingsChangeTheme action', () => {
       const action = ActionSettingsChangeTheme({
-        theme: NIGHT_MODE_THEME,
+        theme: NIGHT_MODE_THEME
       });
 
       expect(action.type).toEqual(ActionSettingsChangeTheme.type);
@@ -26,7 +26,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Animation Elements', () => {
     it('should create ActionSettingsChangeAnimationElements action', () => {
       const action = ActionSettingsChangeAnimationElements({
-        hasElementsAnimations: true,
+        hasElementsAnimations: true
       });
 
       expect(action.type).toEqual(ActionSettingsChangeAnimationElements.type);
@@ -37,7 +37,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Animations Page', () => {
     it('should create ActionSettingsChangeAnimationsPage action', () => {
       const action = ActionSettingsChangeAnimationsPage({
-        hasPageAnimations: true,
+        hasPageAnimations: true
       });
 
       expect(action.type).toEqual(ActionSettingsChangeAnimationsPage.type);
@@ -48,7 +48,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Animation Page Disabled', () => {
     it('should create ActionSettingsChangeAnimationsPageDisabled action', () => {
       const action = ActionSettingsChangeAnimationsPageDisabled({
-        isPageAnimationsDisabled: true,
+        isPageAnimationsDisabled: true
       });
 
       expect(action.type).toEqual(
@@ -61,7 +61,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Auto Night Mode', () => {
     it('should create ActionSettingsChangeAutoNightMode action', () => {
       const action = ActionSettingsChangeAutoNightMode({
-        isAutoNightMode: true,
+        isAutoNightMode: true
       });
 
       expect(action.type).toEqual(ActionSettingsChangeAutoNightMode.type);
@@ -72,7 +72,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Language', () => {
     it('should create ActionSettingsChangeLanguage action', () => {
       const action = ActionSettingsChangeLanguage({
-        language: 'en',
+        language: 'en'
       });
 
       expect(action.type).toEqual(ActionSettingsChangeLanguage.type);
@@ -83,7 +83,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Sticky Header', () => {
     it('should create ActionSettingsChangeStickyHeader action', () => {
       const action = ActionSettingsChangeStickyHeader({
-        isStickyHeader: true,
+        isStickyHeader: true
       });
 
       expect(action.type).toEqual(ActionSettingsChangeStickyHeader.type);
@@ -94,7 +94,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change Hour', () => {
     it('should create ActionSettingsChangeHour action', () => {
       const action = ActionSettingsChangeHour({
-        hour: 7,
+        hour: 7
       });
 
       expect(action.type).toEqual(ActionSettingsChangeHour.type);
@@ -105,7 +105,7 @@ describe('Settings Actions', () => {
   describe('[Settings] Change operating system mode', () => {
     it('should create ActionSettingsChangeOperatingSystemMode action', () => {
       const action = ActionSettingsChangeOperatingSystemMode({
-        isOperatingSystemMode: true,
+        isOperatingSystemMode: true
       });
 
       expect(action.type).toEqual(ActionSettingsChangeOperatingSystemMode.type);

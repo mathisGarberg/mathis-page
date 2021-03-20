@@ -12,7 +12,7 @@ import {
   selectSettingsState,
   selectPageAnimations,
   selectElementsAnimations,
-  selectSettingsLanguage,
+  selectSettingsLanguage
 } from './settings.selectors';
 import { SettingsState } from './settings.model';
 import {
@@ -23,7 +23,7 @@ import {
   ActionSettingsChangeLanguage,
   ActionSettingsChangeOperatingSystemMode,
   ActionSettingsChangeStickyHeader,
-  ActionSettingsChangeTheme,
+  ActionSettingsChangeTheme
 } from './settings.actions';
 
 export const SETTINGS_KEY = 'SETTINGS';
@@ -80,7 +80,7 @@ export class SettingsEffects {
         withLatestFrom(
           combineLatest([
             this.store.pipe(select(selectPageAnimations)),
-            this.store.pipe(select(selectElementsAnimations)),
+            this.store.pipe(select(selectElementsAnimations))
           ])
         ),
         tap(([, [pageAnimations, elementsAnimations]]) =>
@@ -117,7 +117,7 @@ export class SettingsEffects {
       this.store.pipe(
         select(selectSettingsLanguage),
         distinctUntilChanged(),
-        tap((language) => this.translateService.use(language))
+        tap(language => this.translateService.use(language))
       ),
     { dispatch: false }
   );

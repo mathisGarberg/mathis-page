@@ -3,7 +3,7 @@ import {
   ActionAuthLogin,
   ActionAuthLoginFailed,
   ActionAuthLoginSuccess,
-  ActionAuthLogout,
+  ActionAuthLogout
 } from './auth.actions';
 
 describe('Auth Actions', () => {

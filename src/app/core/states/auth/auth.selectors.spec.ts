@@ -2,12 +2,12 @@ import { isAuthorized, isLoadingAuth } from './auth.selectors';
 
 const createState = ({
   isLoadingAuth = false,
-  isAuthenticated = true,
+  isAuthenticated = true
 } = {}) => ({
   auth: {
     isLoadingAuth,
-    isAuthenticated,
-  },
+    isAuthenticated
+  }
 });
 
 describe('Auth Selectors', () => {
