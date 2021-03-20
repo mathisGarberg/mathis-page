@@ -22,3 +22,12 @@ code {
     left: 4px;
   }
 }
+
+fa-icon svg {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+}
+fa-icon .fa-2x {
+  height: 2em;
+}

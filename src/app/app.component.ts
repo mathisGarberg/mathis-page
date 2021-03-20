@@ -56,6 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     ...this.navigation,
     { link: WebFlowPaths.Settings, label: 'app.menu.settings' }
   ];
+  languages = ['en', 'no'];
   mediaContents = mediaContents;
 
   stickyHeader$: Observable<boolean>;

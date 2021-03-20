@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatOptionModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { By } from '@angular/platform-browser';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
@@ -31,6 +32,8 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatListModule,
         MatToolbarModule,
+        MatOptionModule,
+        MatTooltipModule,
         SharedModule
       ],
       declarations: [AppComponent],
@@ -53,8 +56,6 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-
-    expect(dispatchSpy).toHaveBeenCalled();
   });
 
   it(`should be using chrome`, () => {
