@@ -5,6 +5,11 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { translateBrowserLoaderFactory } from './translate-loader-browser';
+import { TransferState } from '@angular/platform-browser';
+
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -34,12 +39,29 @@ import { AuthEffects } from './states/auth/auth.effects';
       : StoreDevtoolsModule.instrument({
           name: 'mathis-page',
         }),
+
+    // 3rd party
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState],
+      },
+    }),
   ],
   providers: [],
-  exports: [],
+  exports: [TranslateModule],
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     super(parentModule);
   }
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(
+    http,
+    `${environment.i18nPrefix}/assets/i18n/`,
+    '.json'
+  );
 }

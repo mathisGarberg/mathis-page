@@ -1,7 +1,7 @@
 import browser from 'browser-detect';
 
 import { Component } from '@angular/core';
-import { WebFlowPaths } from 'src/core/enums/paths';
+import { WebFlowPaths } from './core/enums/paths';
 
 @Component({
   selector: 'app-root',

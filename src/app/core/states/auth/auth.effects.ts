@@ -62,7 +62,7 @@ export class AuthEffects {
         ofType(ActionAuthLoginSuccess),
         tap(() => {
           this.notificationService.success('Logged in booooi!!');
-          this.router.navigateByUrl('/');
+          this.router.navigate(['/']);
         })
       ),
     { dispatch: false }

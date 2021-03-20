@@ -19,7 +19,7 @@ describe('LocalStorageService', () => {
   });
 
   it('testLocalStorage should be executable', () => {
-    spyOn(service, 'testLocalStorage');
+    spyOn(service, 'testLocalStorage').and.callThrough();
     service.testLocalStorage();
     expect(service.testLocalStorage).toHaveBeenCalled();
   });

@@ -21,14 +21,14 @@ import {
   ActionAuthLogout,
 } from './auth.actions';
 import { HttpErrorResponse } from '@angular/common/http';
-import { StatusCode } from 'src/core/enums/status-code.enum';
+import { StatusCode } from '../../enums/status-code.enum';
 
 describe('AuthEffects', () => {
   let router: any;
   let localStorageService: jasmine.SpyObj<LocalStorageService>;
   let authService: jasmine.SpyObj<AuthService>;
   let notificationService: jasmine.SpyObj<NotificationService>;
-  let actions$: Observable<any>;
+  let actions$: Observable<Actions>;
   let store: MockStore<AuthState>;
   let scheduler: TestScheduler;
 
@@ -183,6 +183,60 @@ describe('AuthEffects', () => {
     });
   });
 
+  describe('LoginSuccess$', () => {
+    it('should call notification success and redirect to home page, on success', (done) => {
+      scheduler.run(({ cold }) => {
+        const action = ActionAuthLoginSuccess(user);
+        const source = cold('a', { a: action });
+        const actions = new Actions(source);
+        const effects = new AuthEffects(
+          actions,
+          router,
+          authService,
+          localStorageService,
+          store,
+          notificationService
+        );
+
+        effects.LoginSuccess$.subscribe();
+
+        setTimeout(() => {
+          expect(notificationService.success).toHaveBeenCalled();
+          done();
+        });
+      });
+    });
+  });
+
+  describe('LoginFailed$', () => {
+    it('should call notification error and redirect to home page, on error', (done) => {
+      scheduler.run(({ cold }) => {
+        const error = new HttpErrorResponse({
+          error: 'An error occured',
+          status: StatusCode.BadRequest,
+        });
+        const action = ActionAuthLoginFailed(error);
+        const source = cold('a', { a: action });
+        const actions = new Actions(source);
+        const effects = new AuthEffects(
+          actions,
+          router,
+          authService,
+          localStorageService,
+          store,
+          notificationService
+        );
+
+        effects.LoginFailed$.subscribe();
+
+        setTimeout(() => {
+          expect(notificationService.error).toHaveBeenCalled();
+          done();
+        });
+      });
+    });
+  });
+
   describe('PersistAuth$', () => {
     it('should call methods on LocalstorageSerice for PERSIST action', (done) => {
       scheduler.run(({ cold }) => {
@@ -198,7 +252,9 @@ describe('AuthEffects', () => {
           notificationService
         );
 
-        effects.PersistAuth$.subscribe(() => {
+        effects.PersistAuth$.subscribe();
+
+        setTimeout(() => {
           expect(localStorageService.setItem).toHaveBeenCalledWith(
             AUTH_KEY,
             initialAuthState
