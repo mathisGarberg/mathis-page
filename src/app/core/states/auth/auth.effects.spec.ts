@@ -1,27 +1,34 @@
 import * as assert from 'assert';
-import { LocalStorageService } from '../../local-storage/local-storage.service';
-import { Store } from '@ngrx/store';
-import { AuthState, initialAuthState } from './auth.reducers';
-import { TestScheduler } from 'rxjs/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EMPTY, Observable, of, throwError } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
+
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { Store } from '@ngrx/store';
+
+import { LocalStorageService } from '../../local-storage/local-storage.service';
+import { initialAuthState } from './auth.reducer';
+import { AuthState } from './auth.model';
 import { AuthService } from '../../services/auth.service';
 import { NotificationService } from '../../services/notification.service';
 import { AuthEffects, AUTH_KEY } from './auth.effects';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { StatusCode } from '../../enums/status-code.enum';
 import {
   ActionAuthLogin,
   ActionAuthLoginFailed,
   ActionAuthLoginSuccess,
   ActionAuthLogout,
 } from './auth.actions';
-import { HttpErrorResponse } from '@angular/common/http';
-import { StatusCode } from '../../enums/status-code.enum';
+
+const scheduler = new TestScheduler((actual, expected) =>
+  assert.deepStrictEqual(actual, expected)
+);
 
 describe('AuthEffects', () => {
   let router: any;
@@ -30,7 +37,6 @@ describe('AuthEffects', () => {
   let notificationService: jasmine.SpyObj<NotificationService>;
   let actions$: Observable<Actions>;
   let store: MockStore<AuthState>;
-  let scheduler: TestScheduler;
 
   const user = {
     email: 'anakin@disney.com',
@@ -40,6 +46,10 @@ describe('AuthEffects', () => {
     email: 'anakin@disney.com',
     password: 'password',
   };
+  const error = new HttpErrorResponse({
+    error: 'error',
+    status: StatusCode.BadRequest,
+  });
 
   beforeEach(() => {
     const initialAuthState = {
@@ -64,14 +74,14 @@ describe('AuthEffects', () => {
       ],
     });
 
-    authService = jasmine.createSpyObj('AuthService', ['login']);
+    authService = jasmine.createSpyObj(AuthService, ['login']);
     store = TestBed.inject(Store) as MockStore<AuthState>;
 
-    localStorageService = jasmine.createSpyObj('LocalStorageService', [
+    localStorageService = jasmine.createSpyObj(LocalStorageService, [
       'setItem',
       'removeItem',
     ]);
-    notificationService = jasmine.createSpyObj('NotificationService', [
+    notificationService = jasmine.createSpyObj(NotificationService, [
       'error',
       'success',
     ]);
@@ -84,10 +94,6 @@ describe('AuthEffects', () => {
       },
       navigate: jasmine.createSpy('navigate'),
     };
-
-    scheduler = new TestScheduler((actual, expected) =>
-      assert.deepStrictEqual(actual, expected)
-    );
   });
 
   it('should not dispatch any actions', () => {
@@ -106,6 +112,34 @@ describe('AuthEffects', () => {
     expect(metadata.LoginSuccess$.dispatch).toEqual(false);
     expect(metadata.LoginFailed$.dispatch).toEqual(false);
     expect(metadata.Logout$.dispatch).toEqual(false);
+  });
+
+  describe('PersistAuth$', () => {
+    it('should call methods on LocalstorageSerice for PERSIST action', (done) => {
+      scheduler.run(({ cold }) => {
+        const persistAction = ActionAuthLoginSuccess(user);
+        const source = cold('a', { a: persistAction });
+        const actions = new Actions(source);
+        const effects = new AuthEffects(
+          actions,
+          router,
+          authService,
+          localStorageService,
+          store,
+          notificationService
+        );
+
+        effects.PersistAuth$.subscribe();
+
+        setTimeout(() => {
+          expect(localStorageService.setItem).toHaveBeenCalledWith(
+            AUTH_KEY,
+            initialAuthState
+          );
+          done();
+        });
+      });
+    });
   });
 
   describe('Login$', () => {
@@ -145,11 +179,6 @@ describe('AuthEffects', () => {
 
     it('should return ActionAuthLoginFailed action, with an error, on failure', (done) => {
       scheduler.run(({ cold, expectObservable }) => {
-        const error = new HttpErrorResponse({
-          error: 'An error occured',
-          status: StatusCode.BadRequest,
-        });
-
         const action = ActionAuthLogin(credentials);
         const outcome = ActionAuthLoginFailed({ error });
 
@@ -211,10 +240,6 @@ describe('AuthEffects', () => {
   describe('LoginFailed$', () => {
     it('should call notification error and redirect to home page, on error', (done) => {
       scheduler.run(({ cold }) => {
-        const error = new HttpErrorResponse({
-          error: 'An error occured',
-          status: StatusCode.BadRequest,
-        });
         const action = ActionAuthLoginFailed(error);
         const source = cold('a', { a: action });
         const actions = new Actions(source);
@@ -231,34 +256,6 @@ describe('AuthEffects', () => {
 
         setTimeout(() => {
           expect(notificationService.error).toHaveBeenCalled();
-          done();
-        });
-      });
-    });
-  });
-
-  describe('PersistAuth$', () => {
-    it('should call methods on LocalstorageSerice for PERSIST action', (done) => {
-      scheduler.run(({ cold }) => {
-        const persistAction = ActionAuthLoginSuccess(user);
-        const source = cold('a', { a: persistAction });
-        const actions = new Actions(source);
-        const effects = new AuthEffects(
-          actions,
-          router,
-          authService,
-          localStorageService,
-          store,
-          notificationService
-        );
-
-        effects.PersistAuth$.subscribe();
-
-        setTimeout(() => {
-          expect(localStorageService.setItem).toHaveBeenCalledWith(
-            AUTH_KEY,
-            initialAuthState
-          );
           done();
         });
       });

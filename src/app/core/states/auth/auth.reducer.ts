@@ -4,19 +4,8 @@ import {
   ActionAuthLoginSuccess,
   ActionAuthLogout,
 } from './auth.actions';
-import { User } from '../../models/user.model';
+import { AuthState } from './auth.model';
 import { createReducer, on } from '@ngrx/store';
-
-export interface AuthState {
-  isAuthenticated: boolean;
-  user: User | null;
-  error: Error;
-  isLoadingAuth: boolean;
-}
-
-export interface AppState {
-  auth: AuthState;
-}
 
 export const initialAuthState: AuthState = {
   isAuthenticated: false,

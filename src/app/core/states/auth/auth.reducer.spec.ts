@@ -1,28 +1,22 @@
+import { generateCredentials, generateUser } from './auth.model';
+import { authReducer, initialAuthState } from './auth.reducer';
 import {
   ActionAuthLogin,
   ActionAuthLoginFailed,
   ActionAuthLoginSuccess,
   ActionAuthLogout,
 } from './auth.actions';
-import { authReducer, initialAuthState } from './auth.reducers';
 
 describe('Auth Reducer', () => {
-  const credentials = {
-    email: 'anakin@disney.com',
-    password: 'password',
-  };
-
-  const loginResult = {
-    email: 'anakin@disney.com',
-    token: 'Bearer 123456',
-  };
+  const credentials = generateCredentials();
+  const user = generateUser();
 
   describe('undefined action', () => {
     it('should return the default state', () => {
-      const action = { type: 'NOOP' } as any;
-      const result = authReducer(undefined, action);
+      const action = {} as any;
+      const state = authReducer(undefined, action);
 
-      expect(result).toBe(initialAuthState);
+      expect(state).toBe(initialAuthState);
     });
   });
 
@@ -39,13 +33,13 @@ describe('Auth Reducer', () => {
 
     describe('[Auth] Login Success', () => {
       it('should add token to state', () => {
-        const action = ActionAuthLoginSuccess(loginResult);
+        const action = ActionAuthLoginSuccess(user);
         const result = authReducer(initialAuthState, action);
 
         expect(result).toEqual({
           ...initialAuthState,
           isAuthenticated: true,
-          user: loginResult,
+          user,
         });
       });
     });

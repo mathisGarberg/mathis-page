@@ -11,7 +11,7 @@ export const ActionAuthLoginSuccess = createAction(
 );
 
 export const ActionAuthLoginFailed = createAction(
-  '[Auth] Login Failure',
+  '[Auth] Login Failed',
   props<{ error: Error }>()
 );
 

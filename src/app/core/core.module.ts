@@ -18,6 +18,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { environment } from 'src/environments/environment';
 import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-has-loaded-once.guard';
 import { AuthEffects } from './states/auth/auth.effects';
+import { SettingsEffects } from './states/settings/settings.effects';
 
 @NgModule({
   declarations: [],
@@ -33,7 +34,7 @@ import { AuthEffects } from './states/auth/auth.effects';
       },
     }),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, SettingsEffects]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
