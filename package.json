@@ -8,8 +8,16 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "format:write": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --write",
+    "format:test": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --list-different",
     "cypress": "concurrently \"ng serve\" \"cypress open\"",
     "cypress-headless": "npx cypress --headless --browser chrome"
+  },
+  "lint-staged": {
+    "{src,e2e,cypress}/**/*.{ts,json,md,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -70,6 +78,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "^1.19.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.1.5"
