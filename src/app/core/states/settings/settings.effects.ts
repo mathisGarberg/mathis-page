@@ -97,6 +97,7 @@ export class SettingsEffects {
     () =>
       merge(INIT, this.actions$.pipe(ofType(ActionSettingsChangeTheme))).pipe(
         withLatestFrom(this.store.pipe(select(selectEffectiveTheme))),
+        tap(console.log),
         tap(([, effectiveTheme]) => {
           const classList = this.overlayContainer.getContainerElement()
             .classList;

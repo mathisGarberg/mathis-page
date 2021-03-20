@@ -50,7 +50,7 @@ import { SettingsEffects } from './states/settings/settings.effects';
       },
     }),
   ],
-  providers: [],
+  providers: [TransferState],
   exports: [TranslateModule],
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {

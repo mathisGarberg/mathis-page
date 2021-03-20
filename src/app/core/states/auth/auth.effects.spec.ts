@@ -74,14 +74,13 @@ describe('AuthEffects', () => {
       ],
     });
 
-    authService = jasmine.createSpyObj(AuthService, ['login']);
     store = TestBed.inject(Store) as MockStore<AuthState>;
-
-    localStorageService = jasmine.createSpyObj(LocalStorageService, [
+    authService = jasmine.createSpyObj('AuthService', ['login']);
+    localStorageService = jasmine.createSpyObj('LocalStorageService', [
       'setItem',
       'removeItem',
     ]);
-    notificationService = jasmine.createSpyObj(NotificationService, [
+    notificationService = jasmine.createSpyObj('NotificationService', [
       'error',
       'success',
     ]);
@@ -115,7 +114,7 @@ describe('AuthEffects', () => {
   });
 
   describe('PersistAuth$', () => {
-    it('should call methods on LocalstorageSerice for PERSIST action', (done) => {
+    it('should call methods on LocalstorageSerice for PERSIST action', () => {
       scheduler.run(({ cold }) => {
         const persistAction = ActionAuthLoginSuccess(user);
         const source = cold('a', { a: persistAction });
@@ -129,14 +128,11 @@ describe('AuthEffects', () => {
           notificationService
         );
 
-        effects.PersistAuth$.subscribe();
-
-        setTimeout(() => {
+        effects.PersistAuth$.subscribe(() => {
           expect(localStorageService.setItem).toHaveBeenCalledWith(
             AUTH_KEY,
             initialAuthState
           );
-          done();
         });
       });
     });
@@ -213,7 +209,7 @@ describe('AuthEffects', () => {
   });
 
   describe('LoginSuccess$', () => {
-    it('should call notification success and redirect to home page, on success', (done) => {
+    it('should call notification success and redirect to home page, on success', () => {
       scheduler.run(({ cold }) => {
         const action = ActionAuthLoginSuccess(user);
         const source = cold('a', { a: action });
@@ -227,18 +223,16 @@ describe('AuthEffects', () => {
           notificationService
         );
 
-        effects.LoginSuccess$.subscribe();
-
-        setTimeout(() => {
+        effects.LoginSuccess$.subscribe(() => {
           expect(notificationService.success).toHaveBeenCalled();
-          done();
+          expect(router.navigate).toHaveBeenCalled();
         });
       });
     });
   });
 
   describe('LoginFailed$', () => {
-    it('should call notification error and redirect to home page, on error', (done) => {
+    it('should call notification error and redirect to home page, on error', () => {
       scheduler.run(({ cold }) => {
         const action = ActionAuthLoginFailed(error);
         const source = cold('a', { a: action });
@@ -252,18 +246,15 @@ describe('AuthEffects', () => {
           notificationService
         );
 
-        effects.LoginFailed$.subscribe();
-
-        setTimeout(() => {
+        effects.LoginFailed$.subscribe(() => {
           expect(notificationService.error).toHaveBeenCalled();
-          done();
         });
       });
     });
   });
 
   describe('Logout$', () => {
-    it('should clear authentication state and navigate to home page', (done) => {
+    it('should clear authentication state and navigate to home page', () => {
       scheduler.run(({ cold }) => {
         const logoutAction = ActionAuthLogout();
         const source = cold('a', { a: logoutAction });
@@ -277,11 +268,8 @@ describe('AuthEffects', () => {
           notificationService
         );
 
-        effects.Logout$.subscribe();
-
-        setTimeout(() => {
+        effects.Logout$.subscribe(() => {
           expect(localStorageService.removeItem).toHaveBeenCalled();
-          done();
         });
       });
     });
