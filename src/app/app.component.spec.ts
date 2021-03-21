@@ -17,7 +17,6 @@ import {
   selectSettingsLanguage,
   selectSettingsStickyHeader
 } from './core/states/settings/settings.selectors';
-import { NavbarComponent } from './navbar/navbar.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -38,7 +37,7 @@ describe('AppComponent', () => {
         MatTooltipModule,
         SharedModule
       ],
-      declarations: [AppComponent, NavbarComponent],
+      declarations: [AppComponent],
       providers: [provideMockStore()]
     }).compileComponents();
 

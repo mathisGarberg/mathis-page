@@ -70,6 +70,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     { link: WebFlowPaths.Settings, label: 'app.menu.settings' }
   ];
 
+  languages = ['en', 'no'];
   mediaContents = mediaContents;
 
   stickyHeader$: Observable<boolean>;
@@ -149,6 +150,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onWindowScroll(data: CdkScrollable) {
     const scrollTop = data.getElementRef().nativeElement.scrollTop || 0;
+
     if (this.lastOffset > scrollTop) {
       this.isAutoScrollButtonVisible = false;
       this.isScrollingUpwards = true;
@@ -166,7 +168,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.lastOffset = scrollTop;
   }
 
-  private navigationInterceptor(): void {
+  private navigationInterceptor() {
     this.scrollable.getElementRef().nativeElement.scrollTo({ top: 0 });
   }
 

@@ -39,7 +39,59 @@
         >
           {{ 'app.about.my-projects' | translate }}
         </a>
+        <a
+          mat-raised-button
+          class="actions-main"
+          color="warn"
+          aria-label="Change theme"
+          [routerLink]="webFlowPaths.Settings"
+          [ngClass]="routeAnimationsElements"
+        >
+          {{ 'app.about.change-theme' | translate }}
+        </a>
+        <a
+          mat-raised-button
+          class="actions-main"
+          color="primary"
+          aria-label="Contact"
+          [routerLink]="webFlowPaths.Contact"
+          [ngClass]="routeAnimationsElements"
+        >
+          {{ 'app.about.contact' | translate }}
+        </a>
+        <br />
+        <span [ngClass]="routeAnimationsElements">{{
+          'app.about.check-blogs' | translate
+        }}</span>
+        <br />
+
+        <ng-container *ngFor="let article of articles">
+          <a
+            mat-raised-button
+            [ngClass]="routeAnimationsElements"
+            target="_blank"
+            color="primary"
+            rel="noopener"
+            [href]="article.link"
+          >
+            <fa-icon [icon]="['fab', 'medium-m']"></fa-icon>
+            {{ article.name | translate }}
+          </a>
+        </ng-container>
       </div>
+
+      <section class="about">
+        <h2 [ngClass]="routeAnimationsElements">
+          {{ 'app.about-about-me' | translate }}
+        </h2>
+        <p [ngClass]="routeAnimationsElements">
+          {{ 'app.about.p1' | translate }}
+        </p>
+        <h2 [ngClass]="routeAnimationsElements">
+          {{ 'app.technical-sheet' | translate }}
+        </h2>
+        <div [ngClass]="routeAnimationsElements"></div>
+      </section>
     </div>
   </div>
 </div>

@@ -36,7 +36,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
   transition(':leave', animate(300, style({ opacity: 0 })))
 ]);
 
-export const slideInOutAnimation = trigger('slideInOut', [
+export const slideInOutAnimation = trigger('slideInOutAnimation', [
   transition(':enter', [
     style({ transform: 'translateY(-100%)' }),
     animate('200ms ease-in', style({ transform: 'translateY(0%)' }))
