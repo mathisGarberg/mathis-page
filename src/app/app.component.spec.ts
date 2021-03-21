@@ -78,19 +78,15 @@ describe('AppComponent', () => {
     );
   });
 
-  // it('should call onWindowScroll method on scroll', () => {
+  // it('should call onWindowScroll method on scroll', fakeAsync(() => {
   //   spyOn(component, 'onWindowScroll').and.callThrough();
 
   //   const debugElement = fixture.debugElement.query(By.css('#sidenav-content'));
 
-  //   debugElement.triggerEventHandler('scroll', {
-  //     target: {
-  //       scrollHeight: 100,
-  //       scrollTop: 0,
-  //       clientHeight: 0,
-  //     },
-  //   });
+  //   const scrollEvent = new Event('scroll');
+  //   debugElement.nativeElement.dispatchEvent(scrollEvent);
+  //   tick(250);
 
   //   expect(component.onWindowScroll).toHaveBeenCalled();
-  // });
+  // }));
 });

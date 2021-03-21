@@ -1,12 +1,7 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import {
-  HttpClientModule,
-  HttpClient,
-  HTTP_INTERCEPTORS
-} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { translateBrowserLoaderFactory } from './translate-loader-browser';
 import { TransferState } from '@angular/platform-browser';
 
@@ -41,7 +36,7 @@ import { SettingsEffects } from './states/settings/settings.effects';
           name: 'mathis-page'
         }),
 
-    // 3rd party
+    // other
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -57,12 +52,4 @@ export class CoreModule extends EnsureModuleLoadedOnceGuard {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     super(parentModule);
   }
-}
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(
-    http,
-    `${environment.i18nPrefix}/assets/i18n/`,
-    '.json'
-  );
 }

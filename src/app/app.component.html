@@ -110,23 +110,34 @@
                 </ng-container>
               </span>
 
-              <button mat-icon-button [routerLink]="webFlowPaths.Settings" aria-label="Settings" class="d-none d-sm-inline">
+              <button
+                mat-icon-button
+                [routerLink]="webFlowPaths.Settings"
+                aria-label="Settings"
+                class="d-none d-sm-inline"
+              >
                 <fa-icon icon="cog"></fa-icon>
               </button>
 
-               <a [matTooltip]="'app.about.view-profile' | translate"
+               <a
+                  [matTooltip]="'app.about.view-profile' | translate"
                   aria-label="Github"
                   matdTooltipPosition="before"
                   mat-icon-button
                   class="link d-none d-sm-inline"
                   href="https://github.com/mathisGarberg"
                   rel="noopener"
-                  target="_blank">
+                  target="_blank"
+                >
                 <fa-icon [icon]="['fab','github']"></fa-icon>
               </a>
 
               <span *ngIf="language$ | async as language">
-                <mat-select ngDefaultControl [ngModel]="language" aria-label="Languages" (selectionChange)="onLanguageSelect($event)">
+                <mat-select
+                  ngDefaultControl
+                  [ngModel]="language"
+                  aria-label="Languages"
+                  (selectionChange)="onLanguageSelect($event)">
                   <mat-option role="option" *ngFor="let language of languages" [value]="language">
                     {{ language | uppercase }}
                   </mat-option>
@@ -136,8 +147,8 @@
           </mat-toolbar>
         </div>
 
-        <div class="content">
-          <router-outlet></router-outlet>
+        <div class="content" (@routeAnimations.done)="onAnimationComplete($event)" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
+          <router-outlet #o="outlet"></router-outlet>
         </div>
 
         <footer class="footer">

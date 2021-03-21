@@ -3,19 +3,24 @@ import {
   AfterViewInit,
   Component,
   Inject,
+  Injectable,
   OnDestroy,
   OnInit,
   PLATFORM_ID,
   ViewChild
 } from '@angular/core';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
+import { AnimationEvent } from '@angular/animations';
 import { isPlatformBrowser } from '@angular/common';
 import { select, Store } from '@ngrx/store';
 import { Event, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 import { AppState, selectAuthState } from './core/core.state';
+import { ActionAuthLogout } from './core/states/auth/auth.actions';
+import { routeAnimations } from './core/animations/route.animations';
+import { mediaContents } from './core/data/media-contents';
 import { WebFlowPaths } from './core/enums/paths';
 import {
   ActionSettingsChangeAnimationsPageDisabled,
@@ -26,13 +31,24 @@ import {
   selectSettingsLanguage,
   selectSettingsStickyHeader
 } from './core/states/settings/settings.selectors';
-import { ActionAuthLogout } from './core/states/auth/auth.actions';
-import { mediaContents } from './core/data/media-contents';
+import {
+  fadeAnimation,
+  slideInOutAnimation
+} from './core/animations/animations';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AnimationCompleteCallbackService {
+  animationCompleteCallback = new BehaviorSubject(null);
+  public readonly animationCompleteCallbackValue = this.animationCompleteCallback.asObservable();
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [routeAnimations, fadeAnimation, slideInOutAnimation]
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   static isBrowser = new Subject<boolean>();
@@ -40,7 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(CdkScrollable, { static: false }) scrollable: CdkScrollable;
 
   lastOffset = 0;
-  isScrollToTop = false;
+  isAutoScrollButtonVisible = false;
   isScrollingUpwards = true;
 
   title = 'mathis-page';
@@ -76,7 +92,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId,
     private router: Router,
     private store: Store<AppState>,
-    private scroll: ScrollDispatcher
+    private scroll: ScrollDispatcher,
+    private animationCompleteCallbackService: AnimationCompleteCallbackService
   ) {}
 
   ngOnInit(): void {
@@ -127,22 +144,28 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.store.dispatch(ActionAuthLogout());
   }
 
-  onWindowScroll(data: CdkScrollable) {
-    console.log('Called!!!');
+  onAnimationComplete(event: AnimationEvent) {
+    if (event.toState === 'about') {
+      this.animationCompleteCallbackService.animationCompleteCallback.next(
+        event
+      );
+    }
+  }
 
+  onWindowScroll(data: CdkScrollable) {
     const scrollTop = data.getElementRef().nativeElement.scrollTop || 0;
     if (this.lastOffset > scrollTop) {
-      this.isScrollToTop = false;
+      this.isAutoScrollButtonVisible = false;
       this.isScrollingUpwards = true;
     } else if (scrollTop < 10) {
-      this.isScrollToTop = true;
+      this.isAutoScrollButtonVisible = true;
       this.isScrollingUpwards = true;
     } else if (scrollTop > 100) {
-      this.isScrollToTop = true;
+      this.isAutoScrollButtonVisible = true;
       this.isScrollingUpwards = false;
     } else {
+      this.isAutoScrollButtonVisible = true;
       this.isScrollingUpwards = false;
-      this.isScrollToTop = true;
     }
 
     this.lastOffset = scrollTop;
