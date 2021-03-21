@@ -9,12 +9,12 @@ import {
   PLATFORM_ID,
   ViewChild
 } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { AnimationEvent } from '@angular/animations';
 import { isPlatformBrowser } from '@angular/common';
 import { select, Store } from '@ngrx/store';
-import { Event, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 import { AppState, selectAuthState } from './core/core.state';
@@ -51,15 +51,12 @@ export class AnimationCompleteCallbackService {
   animations: [routeAnimations, fadeAnimation, slideInOutAnimation]
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  static isBrowser = new Subject<boolean>();
-
   @ViewChild(CdkScrollable, { static: false }) scrollable: CdkScrollable;
 
   lastOffset = 0;
   isAutoScrollButtonVisible = false;
   isScrollingUpwards = true;
 
-  title = 'mathis-page';
   currentYear = new Date().getFullYear();
   logo = '../assets/images/logo-resized.png';
   webFlowPaths = WebFlowPaths;
@@ -72,7 +69,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     ...this.navigation,
     { link: WebFlowPaths.Settings, label: 'app.menu.settings' }
   ];
-  languages = ['en', 'no'];
+
   mediaContents = mediaContents;
 
   stickyHeader$: Observable<boolean>;
@@ -116,10 +113,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.routerSubscription$ = this.router.events.subscribe(
-        (event: Event) => {
-          this.navigationInterceptor(event);
-        }
+      this.routerSubscription$ = this.router.events.subscribe(() =>
+        this.navigationInterceptor()
       );
 
       this.scrollingSubscription$ = this.scroll
@@ -171,7 +166,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.lastOffset = scrollTop;
   }
 
-  private navigationInterceptor(event: Event): void {
+  private navigationInterceptor(): void {
     this.scrollable.getElementRef().nativeElement.scrollTo({ top: 0 });
   }
 

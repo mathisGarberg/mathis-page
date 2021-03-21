@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
 import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-has-loaded-once.guard';
 import { AuthEffects } from './states/auth/auth.effects';
 import { SettingsEffects } from './states/settings/settings.effects';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [],
@@ -37,6 +38,7 @@ import { SettingsEffects } from './states/settings/settings.effects';
         }),
 
     // other
+    ScrollingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

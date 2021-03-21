@@ -6,7 +6,7 @@ import {
   FontAwesomeModule,
   FaIconLibrary
 } from '@fortawesome/angular-fontawesome';
-import { faBars, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCog, faBan } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
   faMediumM,
@@ -28,6 +28,7 @@ export class SharedModule {
     faIconLibrary.addIcons(
       faBars,
       faCog,
+      faBan,
       faGithub,
       faMediumM,
       faTwitter,

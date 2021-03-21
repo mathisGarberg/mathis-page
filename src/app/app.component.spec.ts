@@ -11,11 +11,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from 'src/shared/shared.module';
 import { AppComponent } from './app.component';
 import { selectAuthState } from './core/core.state';
+import { initialAuthState } from './core/states/auth/auth.reducer';
 import {
   selectEffectiveTheme,
   selectSettingsLanguage,
   selectSettingsStickyHeader
 } from './core/states/settings/settings.selectors';
+import { NavbarComponent } from './navbar/navbar.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -36,7 +38,7 @@ describe('AppComponent', () => {
         MatTooltipModule,
         SharedModule
       ],
-      declarations: [AppComponent],
+      declarations: [AppComponent, NavbarComponent],
       providers: [provideMockStore()]
     }).compileComponents();
 
@@ -46,7 +48,10 @@ describe('AppComponent', () => {
     store.overrideSelector(selectSettingsStickyHeader, true);
     store.overrideSelector(selectSettingsLanguage, 'en');
     store.overrideSelector(selectEffectiveTheme, 'LIGHT-THEME');
-    store.overrideSelector(selectAuthState, null);
+    store.overrideSelector(selectAuthState, {
+      ...initialAuthState,
+      isAuthenticated: false
+    });
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

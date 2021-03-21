@@ -1,0 +1,45 @@
+<div class="background">
+  <div class="gradient">
+    <div class="container">
+      <h1>Mathis Garberg - V11</h1>
+      <div class="avatar-wrapper" [ngClass]="routeAnimationsElements">
+        <a
+          href="https://itnext.io/@mathis.garberg"
+          aria-label="Avatar"
+          rel="noopener"
+          target="_blank"
+        >
+          <div class="avatar-container">
+            <div class="author-avatar">
+              <img
+                class="avatar"
+                alt="avatar"
+                width="200"
+                height="200"
+                [src]="avatar"
+              />
+            </div>
+            <span class="hire-me">
+              Consulting at ICE Norway
+              <fa-icon [icon]="['fas', 'ban']"></fa-icon>
+            </span>
+          </div>
+          <p>{{ 'app.about.short-desc' | translate }}</p>
+        </a>
+      </div>
+
+      <div class="actions">
+        <a
+          mat-raised-button
+          class="actions-main"
+          color="accent"
+          aria-label="My projects"
+          [routerLink]="webFlowPaths.Projects"
+          [ngClass]="routeAnimationsElements"
+        >
+          {{ 'app.about.my-projects' | translate }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
