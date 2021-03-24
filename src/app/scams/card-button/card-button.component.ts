@@ -43,64 +43,8 @@ import {
   `,
   styles: [
     `
-      :host {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-          'Segoe UI Symbol';
-        font-size: 14px;
-        color: #333;
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin: 8px 0;
-      }
-
       p {
         margin: 0;
-      }
-
-      .spacer {
-        flex: 1;
-      }
-
-      .toolbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        background-color: #1976d2;
-        color: white;
-        font-weight: 600;
-      }
-
-      .toolbar img {
-        margin: 0 16px;
-      }
-
-      .toolbar #twitter-logo {
-        height: 40px;
-        margin: 0 8px;
-      }
-
-      .toolbar #youtube-logo {
-        height: 40px;
-        margin-left: 16px;
-      }
-
-      .toolbar #twitter-logo:hover,
-      .toolbar #youtube-logo:hover {
-        opacity: 0.8;
       }
 
       .content {
@@ -184,21 +128,6 @@ import {
         margin-left: 60px;
       }
 
-      svg#rocket {
-        width: 80px;
-        position: absolute;
-        left: -10px;
-        top: -24px;
-      }
-
-      svg#rocket-smoke {
-        height: calc(100vh - 95px);
-        position: absolute;
-        top: 10px;
-        right: 180px;
-        z-index: -10;
-      }
-
       a,
       a:visited,
       a:hover {
@@ -241,73 +170,6 @@ import {
         color: white;
         padding: 0 1rem 1rem;
         margin: 0;
-      }
-
-      .circle-link {
-        height: 40px;
-        width: 40px;
-        border-radius: 40px;
-        margin: 8px;
-        background-color: white;
-        border: 1px solid #eeeeee;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        transition: 1s ease-out;
-      }
-
-      .circle-link:hover {
-        transform: translateY(-0.25rem);
-        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      footer {
-        margin-top: 8px;
-        display: flex;
-        align-items: center;
-        line-height: 20px;
-      }
-
-      footer a {
-        display: flex;
-        align-items: center;
-      }
-
-      .github-star-badge {
-        color: #24292e;
-        display: flex;
-        align-items: center;
-        font-size: 12px;
-        padding: 3px 10px;
-        border: 1px solid rgba(27, 31, 35, 0.2);
-        border-radius: 3px;
-        background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
-        margin-left: 4px;
-        font-weight: 600;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-          Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-      }
-
-      .github-star-badge:hover {
-        background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
-        border-color: rgba(27, 31, 35, 0.35);
-        background-position: -0.5em;
-      }
-
-      .github-star-badge .material-icons {
-        height: 16px;
-        width: 16px;
-        margin-right: 4px;
-      }
-
-      svg#clouds {
-        position: fixed;
-        bottom: -160px;
-        left: -230px;
-        z-index: -10;
-        width: 1920px;
       }
 
       /* Responsive Styles */
