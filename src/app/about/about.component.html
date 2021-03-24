@@ -2,6 +2,7 @@
   <div class="gradient">
     <div class="container">
       <h1>Mathis Garberg - V11</h1>
+
       <div class="avatar-wrapper" [ngClass]="routeAnimationsElements">
         <a
           href="https://itnext.io/@mathis.garberg"
@@ -60,9 +61,9 @@
           {{ 'app.about.contact' | translate }}
         </a>
         <br />
-        <span [ngClass]="routeAnimationsElements">{{
-          'app.about.check-blogs' | translate
-        }}</span>
+        <h3 [ngClass]="routeAnimationsElements">
+          {{ 'app.about.check-blogs' | translate }}
+        </h3>
         <br />
 
         <ng-container *ngFor="let article of articles">

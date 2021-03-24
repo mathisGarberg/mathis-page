@@ -18,6 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SharedModule } from 'src/shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { CarouselModule } from './scams/carousel/carousel.component';
+import { CardButtonModule } from './scams/card-button/card-button.component';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent],
@@ -29,6 +31,10 @@ import { CoreModule } from './core/core.module';
     // shared and core
     SharedModule,
     CoreModule,
+
+    // scams
+    CarouselModule,
+    CardButtonModule,
 
     // material
     MatButtonModule,
