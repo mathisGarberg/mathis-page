@@ -13,16 +13,16 @@ mat-sidenav-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     display: flex;
     z-index: 10;
+    width: 100%;
 
     .nav-button {
-      margin: 0 10px 0 0;
+      // margin: 0 10px 0 0;
     }
 
     fa-icon {
-      font-size: 24px;
+      // font-size: 24px;
     }
 
     .branding {

@@ -24,10 +24,13 @@ $custom-typography: mat-typography-config(
 
 @import './app/app.component.scss-theme';
 
+@import './app/scams/card-button/card-button.component.scss-theme.scss';
+
 @mixin custom-components-theme($theme) {
   @include mathis-styles-reset-theme($theme);
 
   @include mathis-app-component-theme($theme);
+  @include mathis-card-button-component-theme($theme);
 }
 
 .default-theme {

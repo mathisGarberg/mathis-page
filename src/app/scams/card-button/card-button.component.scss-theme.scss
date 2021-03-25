@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@mixin mathis-card-button-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .card {
+    background-color: mat-color($primary);
+    border: 1px solid mat-color($primary, 50);
+  }
+}

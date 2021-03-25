@@ -20,6 +20,7 @@ import { SharedModule } from 'src/shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { CarouselModule } from './scams/carousel/carousel.component';
 import { CardButtonModule } from './scams/card-button/card-button.component';
+import { CardModule } from './scams/card/card.component';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent],
@@ -35,6 +36,7 @@ import { CardButtonModule } from './scams/card-button/card-button.component';
     // scams
     CarouselModule,
     CardButtonModule,
+    CardModule,
 
     // material
     MatButtonModule,

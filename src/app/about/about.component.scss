@@ -11,46 +11,10 @@
   }
 
   .actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
     text-align: center;
-    margin: 50px;
-    z-index: 1;
-
-    span {
-      display: inline-block;
-      font-weight: bold;
-      padding: 20px 10px 30px 10px;
-    }
-
-    a {
-      margin: 0 5px 10px 0;
-
-      &.actions-main {
-        text-transform: uppercase;
-        padding: 3px 24px;
-      }
-
-      fa-icon {
-        position: relative;
-        bottom: 1px;
-      }
-    }
-  }
-
-  .get-started {
-    max-width: 700px;
-    margin: 50px auto;
-    letter-spacing: 0.01px;
-    overflow-wrap: break-word;
-    z-index: 1;
-    overflow: hidden;
-
-    code {
-      font-size: 0.9em;
-      display: inline-block;
-      word-wrap: break-word;
-      white-space: normal;
-      margin: 0 0 10px 0;
-    }
   }
 
   .avatar-wrapper {
@@ -63,6 +27,7 @@
       margin: 8px;
       display: inline-block;
       text-align: center;
+      text-decoration: none;
 
       p {
         text-transform: uppercase;
