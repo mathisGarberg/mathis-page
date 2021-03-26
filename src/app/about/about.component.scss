@@ -17,6 +17,13 @@
     text-align: center;
   }
 
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 0.5rem;
+    align-items: center;
+  }
+
   .avatar-wrapper {
     display: flex;
     flex-direction: column;
@@ -99,9 +106,6 @@
     .actions {
       margin: 50px 0;
     }
-    .get-started {
-      width: auto;
-    }
   }
 }
 
@@ -123,11 +127,6 @@
       a {
         width: 100%;
       }
-    }
-
-    .get-started {
-      width: auto;
-      margin: 40px auto 40px auto;
     }
   }
 }

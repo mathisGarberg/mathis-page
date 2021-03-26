@@ -14,5 +14,6 @@ export class AboutComponent {
 
   webFlowPaths = WebFlowPaths;
   articles = articles;
-  avatar = 'https://miro.medium.com/fit/c/262/262/1*pzkOXDV0FY3QkIROkVnwkA.png';
+  avatar =
+    'https://res.cloudinary.com/practicaldev/image/fetch/s--qEBhOASw--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/205987/7779d2ed-fb9f-4fca-a5d2-84df4345abb5.jpg';
 }

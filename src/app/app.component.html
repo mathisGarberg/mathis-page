@@ -127,7 +127,7 @@
                   rel="noopener"
                   target="_blank"
                 >
-                  <fa-icon [icon]="['fab', 'github']"></fa-icon>
+                  <fa-icon icon="folder"></fa-icon>
                 </a>
 
                 <span *ngIf="language$ | async as language">
@@ -168,10 +168,6 @@
             </ng-container>
           </ng-container>
         </app-carousel>
-
-        <app-card-button
-          [content]="'app.about.my-projects' | translate"
-        ></app-card-button>
 
         <footer class="footer">
           <div class="row">

@@ -27,7 +27,7 @@
                 <fa-icon [icon]="['fas', 'ban']"></fa-icon>
               </span>
             </div>
-            <p>{{ 'app.about.short-desc' | translate }}</p>
+            <!-- <p>{{ 'app.about.short-desc' | translate }}</p> -->
           </a>
         </div>
 
@@ -87,12 +87,23 @@
           <br />
         </div>
 
-        <div *ngFor="let article of articles">
+        <section class="articles">
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <app-card [ngClass]="routeAnimationsElements"></app-card>
+        </section>
+
+        <!-- <div *ngFor="let article of articles">
           <app-card-button
             [content]="article.name | translate"
             [isSmall]="true"
           ></app-card-button>
-        </div>
+        </div> -->
 
         <!-- <ng-container *ngFor="let article of articles">
           <a
@@ -105,21 +116,17 @@
           >
             <fa-icon [icon]="['fab', 'medium-m']"></fa-icon>
             {{ article.name | translate }}
-          </a>
+          </section>
         </ng-container> -->
 
-        <section class="about">
+        <!-- <section class="about">
           <h2 [ngClass]="routeAnimationsElements">
             {{ 'app.about-about-me' | translate }}
           </h2>
           <p [ngClass]="routeAnimationsElements">
             {{ 'app.about.p1' | translate }}
           </p>
-          <h2 [ngClass]="routeAnimationsElements">
-            {{ 'app.technical-sheet' | translate }}
-          </h2>
-          <div [ngClass]="routeAnimationsElements"></div>
-        </section>
+        </!-->
       </div>
       <div></div>
     </div>
