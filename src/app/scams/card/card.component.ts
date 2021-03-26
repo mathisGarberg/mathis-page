@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from 'src/shared/shared.module';
 
 @Component({
@@ -8,7 +9,7 @@ import { SharedModule } from 'src/shared/shared.module';
     <div class="card-container">
       <header class="card-header">
         <div class="folder-icon">
-          <fa-icon [icon]="['fab', 'medium-m']"></fa-icon>
+          <mat-icon svgIcon="medium_icon"></mat-icon>
         </div>
         <div class="article-link">Link</div>
       </header>
@@ -41,6 +42,11 @@ import { SharedModule } from 'src/shared/shared.module';
         transform: translateY(-3px);
         box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
       }
+
+      mat-icon {
+        width: 40px;
+        height: 40px;
+      }
     `
   ]
 })
@@ -49,7 +55,7 @@ export class CardComponent {
 }
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, MatIconModule],
   declarations: [CardComponent],
   exports: [CardComponent]
 })

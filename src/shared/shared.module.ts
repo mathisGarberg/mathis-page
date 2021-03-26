@@ -10,7 +10,8 @@ import {
   faBars,
   faCog,
   faBan,
-  faFolder
+  faFolder,
+  faFolderOpen
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,

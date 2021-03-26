@@ -35,6 +35,7 @@ import {
   fadeAnimation,
   slideInOutAnimation
 } from './core/animations/animations';
+import { IconService } from './core/services/icon.service';
 
 @Injectable({
   providedIn: 'root'
@@ -93,8 +94,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     private router: Router,
     private store: Store<AppState>,
     private scroll: ScrollDispatcher,
+    private iconService: IconService,
     private animationCompleteCallbackService: AnimationCompleteCallbackService
-  ) {}
+  ) {
+    this.iconService.init();
+  }
 
   ngOnInit(): void {
     if (AppComponent.isIEorEdgeOrSafari()) {
