@@ -19,8 +19,8 @@
 
   .articles {
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+    gap: 1rem;
     align-items: center;
   }
 

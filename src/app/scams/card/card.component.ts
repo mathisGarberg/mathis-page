@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from 'src/shared/shared.module';
 
@@ -14,7 +14,7 @@ import { SharedModule } from 'src/shared/shared.module';
         <div class="article-link">Link</div>
       </header>
       <section class="card-content">
-        <h3>Mathis</h3>
+        <h3>{{ title }}</h3>
         <div class="description">Lorem ipsum dolor sit amet</div>
       </section>
     </div>
@@ -51,6 +51,8 @@ import { SharedModule } from 'src/shared/shared.module';
   ]
 })
 export class CardComponent {
+  @Input() title: string;
+
   constructor() {}
 }
 

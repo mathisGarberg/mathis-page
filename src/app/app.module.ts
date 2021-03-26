@@ -21,9 +21,10 @@ import { CoreModule } from './core/core.module';
 import { CarouselModule } from './scams/carousel/carousel.component';
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
+import { TerminalComponent } from './scams/terminal/terminal.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent],
+  declarations: [AppComponent, AboutComponent, TerminalComponent],
   imports: [
     // angular
     BrowserModule,

@@ -88,30 +88,16 @@
         </div>
 
         <section class="articles">
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
+          <a
+            [ngClass]="routeAnimationsElements"
+            *ngFor="let article of articles"
+          >
+            <app-card [title]="article.name | translate"></app-card>
           </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
-          <a>
-            <app-card [ngClass]="routeAnimationsElements"></app-card>
-          </a>
+        </section>
+
+        <section class="terminal">
+          <app-terminal></app-terminal>
         </section>
 
         <!-- <div *ngFor="let article of articles">
