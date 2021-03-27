@@ -22,9 +22,10 @@ import { CarouselModule } from './scams/carousel/carousel.component';
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
 import { TerminalComponent } from './scams/terminal/terminal.component';
+import { ScrollingComponent } from './scrolling/scrolling.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, TerminalComponent],
+  declarations: [AppComponent, AboutComponent, TerminalComponent, ScrollingComponent],
   imports: [
     // angular
     BrowserModule,

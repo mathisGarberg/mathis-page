@@ -12,7 +12,7 @@ import { SharedModule } from 'src/shared/shared.module';
           <mat-icon svgIcon="medium_icon"></mat-icon>
         </div>
         <div class="article-link">
-          <!-- <fa-icon icon="external-link-alt"></fa-icon> -->
+          <code>2018^</code>
         </div>
       </header>
       <section class="card-content">
