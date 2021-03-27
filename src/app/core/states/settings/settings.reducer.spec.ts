@@ -18,7 +18,7 @@ import { initialSettingsState, settingsReducer } from './settings.reducer';
 describe('SettingsReducer', () => {
   const TEST_SETTINGS_STATE: SettingsState = {
     language: 'no',
-    theme: 'LIGHT-THEME',
+    theme: 'DARK-THEME',
     isAutoNightMode: false,
     isOperatingSystemMode: false,
     nightTheme: NIGHT_MODE_THEME,

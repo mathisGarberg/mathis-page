@@ -58,8 +58,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   isAutoScrollButtonVisible = false;
   isScrollingUpwards = true;
 
-  items = [{ title: 'Slide 1' }, { title: 'Slide 2' }, { title: 'Slide 3' }];
-
   currentYear = new Date().getFullYear();
   logo = '../assets/images/logo-resized.png';
   webFlowPaths = WebFlowPaths;

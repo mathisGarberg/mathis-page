@@ -27,10 +27,5 @@ export const articles = [
     name: 'app.story.nordicjs-review.short',
     link:
       'https://medium.com/@mathis.garberg/nordic-js-2019-a-personal-review-c1d702b464dd'
-  },
-  {
-    name: 'app.story.choosing-the-right-structure-in-2020.short',
-    link:
-      'https://itnext.io/choosing-the-right-file-structure-for-angular-in-2020-and-beyond-a53a71f7eb05'
   }
 ];

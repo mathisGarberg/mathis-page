@@ -24,6 +24,12 @@
     align-items: center;
   }
 
+  .terminal,
+  .carousel {
+    display: flex;
+    justify-content: center;
+  }
+
   .avatar-wrapper {
     display: flex;
     flex-direction: column;
@@ -129,4 +135,15 @@
       }
     }
   }
+}
+
+.item {
+  padding: 0;
+  width: 600px;
+  height: 400px;
+  background-color: crimson;
+  color: #fff;
+  font-size: 50px;
+  line-height: 300px;
+  text-align: center;
 }

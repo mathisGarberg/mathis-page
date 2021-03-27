@@ -38,26 +38,6 @@ export class CarouselItemElementDirective {}
         </li>
       </ul>
     </section>
-    <div *ngIf="showControls" class="carousel-actions">
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="prevSlide()"
-        [disabled]="currentSlide === 0"
-        class="btn btn-default"
-      >
-        Previous
-      </button>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="nextSlide()"
-        [disabled]="currentSlide + 1 === items.length"
-        class="btn btn-default"
-      >
-        Next
-      </button>
-    </div>
   `,
   styles: [
     `

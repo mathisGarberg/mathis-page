@@ -11,12 +11,17 @@ import { SharedModule } from 'src/shared/shared.module';
         <div class="folder-icon">
           <mat-icon svgIcon="medium_icon"></mat-icon>
         </div>
-        <div class="article-link">Link</div>
+        <div class="article-link">
+          <!-- <fa-icon icon="external-link-alt"></fa-icon> -->
+        </div>
       </header>
       <section class="card-content">
         <h3>{{ title }}</h3>
         <div class="description">Lorem ipsum dolor sit amet</div>
       </section>
+      <footer class="card-footer">
+        <span>Angular</span>
+      </footer>
     </div>
   `,
   styles: [
@@ -30,6 +35,7 @@ import { SharedModule } from 'src/shared/shared.module';
         z-index: 1;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+        border-radius: 5px;
       }
 
       .card-header {
@@ -41,6 +47,14 @@ import { SharedModule } from 'src/shared/shared.module';
       .card-container:hover {
         transform: translateY(-3px);
         box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      }
+
+      .card-footer {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-top: 1rem;
       }
 
       mat-icon {

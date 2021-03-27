@@ -11,7 +11,7 @@ import {
   faCog,
   faBan,
   faFolder,
-  faFolderOpen
+  faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -36,6 +36,7 @@ export class SharedModule {
       faCog,
       faBan,
       faFolder,
+      faExternalLinkAlt,
       faGithub,
       faMediumM,
       faTwitter,

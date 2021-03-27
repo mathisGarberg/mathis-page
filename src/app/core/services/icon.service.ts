@@ -46,5 +46,12 @@ export class IconService {
         '../../../assets/icons/svg/medium-icon.svg'
       )
     );
+
+    this.matIconRegistry.addSvgIcon(
+      'github_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/github-icon.svg'
+      )
+    );
   }
 }

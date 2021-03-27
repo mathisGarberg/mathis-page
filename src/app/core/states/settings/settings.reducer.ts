@@ -19,7 +19,7 @@ import {
 
 export const initialSettingsState: SettingsState = {
   language: 'en',
-  theme: 'LIGHT-THEME',
+  theme: 'DARK-THEME',
   isAutoNightMode: false,
   isOperatingSystemMode: false,
   isStickyHeader: true,
