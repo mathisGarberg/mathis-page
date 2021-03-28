@@ -53,5 +53,12 @@ export class IconService {
         '../../../assets/icons/svg/github-icon.svg'
       )
     );
+
+    this.matIconRegistry.addSvgIcon(
+      'arrow_up_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/arrow-up-icon.svg'
+      )
+    );
   }
 }

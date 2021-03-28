@@ -1,0 +1,15 @@
+.connection {
+  position: fixed;
+}
+
+a,
+a[mat-fab] {
+  position: fixed;
+  right: 3.5rem;
+  bottom: 5rem;
+
+  svg {
+    height: 1.8rem;
+    fill: #fff;
+  }
+}

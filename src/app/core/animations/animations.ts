@@ -5,7 +5,8 @@ import {
   style,
   stagger,
   animate,
-  state
+  state,
+  keyframes
 } from '@angular/animations';
 
 export const listStagger = trigger('listStagger', [
@@ -43,5 +44,21 @@ export const slideInOutAnimation = trigger('slideInOutAnimation', [
   ]),
   transition(':leave', [
     animate('200ms ease-in', style({ transform: 'translateY(-100%)' }))
+  ])
+]);
+
+export const bounceAnimation = trigger('bounceAnimation', [
+  transition('* <=> *', [
+    animate(
+      '2s',
+      keyframes([
+        style({ transform: 'scale(1,1) translateY(0)' }),
+        style({ transform: 'scale(1.1, 0.9) translateY(0)' }),
+        style({ transform: 'scale(0.9, 1.1) translateY(-100px)' }),
+        style({ transform: 'scale(1.05, 0.95) translateY(0)' }),
+        style({ transform: 'scale(1,1) translateY(-7px)' }),
+        style({ transform: 'scale(1,1) translateY(0)' })
+      ])
+    )
   ])
 ]);

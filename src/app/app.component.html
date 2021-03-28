@@ -1,6 +1,6 @@
 <div [class]="'theme-wrapper ' + (theme$ | async)">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="push">
+    <mat-sidenav #sidenav mode="over">
       <div class="branding">
         <img [src]="logo" width="48" height="48" />
         <span id="title">Mathis Garberg</span>
@@ -34,6 +34,8 @@
       <div class="wrapper">
         <div
           class="toolbar"
+          *ngIf="isScrollingUpwards"
+          [@slideInOutAnimation]
           [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
           [class.mat-elevation-z4]="stickyHeader$ | async"
         >

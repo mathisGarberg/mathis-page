@@ -23,10 +23,9 @@ import { AnimationCompleteCallbackService } from 'src/app/app.component';
 })
 export class TerminalComponent implements OnInit {
   titles = [
-    'console.log("Hello! My name is Mathis Garberg");',
-    'console.log("Living in Oslo, Norway);',
-    'console.log("An open source enthusiast with passion for programming");',
-    'console.log("Creator of intuitive and user friendly solutions");',
+    'console.log("Lives in Oslo, Norway);',
+    'Console.Write("Creator of intuitive and user friendly solutions");',
+    'Serial.Print("Creator of IOT");',
     'npm install --save-dev mathis-garberg'
   ];
 

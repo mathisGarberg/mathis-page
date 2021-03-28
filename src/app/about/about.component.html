@@ -100,7 +100,12 @@
           <app-terminal></app-terminal>
         </section>
 
-        <section class="experience"></section>
+        <!-- <section class="experience">
+          <app-card [title]=""></app-card>
+          <app-card [title]=""></app-card>
+          <app-card [title]=""></app-card>
+          <app-card [title]=""></app-card>
+        </!-->
 
         <!-- <div *ngFor="let article of articles">
           <app-card-button
@@ -131,8 +136,10 @@
             {{ 'app.about.p1' | translate }}
           </p>
         </!-->
+        <section class="scroll-container">
+          <app-scrolling [ngClass]="routeAnimationsElements"></app-scrolling>
+        </section>
       </article>
-      <div></div>
     </div>
   </div>
 </div>

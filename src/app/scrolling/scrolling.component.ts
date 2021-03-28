@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { bounceAnimation } from '../core/animations/animations';
 
 @Component({
   selector: 'app-scrolling',
-  templateUrl: './scrolling.component.html',
-  styleUrls: ['./scrolling.component.scss']
+  template: `
+    <a mat-fab color="primary" aria-label="Scroll to top" @bounceAnimation>
+      <mat-icon svgIcon="arrow_up_icon"></mat-icon>
+    </a>
+  `,
+  animations: [bounceAnimation]
 })
-export class ScrollingComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class ScrollingComponent {
+  constructor() {}
 }

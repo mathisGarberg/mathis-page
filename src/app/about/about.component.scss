@@ -30,6 +30,13 @@
     justify-content: center;
   }
 
+  .scroll-container {
+    opacity: 1;
+    position: fixed;
+    right: 18rem;
+    bottom: 1rem;
+  }
+
   .avatar-wrapper {
     display: flex;
     flex-direction: column;
