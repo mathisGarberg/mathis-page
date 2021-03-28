@@ -48,17 +48,28 @@ export const slideInOutAnimation = trigger('slideInOutAnimation', [
 ]);
 
 export const bounceAnimation = trigger('bounceAnimation', [
-  transition('* <=> *', [
+  state('in', style({ transform: 'translateX(0)' })),
+  transition('void => *', [
     animate(
-      '2s',
+      300,
       keyframes([
-        style({ transform: 'scale(1,1) translateY(0)' }),
-        style({ transform: 'scale(1.1, 0.9) translateY(0)' }),
-        style({ transform: 'scale(0.9, 1.1) translateY(-100px)' }),
-        style({ transform: 'scale(1.05, 0.95) translateY(0)' }),
-        style({ transform: 'scale(1,1) translateY(-7px)' }),
-        style({ transform: 'scale(1,1) translateY(0)' })
+        style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+        style({
+          opacity: 1,
+          transform: 'translateX(15px)',
+          offset: 0.3
+        }),
+        style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
       ])
     )
   ])
 ]);
+
+export const rotateAnimation =
+  // Each unique animation requires its own trigger. The first argument of the trigger function is the name
+  trigger('rotatedState', [
+    state('default', style({ transform: 'rotate(0)' })),
+    state('rotated', style({ transform: 'rotate(-180deg)' })),
+    transition('rotated => default', animate('400ms ease-out')),
+    transition('default => rotated', animate('400ms ease-in'))
+  ]);

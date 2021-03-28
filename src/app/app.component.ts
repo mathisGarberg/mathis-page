@@ -57,6 +57,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   lastOffset = 0;
   isAutoScrollButtonVisible = false;
   isScrollingUpwards = true;
+  isRotated = false;
 
   currentYear = new Date().getFullYear();
   logo = '../assets/images/logo-resized.png';
@@ -73,6 +74,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   languages = ['en', 'no'];
   mediaContents = mediaContents;
+  currentState = 'default';
 
   stickyHeader$: Observable<boolean>;
   language$: Observable<string>;
@@ -131,9 +133,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onScrollToTop() {
-    this.scrollable
-      .getElementRef()
-      .nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+    if (this.currentState === 'rotated') {
+      this.scrollable
+        .getElementRef()
+        .nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      this.scrollable
+        .getElementRef()
+        .nativeElement.scrollTo({ top: 550, behavior: 'smooth' });
+    }
   }
 
   onLanguageSelect({ value: language }) {
@@ -154,6 +162,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onWindowScroll(data: CdkScrollable) {
     const scrollTop = data.getElementRef().nativeElement.scrollTop || 0;
+
+    if (scrollTop > 100) {
+      this.currentState = 'rotated';
+    } else {
+      this.currentState = 'default';
+    }
 
     if (this.lastOffset > scrollTop) {
       this.isAutoScrollButtonVisible = false;

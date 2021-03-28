@@ -58,6 +58,13 @@ mat-sidenav-container {
     }
   }
 
+  .scroll-container {
+    opacity: 1;
+    position: fixed;
+    right: 3rem;
+    bottom: 1rem;
+  }
+
   .wrapper {
     position: absolute;
     top: 0;

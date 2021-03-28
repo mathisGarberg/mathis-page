@@ -34,7 +34,6 @@
       <div class="wrapper">
         <div
           class="toolbar"
-          *ngIf="isScrollingUpwards"
           [@slideInOutAnimation]
           [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
           [class.mat-elevation-z4]="stickyHeader$ | async"
@@ -152,6 +151,13 @@
           "
         >
           <router-outlet #o="outlet"></router-outlet>
+
+          <section class="scroll-container">
+            <app-scrolling
+              [currentState]="currentState"
+              (click)="onScrollToTop()"
+            ></app-scrolling>
+          </section>
         </div>
 
         <footer class="footer">

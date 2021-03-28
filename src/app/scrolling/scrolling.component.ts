@@ -1,15 +1,19 @@
-import { Component } from '@angular/core';
-import { bounceAnimation } from '../core/animations/animations';
+import { Component, Input } from '@angular/core';
+import { rotateAnimation } from '../core/animations/animations';
 
 @Component({
   selector: 'app-scrolling',
   template: `
-    <a mat-fab color="primary" aria-label="Scroll to top" @bounceAnimation>
-      <mat-icon svgIcon="arrow_up_icon"></mat-icon>
+    <a mat-fab color="primary" aria-label="Scroll to top">
+      <mat-icon
+        [@rotatedState]="currentState"
+        svgIcon="arrow_up_icon"
+      ></mat-icon>
     </a>
   `,
-  animations: [bounceAnimation]
+  styles: [``],
+  animations: [rotateAnimation]
 })
 export class ScrollingComponent {
-  constructor() {}
+  @Input() currentState: string;
 }
