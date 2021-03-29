@@ -13,19 +13,19 @@ export const articles = [
     name: 'app.story.modal-forms.short',
     link:
       'https://itnext.io/creating-forms-inside-modals-with-ng-bootstrap-221e4f1f5648'
-  },
-  {
-    name: 'app.story.ngx-rocket.short',
-    link:
-      'https://itnext.io/creating-enterprise-angular-apps-with-the-ngx-rocket-generator-871ac76ace87'
-  },
-  {
-    name: 'app.story.how-to-read-code.short',
-    link: 'https://itnext.io/how-to-read-code-bf478c262932'
-  },
-  {
-    name: 'app.story.nordicjs-review.short',
-    link:
-      'https://medium.com/@mathis.garberg/nordic-js-2019-a-personal-review-c1d702b464dd'
   }
+  // {
+  //   name: 'app.story.ngx-rocket.short',
+  //   link:
+  //     'https://itnext.io/creating-enterprise-angular-apps-with-the-ngx-rocket-generator-871ac76ace87'
+  // },
+  // {
+  //   name: 'app.story.how-to-read-code.short',
+  //   link: 'https://itnext.io/how-to-read-code-bf478c262932'
+  // },
+  // {
+  //   name: 'app.story.nordicjs-review.short',
+  //   link:
+  //     'https://medium.com/@mathis.garberg/nordic-js-2019-a-personal-review-c1d702b464dd'
+  // }
 ];

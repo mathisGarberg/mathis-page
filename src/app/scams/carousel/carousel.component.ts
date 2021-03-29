@@ -80,7 +80,7 @@ export class CarouselComponent implements AfterViewInit {
     this.player.play();
   }
 
-  private buildAnimation(offset) {
+  private buildAnimation(offset: number) {
     return this.builder.build([
       animate(this.timing, style({ transform: `translateX(-${offset}px)` }))
     ]);
