@@ -1,7 +1,7 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <div></div>
+      <span></span>
       <article class="mid-content">
         <h1>Mathis Garberg - V2</h1>
 
@@ -87,28 +87,27 @@
           <br />
         </div>
 
-        <section class="articles">
-          <a
-            [ngClass]="routeAnimationsElements"
-            *ngFor="let article of articles"
-          >
-            <app-card [title]="article.name | translate"></app-card>
-          </a>
-        </section>
+        <div
+          [ngClass]="routeAnimationsElements"
+          class="docs-homepage-featured-components docs-homepage-carousel-row"
+        >
+          <app-carousel [itemWidth]="370" [aria-label]="'Featured components'">
+            <a
+              *ngFor="let article of articles"
+              carousel-item
+              class="docs-featured-components-carousel-item"
+              routerLink="/components/{{ comp }}"
+            >
+              <app-card [title]="article.name | translate"></app-card>
+            </a>
+          </app-carousel>
+        </div>
 
         <section class="terminal">
           <app-terminal></app-terminal>
         </section>
 
         <h2>About Me</h2>
-
-        <!-- <app-carousel>
-          <ng-container >
-            <ng-container *carouselItem>
-
-            </ng-container>
-          </ng-container>
-        </app-carousel> -->
 
         <!-- <section class="experience">
           <app-card [title]=""></app-card>
@@ -145,8 +144,9 @@
           <p [ngClass]="routeAnimationsElements">
             {{ 'app.about.p1' | translate }}
           </p>
-        </!-->
+          </!-->
       </article>
+      <span></span>
     </div>
   </div>
 </div>

@@ -18,15 +18,21 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SharedModule } from 'src/shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { CarouselModule } from './scams/carousel/carousel.component';
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
 import { TerminalComponent } from './scams/terminal/terminal.component';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 import { ConnectComponent } from './connect/connect.component';
+import { CarouselModule } from './scams/material-carousel/carousel.module';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, TerminalComponent, ScrollingComponent, ConnectComponent],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    TerminalComponent,
+    ScrollingComponent,
+    ConnectComponent
+  ],
   imports: [
     // angular
     BrowserModule,
@@ -37,9 +43,9 @@ import { ConnectComponent } from './connect/connect.component';
     CoreModule,
 
     // scams
-    CarouselModule,
     CardButtonModule,
     CardModule,
+    CarouselModule,
 
     // material
     MatButtonModule,

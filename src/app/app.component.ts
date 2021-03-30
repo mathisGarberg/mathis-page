@@ -1,3 +1,4 @@
+import { articles } from './core/data/articles';
 import browser from 'browser-detect';
 import {
   AfterViewInit,
@@ -58,6 +59,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   isAutoScrollButtonVisible = false;
   isScrollingUpwards = true;
   isRotated = false;
+
+  articles = articles;
 
   currentYear = new Date().getFullYear();
   logo = '../assets/images/logo-resized.png';
