@@ -1,5 +1,10 @@
 export const experiences = [
   {
+    icon: 'dfind_icon',
+    title: 'Dfind Consulting',
+    description: 'During his time at Dfind Consulting'
+  },
+  {
     icon: 'ice_icon',
     title: 'ICE Norge',
     description: 'During his time at ICE'

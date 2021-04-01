@@ -81,5 +81,12 @@ export class IconService {
         '../../../assets/icons/svg/furst-icon.svg'
       )
     );
+
+    this.matIconRegistry.addSvgIcon(
+      'dfind_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/dfind-icon.svg'
+      )
+    );
   }
 }
