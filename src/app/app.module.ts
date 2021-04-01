@@ -23,7 +23,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 import { CoreModule } from './core/core.module';
 
 import { TerminalComponent } from './scams/terminal/terminal.component';

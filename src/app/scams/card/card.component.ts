@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-card',

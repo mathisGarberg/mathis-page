@@ -14,10 +14,10 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "@core/*": ["app/core/*"],
-      "@shared/*": ["app/shared/*"],
-      "@env/*": ["environments/*"],
-      "@testing/*": ["testing/*"]
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@env/*": ["src/environments/*"],
+      "@testing/*": ["src/testing/*"]
     }
   },
   "angularCompilerOptions": {

@@ -18,6 +18,8 @@ mat-sidenav-container {
       margin: 0 auto;
       max-width: 75rem;
       width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
 
     .nav-button {

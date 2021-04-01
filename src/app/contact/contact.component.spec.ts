@@ -9,11 +9,10 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatInputHarness } from '@angular/material/input/testing';
 import { MatButtonHarness } from '@angular/material/button/testing';
-import { SharedModule } from '@shared/shared.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NotificationService } from '@core/services';
-import { selectFormState } from '@core/states/connect-form/form.selectors';
-import { Form } from '@core/states/connect-form/form.model';
+import { NotificationService } from '@core/services/notification.service';
+import { selectFormState } from '@core/states/form/form.selectors';
+import { Form } from '@core/states/form/form.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -39,7 +38,6 @@ describe('ContactComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
-        SharedModule,
         NoopAnimationsModule,
         TextFieldModule,
         MatCardModule,

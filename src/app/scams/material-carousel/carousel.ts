@@ -117,7 +117,6 @@ export class CarouselComponent implements AfterContentInit {
     setTimeout(() => {
       this.itemsArray = this.items.toArray();
       this.shiftWidth = this.calculateShiftWidth(this.itemsArray);
-      console.log(this.shiftWidth);
       this._resizeCarousel();
     });
   }
@@ -141,7 +140,6 @@ export class CarouselComponent implements AfterContentInit {
    * @return width to shift the carousel
    */
   calculateShiftWidth(items: CarouselItemDirective[]): number {
-    console.log(items);
     return items[0].element.nativeElement.clientWidth;
   }
 

@@ -1,9 +1,9 @@
-import { experiences } from './../core/data/experience';
 import { Component } from '@angular/core';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../core/animations/route.animations';
-import { WebFlowPaths } from '../core/enums/paths';
-import { articles } from '../core/data/articles';
+import { experiences } from '@core/data/experience';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/animations/route.animations';
+import { WebFlowPaths } from '@core/enums/paths';
+import { articles } from '@core/data/articles';
 
 @Component({
   selector: 'app-about',

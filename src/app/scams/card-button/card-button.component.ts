@@ -5,7 +5,7 @@ import {
   Input,
   NgModule
 } from '@angular/core';
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-card-button',

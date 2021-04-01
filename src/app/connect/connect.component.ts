@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { listStagger } from '../core/animations/animations';
+import { listStagger } from '@core/animations/animations';
 
 export interface Connection {
   link: string;
