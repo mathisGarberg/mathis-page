@@ -1,13 +1,75 @@
 @import '../../styles/styles-variables.scss';
 
-.background {
-  height: 100%;
-  width: 100%;
-  padding: 80px 0 0 0;
-  position: relative;
+h1 {
+  text-align: center;
+}
 
-  h1 {
+.background {
+  padding: 100px 0 0 0;
+  position: relative;
+  // min-height: 100vh;
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
     text-align: center;
+    z-index: 1;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../../assets/images/nature-winter.jpg') no-repeat center
+      top;
+    background-size: cover;
+    opacity: 0.7;
+    content: '';
+    z-index: 0;
+  }
+
+  .gradient {
+    &::before {
+      position: absolute;
+      top: 51%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 2rem;
+
+    .mid-content {
+      max-width: 80rem;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .docs-homepage-featured-components {
+        // margin-bottom: 3.25rem;
+        .docs-featured-components-carousel-item {
+          text-decoration: none;
+          padding: 15px;
+
+          .docs-homepage-img-container {
+            overflow: hidden;
+            width: 259px;
+            height: 144px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
   }
 
   .avatar-wrapper {
@@ -55,72 +117,64 @@
       }
     }
   }
+}
 
-  .actions {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-content: center;
-    text-align: center;
-  }
-
-  .terminal {
+.my-work-wrapper {
+  .my-work {
+    text-align: right;
+    // margin-bottom: 5rem;
+    max-width: 80rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    margin: 0 auto 5rem auto;
   }
 
-  &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url('../../assets/images/nature-winter.jpg') no-repeat center
-      top;
-    background-size: cover;
-    opacity: 0.7;
-    content: '';
-    z-index: 0;
+  .about-me {
+    display: grid;
+    grid-column: 1fr 1fr;
+    margin: 0 auto;
+    margin-bottom: 5rem;
   }
 
-  .gradient {
-    &::before {
-      position: absolute;
-      top: 51%;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      content: '';
-      z-index: 0;
+  .about-me {
+    max-width: 60rem;
+    width: 100%;
+
+    img {
+      border: 5px solid;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+      float: right;
+      width: 300px;
+      border-radius: 5px;
+      mask-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.65) 100%
+      );
+    }
+
+    .about-me-section {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 50px;
     }
   }
+}
 
-  .container {
-    position: relative;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-column-gap: 2rem;
-    min-height: 100vh;
+.projects {
+  max-width: 105rem;
+  margin: 0 auto;
+  .docs-homepage-featured-projects {
+    .docs-featured-components-carousel-item {
+      text-decoration: none;
+      padding: 15px;
 
-    .mid-content {
-      max-width: 80rem;
-      width: 100%;
-      // display: flex;
-      // row-gap: 1.5rem;
-      margin-left: auto;
-      margin-right: auto;
-
-      .docs-homepage-featured-components {
-        .docs-featured-components-carousel-item {
-          text-decoration: none;
-          padding: 15px;
-
-          .docs-homepage-img-container {
-            overflow: hidden;
-            width: 259px;
-            height: 144px;
-            margin-bottom: 10px;
-          }
-        }
+      .docs-homepage-img-container {
+        overflow: hidden;
+        width: 259px;
+        height: 144px;
+        margin-bottom: 10px;
       }
     }
   }

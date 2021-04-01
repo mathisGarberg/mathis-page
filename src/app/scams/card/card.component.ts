@@ -9,7 +9,13 @@ import { SharedModule } from 'src/shared/shared.module';
     <div class="card-container">
       <header class="card-header">
         <div class="folder-icon">
-          <mat-icon svgIcon="medium_icon"></mat-icon>
+          <mat-icon
+            [svgIcon]="icon"
+            [ngClass]="{
+              'medium-size': iconSize === 'medium',
+              'large-size': iconSize === 'large'
+            }"
+          ></mat-icon>
         </div>
         <div class="article-link">
           <code>2018^</code>
@@ -17,7 +23,6 @@ import { SharedModule } from 'src/shared/shared.module';
       </header>
       <section class="card-content">
         <h3>{{ title }}</h3>
-        <div class="description">Lorem ipsum dolor sit amet</div>
       </section>
       <footer class="card-footer">
         <span>Angular</span>
@@ -57,17 +62,21 @@ import { SharedModule } from 'src/shared/shared.module';
         margin-top: 1rem;
       }
 
-      mat-icon {
+      .medium-size {
         width: 40px;
         height: 40px;
+      }
+      .large-size {
+        width: 60px;
+        height: 60px;
       }
     `
   ]
 })
 export class CardComponent {
   @Input() title: string;
-
-  constructor() {}
+  @Input() icon: string;
+  @Input() iconSize: string;
 }
 
 @NgModule({

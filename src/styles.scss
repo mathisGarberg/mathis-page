@@ -27,6 +27,7 @@ $custom-typography: mat-typography-config(
 @import './app/scams/card-button/card-button.component.scss-theme.scss';
 @import './app/scams/card/card.component.scss-theme.scss';
 @import './app/scams/material-carousel/carousel.component.scss-theme.scss';
+@import './app/about/about.component.scss-theme.scss';
 
 @mixin custom-components-theme($theme) {
   @include mathis-styles-reset-theme($theme);
@@ -35,6 +36,7 @@ $custom-typography: mat-typography-config(
   @include mathis-card-button-component-theme($theme);
   @include mathis-card-component-theme($theme);
   @include carousel-theme($theme);
+  @include mathis-about-component-theme($theme);
 }
 
 .default-theme {

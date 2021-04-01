@@ -11,7 +11,7 @@ import { SharedModule } from 'src/shared/shared.module';
   selector: 'app-card-button',
   template: `
     <a
-      [ngClass]="{ small: isSmall }"
+      [ngClass]="{ 'card-small': isSmall }"
       class="card"
       target="_blank"
       rel="noopener"

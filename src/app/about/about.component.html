@@ -2,8 +2,8 @@
   <div class="gradient">
     <div class="container">
       <span></span>
-      <article class="mid-content">
-        <h1>Mathis Garberg - V2</h1>
+      <div class="mid-content">
+        <h1>Mathis Garberg</h1>
 
         <div class="avatar-wrapper" [ngClass]="routeAnimationsElements">
           <a
@@ -27,8 +27,8 @@
                 <fa-icon [icon]="['fas', 'ban']"></fa-icon>
               </span>
             </div>
-            <p>{{ 'app.about.short-desc' | translate }}</p>
           </a>
+          <p>{{ 'app.about.short-desc' | translate | uppercase }}</p>
         </div>
 
         <div class="actions">
@@ -49,37 +49,6 @@
             [content]="'app.about.contact' | translate"
             [icon]=""
           ></app-card-button>
-
-          <!-- <a
-            mat-raised-button
-            class="actions-main"
-            color="accent"
-            aria-label="My projects"
-            [routerLink]="webFlowPaths.Projects"
-            [ngClass]="routeAnimationsElements"
-          >
-            {{ 'app.about.my-projects' | translate }}
-          </a>
-          <a
-            mat-raised-button
-            class="actions-main"
-            color="warn"
-            aria-label="Change theme"
-            [routerLink]="webFlowPaths.Settings"
-            [ngClass]="routeAnimationsElements"
-          >
-            {{ 'app.about.change-theme' | translate }}
-          </a>
-          <a
-            mat-raised-button
-            class="actions-main"
-            color="primary"
-            aria-label="Contact"
-            [routerLink]="webFlowPaths.Contact"
-            [ngClass]="routeAnimationsElements"
-          >
-            {{ 'app.about.contact' | translate }}
-          </a> -->
           <br />
           <h3 [ngClass]="routeAnimationsElements">
             {{ 'app.about.check-blogs' | translate }}
@@ -88,65 +57,69 @@
         </div>
 
         <div
-          [ngClass]="routeAnimationsElements"
           class="docs-homepage-featured-components docs-homepage-carousel-row"
         >
           <app-carousel [itemWidth]="370" [aria-label]="'Featured components'">
             <a
+              [ngClass]="routeAnimationsElements"
               *ngFor="let article of articles"
               carousel-item
               class="docs-featured-components-carousel-item"
               routerLink="/components/{{ comp }}"
             >
-              <app-card [title]="article.name | translate"></app-card>
+              <app-card
+                [icon]="'medium_icon'"
+                [title]="article.name | translate"
+                [iconSize]="'medium'"
+              ></app-card>
             </a>
           </app-carousel>
         </div>
-
-        <section class="terminal">
-          <app-terminal></app-terminal>
-        </section>
-
-        <h2>About Me</h2>
-
-        <!-- <section class="experience">
-          <app-card [title]=""></app-card>
-          <app-card [title]=""></app-card>
-          <app-card [title]=""></app-card>
-          <app-card [title]=""></app-card>
-        </!-->
-
-        <!-- <div *ngFor="let article of articles">
-          <app-card-button
-            [content]="article.name | translate"
-            [isSmall]="true"
-          ></app-card-button>
-        </div> -->
-
-        <!-- <ng-container *ngFor="let article of articles">
-          <a
-            mat-raised-button
-            [ngClass]="routeAnimationsElements"
-            target="_blank"
-            color="primary"
-            rel="noopener"
-            [href]="article.link"
-          >
-            <fa-icon [icon]="['fab', 'medium-m']"></fa-icon>
-            {{ article.name | translate }}
-          </section>
-        </ng-container> -->
-
-        <!-- <section class="about">
-          <h2 [ngClass]="routeAnimationsElements">
-            {{ 'app.about-about-me' | translate }}
-          </h2>
-          <p [ngClass]="routeAnimationsElements">
-            {{ 'app.about.p1' | translate }}
-          </p>
-          </!-->
-      </article>
+      </div>
       <span></span>
+    </div>
+  </div>
+</div>
+<div class="my-work-wrapper">
+  <div class="my-work" [ngClass]="routeAnimationsElements">
+    <span class="view-all">
+      <app-card-button
+        [content]="'View all blog posts'"
+        [icon]="'medium_icon'"
+        [isSmall]="true"
+      ></app-card-button>
+    </span>
+  </div>
+  <div class="about-me">
+    <span>
+      <h2>01. About Me</h2>
+      <div class="about-me-section">
+        <app-card
+          [iconSize]="'medium'"
+          [title]="'app.about.p1' | translate"
+        ></app-card>
+        <img src="../../assets/images/1_pzkOXDV0FY3QkIROkVnwkA.png" alt="" />
+      </div>
+    </span>
+  </div>
+  <div class="projects">
+    <h2>02. Where I've Worked</h2>
+    <div class="docs-homepage-featured-projects docs-about-carousel-row">
+      <app-carousel [itemWidth]="500" [aria-label]="'Featured components'">
+        <a
+          [ngClass]="routeAnimationsElements"
+          *ngFor="let article of articles"
+          carousel-item
+          class="docs-featured-components-carousel-item"
+          routerLink="/components/{{ comp }}"
+        >
+          <app-card
+            [iconSize]="'large'"
+            [icon]="'ice_icon'"
+            [title]="article.name | translate"
+          ></app-card>
+        </a>
+      </app-carousel>
     </div>
   </div>
 </div>

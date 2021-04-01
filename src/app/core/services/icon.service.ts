@@ -60,5 +60,12 @@ export class IconService {
         '../../../assets/icons/svg/arrow-up-icon.svg'
       )
     );
+
+    this.matIconRegistry.addSvgIcon(
+      'ice_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/ice-icon.svg'
+      )
+    );
   }
 }

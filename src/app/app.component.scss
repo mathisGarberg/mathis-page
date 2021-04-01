@@ -14,6 +14,12 @@ mat-sidenav-container {
     z-index: 10;
     width: 100%;
 
+    .container {
+      margin: 0 auto;
+      max-width: 75rem;
+      width: 100%;
+    }
+
     .nav-button {
       margin: 0 10px 0 0;
     }
@@ -61,8 +67,8 @@ mat-sidenav-container {
   .scroll-container {
     opacity: 1;
     position: fixed;
-    right: 50%;
-    bottom: 1rem;
+    right: 3.5rem;
+    bottom: 1.5rem;
   }
 
   .wrapper {
