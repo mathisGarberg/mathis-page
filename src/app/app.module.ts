@@ -1,3 +1,4 @@
+import { SettingsComponent } from './settings/settings.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +40,8 @@ import { CardModule } from './scams/card/card.component';
     TerminalComponent,
     ScrollingComponent,
     ConnectComponent,
-    ContactComponent
+    ContactComponent,
+    SettingsComponent
   ],
   imports: [
     // angular
