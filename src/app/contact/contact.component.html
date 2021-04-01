@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="main-heading">03. {{ 'app.about.contact' | translate }}</h2>
+    </div>
+  </div>
+  <ng-container *ngIf="formValueChanges$ | async as updatedForm">
+    {{ update(updatedForm) }}
+  </ng-container>
+  <form [formGroup]="contactForm" (ngSubmit)="onSendEmailSubmit()">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <mat-card>
+          <div class="row">
+            <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+              <input
+                matInput
+                autocomplete="off"
+                [placeholder]="'app.contact.subject' | translate"
+                type="text"
+                formControlName="subject"
+              />
+              <mat-error
+                *ngIf="contactForm.get('subject').hasError('required')"
+              >
+                {{ 'app.contact.subject.error.required' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+              <textarea
+                matInput
+                [placeholder]="'app.contact.description' | translate"
+                minlength="10"
+                maxlength="1000"
+                cdkTextareaAutosize
+                formControlName="description"
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="10"
+                cdkAutosizeMaxRows="15"
+              ></textarea>
+              <mat-error
+                *ngIf="contactForm.get('description').hasError('required')"
+              >
+                {{ 'app.contact.description.error.required' | translate }}
+              </mat-error>
+              <mat-error
+                *ngIf="contactForm.get('description').hasError('minlength')"
+              >
+                {{
+                  'Description should be longer than ' +
+                    contactForm.get('description').getError('minlength') +
+                    ' chars'
+                }}
+              </mat-error>
+              <mat-error
+                *ngIf="contactForm.get('description').hasError('maxlength')"
+              >
+                {{
+                  'Description should be no longer than ' +
+                    contactForm.get('description').getError('maxlength') +
+                    ' chars'
+                }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row buttons d-flex justify-content-between pad">
+            <button
+              (click)="onSendEmailSubmit()"
+              mat-raised-button
+              color="primary"
+              [disabled]="contactForm.invalid"
+              [ngClass]="routeAnimationsElements"
+            >
+              Send
+            </button>
+            <button
+              (click)="reset()"
+              type="reset"
+              mat-raised-button
+              [ngClass]="routeAnimationsElements"
+            >
+              {{ 'app.reset-form' | translate }}
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </form>
+</div>
