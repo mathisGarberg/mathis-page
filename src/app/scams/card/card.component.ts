@@ -68,7 +68,7 @@ import { SharedModule } from 'src/shared/shared.module';
       }
       .large-size {
         width: 60px;
-        height: 60px;
+        height: 40px;
       }
     `
   ]

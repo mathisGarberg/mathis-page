@@ -108,15 +108,15 @@
       <app-carousel [itemWidth]="500" [aria-label]="'Featured components'">
         <a
           [ngClass]="routeAnimationsElements"
-          *ngFor="let article of articles"
+          *ngFor="let experience of experiences"
           carousel-item
           class="docs-featured-components-carousel-item"
           routerLink="/components/{{ comp }}"
         >
           <app-card
             [iconSize]="'large'"
-            [icon]="'ice_icon'"
-            [title]="article.name | translate"
+            [icon]="experience.icon"
+            [title]="experience.title"
           ></app-card>
         </a>
       </app-carousel>

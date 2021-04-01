@@ -67,5 +67,19 @@ export class IconService {
         '../../../assets/icons/svg/ice-icon.svg'
       )
     );
+
+    this.matIconRegistry.addSvgIcon(
+      'telenor_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/telenor-icon.svg'
+      )
+    );
+
+    this.matIconRegistry.addSvgIcon(
+      'furst_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/furst-icon.svg'
+      )
+    );
   }
 }
