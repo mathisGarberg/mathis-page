@@ -9,19 +9,15 @@ import {
   PLATFORM_ID,
   ViewChild
 } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { AnimationEvent } from '@angular/animations';
-import { isPlatformBrowser } from '@angular/common';
-import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AppState, selectAuthState } from './core/core.state';
-import { ActionAuthLogout } from './core/states/auth/auth.actions';
-import { routeAnimations } from './core/animations/route.animations';
-import { mediaContents } from './core/data/media-contents';
-import { WebFlowPaths } from './core/enums/paths';
+import { select, Store } from '@ngrx/store';
+
 import {
   ActionSettingsChangeAnimationsPageDisabled,
   ActionSettingsChangeLanguage
@@ -35,6 +31,11 @@ import {
   fadeAnimation,
   slideInOutAnimation
 } from './core/animations/animations';
+import { AppState, selectAuthState } from './core/core.state';
+import { ActionAuthLogout } from './core/states/auth/auth.actions';
+import { routeAnimations } from './core/animations/route.animations';
+import { mediaContents } from './core/data/media-contents';
+import { WebFlowPaths } from './core/enums/paths';
 import { IconService } from './core/services/icon.service';
 
 @Injectable({

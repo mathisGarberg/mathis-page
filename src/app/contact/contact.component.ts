@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from './../core/animations/route.animations';
+import { debounceTime, filter, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/animations/route.animations';
 
 import {
   actionFormReset,
   actionFormUpdate
-} from '../core/states/form/form.actions';
-import { Form, FormState } from '../core/states/form/form.model';
-import { selectFormState } from '../core/states/form/form.selectors';
+} from '@core/states/form/form.actions';
+import { Form, FormState } from '@core/states/form/form.model';
+import { selectFormState } from '@core/states/form/form.selectors';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { debounceTime, filter, take } from 'rxjs/operators';
 
 enum Messages {
   sendEmailSuccess = 'Email was successfully sent!'

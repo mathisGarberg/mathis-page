@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ConnectComponent } from './connect.component';
 
 describe('ConnectComponent', () => {
@@ -8,9 +7,8 @@ describe('ConnectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConnectComponent ]
-    })
-    .compileComponents();
+      declarations: [ConnectComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

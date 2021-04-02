@@ -3,7 +3,7 @@ import {
   ActionSettingsChangeTheme,
   ActionSettingsChangeAutoNightMode,
   ActionSettingsChangeStickyHeader
-} from './../core/states/settings/settings.actions';
+} from '@core/states/settings/settings.actions';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';

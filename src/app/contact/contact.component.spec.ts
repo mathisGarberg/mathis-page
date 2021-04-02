@@ -1,21 +1,25 @@
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { TranslateModule } from '@ngx-translate/core';
-
-import { ContactComponent } from './contact.component';
-
-import { HarnessLoader } from '@angular/cdk/testing';
-import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
-import { MatInputHarness } from '@angular/material/input/testing';
-import { MatButtonHarness } from '@angular/material/button/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { NotificationService } from '@core/services/notification.service';
-import { selectFormState } from '@core/states/form/form.selectors';
-import { Form } from '@core/states/form/form.model';
+
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { HarnessLoader } from '@angular/cdk/testing';
+import { MatButtonHarness } from '@angular/material/button/testing';
+import { MatInputHarness } from '@angular/material/input/testing';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { selectFormState } from '@core/states/form/form.selectors';
+import { Form } from '@core/states/form/form.model';
+
+import { NotificationService } from '@core/services/notification.service';
+
+import { TranslateModule } from '@ngx-translate/core';
+
+import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
   let store: MockStore;

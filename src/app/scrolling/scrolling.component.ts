@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { rotateAnimation } from '../core/animations/animations';
+import { rotateAnimation } from '@core/animations/animations';
 
 @Component({
   selector: 'app-scrolling',

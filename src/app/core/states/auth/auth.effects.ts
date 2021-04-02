@@ -20,7 +20,7 @@ import { Store, select, Action } from '@ngrx/store';
 import { LocalStorageService } from '../../local-storage/local-storage.service';
 import { NotificationService } from '../../services/notification.service';
 import { AuthService, LoginResponse } from '../../services/auth.service';
-import { selectAuthState } from '../../core.state';
+import { selectAuthState } from '@core/core.state';
 import { AuthState } from './auth.model';
 
 export const AUTH_KEY = 'AUTH';
