@@ -1,9 +1,18 @@
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/animations/route.animations';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import * as SettingActions from '@core/states/settings/settings.actions';
+import { Store, select } from '@ngrx/store';
+import {
+  ActionSettingsChangeLanguage,
+  ActionSettingsChangeTheme,
+  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeOperatingSystemMode,
+  ActionSettingsChangeStickyHeader,
+  ActionSettingsChangeAnimationsPage,
+  ActionSettingsChangeAnimationElements
+} from '@core/states/settings/settings.actions';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/animations/route.animations';
+
 import { selectSettingsState } from '@core/states/settings/settings.selectors';
 import { SettingsState } from '@core/states/settings/settings.model';
 
@@ -37,38 +46,32 @@ export class SettingsComponent implements OnInit {
   }
 
   onLanguageSelect({ value: language }) {
-    this.store.dispatch(
-      SettingActions.ActionSettingsChangeLanguage({ language })
-    );
+    this.store.dispatch(ActionSettingsChangeLanguage({ language }));
   }
 
   onThemeSelect({ value: theme }) {
-    this.store.dispatch(SettingActions.ActionSettingsChangeTheme({ theme }));
+    this.store.dispatch(ActionSettingsChangeTheme({ theme }));
   }
 
   onAutoNightModeToggle({ checked: isAutoNightMode }) {
-    this.store.dispatch(
-      SettingActions.ActionSettingsChangeAutoNightMode({ isAutoNightMode })
-    );
+    this.store.dispatch(ActionSettingsChangeAutoNightMode({ isAutoNightMode }));
   }
 
   onOperatingSystemModeToggle({ checked: isOperatingSystemMode }) {
     this.store.dispatch(
-      SettingActions.ActionSettingsChangeOperatingSystemMode({
+      ActionSettingsChangeOperatingSystemMode({
         isOperatingSystemMode
       })
     );
   }
 
   onStickyHeaderToggle({ checked: isStickyHeader }) {
-    this.store.dispatch(
-      SettingActions.ActionSettingsChangeStickyHeader({ isStickyHeader })
-    );
+    this.store.dispatch(ActionSettingsChangeStickyHeader({ isStickyHeader }));
   }
 
   onPageAnimationsToggle({ checked: hasPageAnimations }) {
     this.store.dispatch(
-      SettingActions.ActionSettingsChangeAnimationsPage({
+      ActionSettingsChangeAnimationsPage({
         hasPageAnimations
       })
     );
@@ -76,7 +79,7 @@ export class SettingsComponent implements OnInit {
 
   onElementsAnimationsToggle({ checked: hasElementsAnimations }) {
     this.store.dispatch(
-      SettingActions.ActionSettingsChangeAnimationElements({
+      ActionSettingsChangeAnimationElements({
         hasElementsAnimations
       })
     );
