@@ -26,6 +26,7 @@ export interface Connection {
           [ngStyle]="{ bottom: connection.position.bottom }"
           class="circle-link"
           title="Animations"
+          [href]="connection.link"
           href="https://angular.io/guide/animations"
           target="_blank"
           rel="noopener"
@@ -110,9 +111,4 @@ export class ConnectComponent {
       icon: 'twitter_icon'
     }
   ];
-
-  openLink(link: string) {
-    window.open(link, '_blank');
-    this.isShowingConnections = false;
-  }
 }
