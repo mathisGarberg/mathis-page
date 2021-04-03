@@ -8,8 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ConnectComponent } from './connect/connect.component';
-import { ContactComponent } from './contact/contact.component';
-import { SettingsComponent } from './settings/settings.component';
+// import { SettingsComponent } from './settings/settings.component';
 import { TerminalComponent } from './scams/terminal/terminal.component';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 
@@ -38,9 +37,8 @@ import { CardModule } from './scams/card/card.component';
     AboutComponent,
     TerminalComponent,
     ScrollingComponent,
-    ConnectComponent,
-    ContactComponent,
-    SettingsComponent
+    ConnectComponent
+    // SettingsComponent
   ],
   imports: [
     // angular
@@ -59,16 +57,16 @@ import { CardModule } from './scams/card/card.component';
     CarouselModule,
 
     // material
+    MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
     MatSelectModule,
-    MatSidenavModule,
     MatSnackBarModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
     MatCardModule,
-    MatFormFieldModule,
     MatInputModule,
 
     AppRoutingModule

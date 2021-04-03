@@ -1,3 +1,8 @@
+// import { SettingsComponent } from './settings/settings.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ScrollingComponent } from './scrolling/scrolling.component';
+import { ConnectComponent } from './connect/connect.component';
+import { MatIconModule } from '@angular/material/icon';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -39,9 +44,17 @@ describe('AppComponent', () => {
         MatToolbarModule,
         MatOptionModule,
         MatTooltipModule,
-        SharedModule
+        MatIconModule,
+        SharedModule,
+        HttpClientModule
       ],
-      declarations: [AppComponent],
+      declarations: [
+        AppComponent,
+        ConnectComponent,
+        ScrollingComponent,
+        ConnectComponent
+        // SettingsComponent
+      ],
       providers: [provideMockStore()]
     }).compileComponents();
 

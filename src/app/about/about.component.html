@@ -46,17 +46,17 @@
 
           <app-card-button
             [ngClass]="routeAnimationsElements"
-            [content]="'app.about.contact' | translate"
+            [content]="'app.about.contact-me' | translate"
             [icon]=""
           ></app-card-button>
           <br />
           <h3 [ngClass]="routeAnimationsElements">
-            {{ 'app.about.check-blogs' | translate }}
+            {{ 'app.about.or-check-out-blogs' | translate }}
           </h3>
           <br />
         </div>
 
-        <div
+        <!-- <div
           class="docs-homepage-featured-components docs-homepage-carousel-row"
         >
           <app-carousel [itemWidth]="370" [aria-label]="'Featured components'">
@@ -74,14 +74,14 @@
               ></app-card>
             </a>
           </app-carousel>
-        </div>
+        </div> -->
       </div>
       <span></span>
     </div>
   </div>
 </div>
 <div class="my-work-wrapper">
-  <div class="my-work" [ngClass]="routeAnimationsElements">
+  <!-- <div class="my-work" [ngClass]="routeAnimationsElements">
     <span class="view-all">
       <app-card-button
         [content]="'View all blog posts'"
@@ -89,10 +89,10 @@
         [isSmall]="true"
       ></app-card-button>
     </span>
-  </div>
+  </div> -->
   <div class="about-me">
-    <span>
-      <h2>01. About Me</h2>
+    <!-- <span>
+      <h2>01. {{ 'app.about.about-me' | translate }}</h2>
       <div class="about-me-section">
         <app-card
           [iconSize]="'medium'"
@@ -100,10 +100,10 @@
         ></app-card>
         <img src="../../assets/images/1_pzkOXDV0FY3QkIROkVnwkA.png" alt="" />
       </div>
-    </span>
+    </span> -->
   </div>
   <div class="projects">
-    <h2>02. Where I've Worked</h2>
+    <!-- <h2>02. Where I've Worked</h2>
     <div class="docs-homepage-featured-projects docs-about-carousel-row">
       <app-carousel [itemWidth]="500" [aria-label]="'Featured components'">
         <a
@@ -120,9 +120,9 @@
           ></app-card>
         </a>
       </app-carousel>
-    </div>
+    </div> -->
   </div>
   <div class="contant">
-    <app-contact></app-contact>
+    <!-- <app-contact></app-contact> -->
   </div>
 </div>

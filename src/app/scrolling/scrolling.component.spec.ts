@@ -1,3 +1,7 @@
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './../shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScrollingComponent } from './scrolling.component';
@@ -8,9 +12,14 @@ describe('ScrollingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScrollingComponent ]
-    })
-    .compileComponents();
+      imports: [
+        MatIconModule,
+        SharedModule,
+        HttpClientModule,
+        NoopAnimationsModule
+      ],
+      declarations: [ScrollingComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

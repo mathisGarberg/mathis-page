@@ -7,7 +7,6 @@ h1 {
 .background {
   padding: 100px 0 0 0;
   position: relative;
-  // min-height: 100vh;
 
   .actions {
     display: grid;
@@ -119,67 +118,67 @@ h1 {
   }
 }
 
-.my-work-wrapper {
-  .my-work {
-    text-align: right;
-    // margin-bottom: 5rem;
-    max-width: 80rem;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto 5rem auto;
-  }
+// .my-work-wrapper {
+//   .my-work {
+//     text-align: right;
+//     // margin-bottom: 5rem;
+//     max-width: 80rem;
+//     display: flex;
+//     justify-content: flex-end;
+//     margin: 0 auto 5rem auto;
+//   }
 
-  .about-me {
-    display: grid;
-    grid-column: 1fr 1fr;
-    margin: 0 auto;
-    margin-bottom: 5rem;
-  }
+//   .about-me {
+//     display: grid;
+//     grid-column: 1fr 1fr;
+//     margin: 0 auto;
+//     margin-bottom: 5rem;
+//   }
 
-  .about-me {
-    max-width: 60rem;
-    width: 100%;
+//   .about-me {
+//     max-width: 60rem;
+//     width: 100%;
 
-    img {
-      border: 5px solid;
-      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-      float: right;
-      width: 300px;
-      border-radius: 5px;
-      mask-image: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.65) 100%
-      );
-    }
+//     img {
+//       border: 5px solid;
+//       box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+//         0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+//       float: right;
+//       width: 300px;
+//       border-radius: 5px;
+//       mask-image: linear-gradient(
+//         to top,
+//         rgba(0, 0, 0, 0) 0%,
+//         rgba(0, 0, 0, 0.65) 100%
+//       );
+//     }
 
-    .about-me-section {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 50px;
-    }
-  }
-}
+//     .about-me-section {
+//       display: grid;
+//       grid-template-columns: 3fr 2fr;
+//       gap: 50px;
+//     }
+//   }
+// }
 
-.projects {
-  max-width: 105rem;
-  margin: 0 auto;
-  margin-bottom: 5rem;
-  .docs-homepage-featured-projects {
-    .docs-featured-components-carousel-item {
-      text-decoration: none;
-      padding: 15px;
+// .projects {
+//   max-width: 105rem;
+//   margin: 0 auto;
+//   margin-bottom: 5rem;
+//   .docs-homepage-featured-projects {
+//     .docs-featured-components-carousel-item {
+//       text-decoration: none;
+//       padding: 15px;
 
-      .docs-homepage-img-container {
-        overflow: hidden;
-        width: 259px;
-        height: 144px;
-        margin-bottom: 10px;
-      }
-    }
-  }
-}
+//       .docs-homepage-img-container {
+//         overflow: hidden;
+//         width: 259px;
+//         height: 144px;
+//         margin-bottom: 10px;
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: map-get($grid-breakpoints, md)) {
   .background {

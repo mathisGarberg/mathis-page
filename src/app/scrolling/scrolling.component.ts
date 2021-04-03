@@ -11,7 +11,6 @@ import { rotateAnimation } from '@core/animations/animations';
       ></mat-icon>
     </a>
   `,
-  styles: [``],
   animations: [rotateAnimation]
 })
 export class ScrollingComponent {
