@@ -40,8 +40,8 @@ $custom-typography: mat-typography-config(
 }
 
 .default-theme {
-  @include angular-material-theme($mathis-theme);
-  @include custom-components-theme($mathis-theme);
+  @include angular-material-theme($mathis-default-theme);
+  @include custom-components-theme($mathis-default-theme);
 }
 
 .light-theme {
