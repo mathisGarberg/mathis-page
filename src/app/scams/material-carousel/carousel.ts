@@ -49,7 +49,7 @@ export class CarouselComponent implements AfterContentInit {
   visibleItems: number | undefined;
   shiftWidth: number | undefined;
   itemsArray: CarouselItemDirective[] | undefined;
-  private focusKeyManager: FocusKeyManager<CarouselItemDirective> | undefined;
+  focusKeyManager: FocusKeyManager<CarouselItemDirective> | undefined;
 
   constructor(private readonly element: ElementRef) {}
 
@@ -113,6 +113,7 @@ export class CarouselComponent implements AfterContentInit {
     this.focusKeyManager = new FocusKeyManager<CarouselItemDirective>(
       this.items
     ) as FocusKeyManager<CarouselItemDirective>;
+
     // timeout to make sure clientWidth is defined
     setTimeout(() => {
       this.itemsArray = this.items.toArray();

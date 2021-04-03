@@ -1,5 +1,4 @@
 import {
-  async,
   ComponentFixture,
   fakeAsync,
   flush,
@@ -13,12 +12,12 @@ describe('HorizontalCarousel', () => {
   let fixture: ComponentFixture<CarouselTestComponent>;
   let component: CarouselComponent;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CarouselModule],
       declarations: [CarouselTestComponent]
     }).compileComponents();
-  }));
+  });
 
   beforeEach(fakeAsync(() => {
     fixture = TestBed.createComponent(CarouselTestComponent);
@@ -55,6 +54,8 @@ describe('HorizontalCarousel', () => {
   it('should hide next nav arrow after reaching end of items', () => {
     expect(component.visibleItems).toBe(4);
 
+    component.next();
+    component.previous();
     component.next();
     component.next();
     expect(component.index).toEqual(2);
@@ -97,6 +98,42 @@ describe('HorizontalCarousel', () => {
 
     expect(carouselWrapper.clientWidth).toEqual(500);
     expect(component.visibleItems).toEqual(2);
+  });
+
+  it('should navigate on keyup event', () => {
+    const carouselWrapper = fixture.nativeElement.querySelector(
+      '.docs-carousel-content-wrapper'
+    );
+
+    carouselWrapper.dispatchEvent(
+      new KeyboardEvent('keyup', {
+        key: 'Tab'
+      })
+    );
+
+    fixture.detectChanges();
+
+    expect(component.focusKeyManager.activeItemIndex).toEqual(0);
+
+    carouselWrapper.dispatchEvent(
+      new KeyboardEvent('keyup', {
+        key: 'ArrowRight'
+      })
+    );
+
+    fixture.detectChanges();
+
+    expect(component.focusKeyManager.activeItemIndex).toEqual(1);
+
+    carouselWrapper.dispatchEvent(
+      new KeyboardEvent('keyup', {
+        key: 'ArrowLeft'
+      })
+    );
+
+    fixture.detectChanges();
+
+    expect(component.focusKeyManager.activeItemIndex).toEqual(0);
   });
 });
 

@@ -2,7 +2,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 import { ConnectComponent } from './connect/connect.component';
 import { MatIconModule } from '@angular/material/icon';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick
+} from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -25,6 +30,7 @@ import {
 
 import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -92,15 +98,13 @@ describe('AppComponent', () => {
     );
   });
 
-  // it('should call onWindowScroll method on scroll', fakeAsync(() => {
-  //   spyOn(component, 'onWindowScroll').and.callThrough();
+  it('should call onWindowScroll method on scroll', () => {
+    const sidenavContent = fixture.nativeElement.querySelector(
+      '.sidenav-content'
+    );
 
-  //   const debugElement = fixture.debugElement.query(By.css('#sidenav-content'));
+    sidenavContent.dispatchEvent(new Event('scroll'));
 
-  //   const scrollEvent = new Event('scroll');
-  //   debugElement.nativeElement.dispatchEvent(scrollEvent);
-  //   tick(250);
-
-  //   expect(component.onWindowScroll).toHaveBeenCalled();
-  // }));
+    fixture.detectChanges();
+  });
 });
