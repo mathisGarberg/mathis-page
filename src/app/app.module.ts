@@ -27,13 +27,15 @@ import { CoreModule } from './core/core.module';
 
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     ScrollingComponent,
-    ConnectComponent
+    ConnectComponent,
+    NavbarComponent
   ],
   imports: [
     // angular
