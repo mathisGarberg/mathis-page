@@ -160,8 +160,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onWindowScroll(data: CdkScrollable) {
-    // console.log(data.getElementRef());
-
     const scrollTop = data.getElementRef().nativeElement.scrollTop || 0;
 
     if (scrollTop > 100) {
