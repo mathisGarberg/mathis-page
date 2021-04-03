@@ -1,4 +1,3 @@
-// import { SettingsComponent } from './settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 import { ConnectComponent } from './connect/connect.component';
@@ -48,13 +47,7 @@ describe('AppComponent', () => {
         SharedModule,
         HttpClientModule
       ],
-      declarations: [
-        AppComponent,
-        ConnectComponent,
-        ScrollingComponent,
-        ConnectComponent
-        // SettingsComponent
-      ],
+      declarations: [AppComponent, ConnectComponent, ScrollingComponent],
       providers: [provideMockStore()]
     }).compileComponents();
 

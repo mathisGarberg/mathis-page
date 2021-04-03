@@ -1,10 +1,21 @@
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './../shared/shared.module';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScrollingComponent } from './scrolling.component';
+import { Input, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-mat-icon',
+  template: '<span></span>'
+})
+class MockMatIconComponent {
+  @Input() svgIcon: any;
+  @Input() fontSet: any;
+  @Input() fontIcon: any;
+}
 
 describe('ScrollingComponent', () => {
   let component: ScrollingComponent;
@@ -19,7 +30,18 @@ describe('ScrollingComponent', () => {
         NoopAnimationsModule
       ],
       declarations: [ScrollingComponent]
-    }).compileComponents();
+    })
+      .overrideModule(MatIconModule, {
+        remove: {
+          declarations: [MatIcon],
+          exports: [MatIcon]
+        },
+        add: {
+          declarations: [MockMatIconComponent],
+          exports: [MockMatIconComponent]
+        }
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {

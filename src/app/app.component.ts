@@ -61,17 +61,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   isRotated = false;
 
   currentYear = new Date().getFullYear();
-  logo = '../assets/images/logo-resized.png';
+  logo = '../assets/icons/logo/logo-resized.png';
   webFlowPaths = WebFlowPaths;
   navigation = [
     { link: WebFlowPaths.About, label: 'app.menu.about' },
     { link: WebFlowPaths.Projects, label: 'app.menu.projects' },
-    { link: WebFlowPaths.Contact, label: 'app.menu.contact' }
-  ];
-  navigationSideMenu = [
-    ...this.navigation,
+    { link: WebFlowPaths.Contact, label: 'app.menu.contact' },
     { link: WebFlowPaths.Settings, label: 'app.menu.settings' }
   ];
+  navigationSideMenu = [...this.navigation];
 
   languages = ['en', 'no'];
   mediaContents = mediaContents;

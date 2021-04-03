@@ -18,7 +18,7 @@ export interface Connection {
         class="speed-dial-items"
         (click)="isShowingConnections = !isShowingConnections"
       >
-        <mat-icon svgIcon="connect_icon"></mat-icon>
+        <!-- <mat-icon svgIcon="connect_icon"></mat-icon> -->
       </a>
       <div class="speed-dial-list" @listStagger *ngIf="isShowingConnections">
         <a
@@ -75,7 +75,7 @@ export interface Connection {
             />
           </svg>
         </a>
-        <!-- <a
+        <a
           (click)="openLink(connection.link)"
           aria-label="connection"
           *ngFor="let connection of connections"
@@ -88,7 +88,7 @@ export interface Connection {
               <mat-icon [svgIcon]="connection.icon"></mat-icon>
             </div>
           </button>
-        </a> -->
+        </a>
       </div>
     </div>
   `,

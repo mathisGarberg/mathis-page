@@ -8,8 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ConnectComponent } from './connect/connect.component';
-// import { SettingsComponent } from './settings/settings.component';
-import { TerminalComponent } from './scams/terminal/terminal.component';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -28,17 +26,14 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
 import { CardButtonModule } from './scams/card-button/card-button.component';
-import { CarouselModule } from './scams/material-carousel/carousel.module';
 import { CardModule } from './scams/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    TerminalComponent,
     ScrollingComponent,
     ConnectComponent
-    // SettingsComponent
   ],
   imports: [
     // angular
@@ -54,7 +49,6 @@ import { CardModule } from './scams/card/card.component';
     // scams
     CardButtonModule,
     CardModule,
-    CarouselModule,
 
     // material
     MatFormFieldModule,
