@@ -30,6 +30,7 @@ import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CarouselModule } from './scams/carousel/carousel.module';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     // scams
     CardButtonModule,
     CardModule,
+    CarouselModule,
 
+    // external
     FlexLayoutModule,
 
     // material

@@ -63,7 +63,7 @@
             <a
               [ngClass]="routeAnimationsElements"
               *ngFor="let article of articles"
-              carousel-item
+              appCarouselItem
               class="docs-featured-components-carousel-item"
               routerLink="/components/{{ comp }}"
             >
@@ -109,7 +109,7 @@
         <a
           [ngClass]="routeAnimationsElements"
           *ngFor="let experience of experiences"
-          carousel-item
+          appCarouselItem
           class="docs-featured-components-carousel-item"
           routerLink="/components/{{ comp }}"
         >

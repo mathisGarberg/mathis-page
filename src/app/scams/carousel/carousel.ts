@@ -13,7 +13,7 @@ import {
 import { FocusableOption, FocusKeyManager } from '@angular/cdk/a11y';
 
 @Directive({
-  selector: '[carousel-item]'
+  selector: '[appCarouselItem]'
 })
 export class CarouselItemDirective implements FocusableOption {
   @HostBinding('attr.role') readonly role = 'listitem';

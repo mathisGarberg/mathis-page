@@ -16,7 +16,7 @@ app-carousel {
   position: relative;
 }
 
-[carousel-item] {
+[appCarouselItem] {
   flex-shrink: 0;
   transition: transform 0.5s ease-in-out;
 }

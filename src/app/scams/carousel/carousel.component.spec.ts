@@ -138,11 +138,11 @@ describe('HorizontalCarousel', () => {
 });
 
 @Component({
-  selector: 'test-carousel',
+  selector: 'app-test-carousel',
   template: `
     <app-carousel itemWidth="250">
       <div
-        carousel-item
+        appCarouselItem
         class="docs-carousel-item-container"
         *ngFor="let i of [].constructor(numberOfItems)"
       ></div>
