@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { WebFlowPaths } from './../core/enums/paths';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
+  @Input() language: string;
+  @Input() navigation: string[];
+  @Input() isAuthenticated: boolean;
 
-  constructor() { }
+  @Output() openSidenav = new EventEmitter();
 
-  ngOnInit(): void {
-  }
-
+  logo = '../../assets/icons/logo/logo-resized.png';
+  webFlowPaths = WebFlowPaths;
+  languages = ['en', 'no'];
 }

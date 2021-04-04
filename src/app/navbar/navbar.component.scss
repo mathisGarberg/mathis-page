@@ -1,0 +1,55 @@
+@import '../../styles/styles-variables';
+
+:host {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  margin: 0 10px 0 0;
+}
+
+.branding {
+  cursor: pointer;
+  overflow: hidden;
+  padding-top: 4px;
+  text-overflow: ellipsis;
+
+  &.center {
+    text-align: center;
+  }
+
+  img {
+    position: relative;
+    top: -2px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.mat-stroked-button {
+  margin-right: 10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-select {
+  margin: 0 0 0 20px;
+  width: 40px;
+  font-size: 14px;
+}
+
+@media (max-width: map-get($grid-breakpoints, lg)) {
+  .nav-button {
+    min-width: 0;
+    padding: 0 10px;
+  }
+}

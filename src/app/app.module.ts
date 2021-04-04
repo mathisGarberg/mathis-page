@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { ConnectComponent } from './connect/connect.component';
 import { ScrollingComponent } from './scrolling/scrolling.component';
@@ -27,7 +28,6 @@ import { CoreModule } from './core/core.module';
 
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
-import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [

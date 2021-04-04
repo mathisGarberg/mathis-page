@@ -71,7 +71,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   navigationSideMenu = [...this.navigation];
 
-  languages = ['en', 'no'];
   mediaContents = mediaContents;
   currentState = 'default';
 

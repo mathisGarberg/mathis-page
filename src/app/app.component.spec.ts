@@ -1,13 +1,9 @@
+import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingComponent } from './scrolling/scrolling.component';
 import { ConnectComponent } from './connect/connect.component';
 import { MatIconModule } from '@angular/material/icon';
-import {
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -30,7 +26,6 @@ import {
 
 import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
-import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -53,7 +48,12 @@ describe('AppComponent', () => {
         SharedModule,
         HttpClientModule
       ],
-      declarations: [AppComponent, ConnectComponent, ScrollingComponent],
+      declarations: [
+        AppComponent,
+        NavbarComponent,
+        ConnectComponent,
+        ScrollingComponent
+      ],
       providers: [provideMockStore()]
     }).compileComponents();
 
