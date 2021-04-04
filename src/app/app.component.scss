@@ -103,17 +103,6 @@ mat-sidenav-container {
           }
         }
       }
-
-      @media (max-width: $toolbar-breakpoint) {
-        .content {
-          margin-top: 56px !important;
-        }
-      }
-    }
-
-    .right-align-items {
-      display: flex;
-      justify-content: flex-end;
     }
   }
 

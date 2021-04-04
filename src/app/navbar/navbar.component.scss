@@ -8,31 +8,31 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
-}
+  justify-content: space-around;
 
-.branding {
-  cursor: pointer;
-  overflow: hidden;
-  padding-top: 4px;
-  text-overflow: ellipsis;
+  .branding {
+    cursor: pointer;
+    overflow: hidden;
+    padding-top: 4px;
+    text-overflow: ellipsis;
 
-  &.center {
-    text-align: center;
+    &.center {
+      text-align: center;
+    }
+
+    img {
+      position: relative;
+      top: -2px;
+      width: 28px;
+      height: 28px;
+    }
   }
 
-  img {
-    position: relative;
-    top: -2px;
-    width: 28px;
-    height: 28px;
+  mat-select {
+    margin: 0 0 0 20px;
+    width: 40px;
+    font-size: 14px;
   }
-}
-
-mat-select {
-  margin: 0 0 0 20px;
-  width: 40px;
-  font-size: 14px;
 }
 
 @media (max-width: map-get($grid-breakpoints, lg)) {
