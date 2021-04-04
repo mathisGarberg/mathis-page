@@ -1,6 +1,12 @@
 <div class="container" fxLayout="row">
   <div>
-    <button mat-icon-button aria-label="bars" (click)="openSidenav.emit()">
+    <button
+      fxShow="true"
+      fxHide.gt-sm="true"
+      mat-icon-button
+      aria-label="bars"
+      (click)="openSidenav.emit()"
+    >
       <mat-icon>menu</mat-icon>
     </button>
     <span

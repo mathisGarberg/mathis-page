@@ -29,6 +29,8 @@ import { CoreModule } from './core/core.module';
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +53,8 @@ import { CardModule } from './scams/card/card.component';
     // scams
     CardButtonModule,
     CardModule,
+
+    FlexLayoutModule,
 
     // material
     MatFormFieldModule,
