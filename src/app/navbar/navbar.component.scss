@@ -11,10 +11,6 @@
   justify-content: space-between;
 }
 
-.nav-button {
-  margin: 0 10px 0 0;
-}
-
 .branding {
   cursor: pointer;
   overflow: hidden;
@@ -31,14 +27,6 @@
     width: 28px;
     height: 28px;
   }
-}
-
-.mat-stroked-button {
-  margin-right: 10px;
-}
-
-.spacer {
-  flex: 1 1 auto;
 }
 
 mat-select {

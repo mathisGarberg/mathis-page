@@ -40,9 +40,9 @@
         >
           <mat-toolbar color="primary">
             <app-navbar
+              [isAuthenticated]="isAuthenticated$ | async"
               [language]="language$ | async"
               [navigation]="navigation"
-              [isAuthenticated]="isAuthenticated$ | async"
               (openSidenav)="sidenav.open()"
             ></app-navbar>
           </mat-toolbar>
