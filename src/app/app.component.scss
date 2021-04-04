@@ -14,13 +14,6 @@ mat-sidenav-container {
     width: 100%;
   }
 
-  .scroll-container {
-    opacity: 1;
-    position: fixed;
-    right: 3.5rem;
-    bottom: 1.5rem;
-  }
-
   .wrapper {
     position: absolute;
     top: 0;
@@ -103,12 +96,6 @@ mat-sidenav-container {
           }
         }
       }
-    }
-  }
-
-  @media (max-width: map-get($grid-breakpoints, sm)) {
-    .wrapper {
-      top: 56px;
     }
   }
 }
