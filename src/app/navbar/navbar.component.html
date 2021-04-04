@@ -10,27 +10,15 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span
+      fxShow="true"
+      fxHide.lt-md="true"
       [routerLink]="webFlowPaths.About"
       class="branding spacer center d-inline d-sm-none"
     >
       <img alt="logo" [src]="logo" width="28" height="28" />
     </span>
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <mat-icon>share</mat-icon>
-    </button>
   </div>
-  <div>
+  <div fxShow="true" fxHide.lt-md="true">
     <span class="d-none d-md-inline">
       <button
         mat-button
