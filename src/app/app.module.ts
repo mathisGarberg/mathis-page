@@ -39,7 +39,7 @@ import { CardModule } from './scams/card/card.component';
   ],
   imports: [
     // angular
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
 
     ReactiveFormsModule,
