@@ -1,6 +1,7 @@
 @import '../../styles/styles-variables.scss';
 
-h1 {
+h1,
+h3 {
   text-align: center;
 }
 
@@ -10,9 +11,9 @@ h1 {
 
   .actions {
     display: grid;
-    grid-template-columns: repeat(3, auto);
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
     z-index: 1;
   }
 
@@ -54,6 +55,10 @@ h1 {
       margin-left: auto;
       margin-right: auto;
 
+      @media only screen and (max-width: map-get($grid-breakpoints, md)) {
+        width: 80%;
+      }
+
       .docs-homepage-featured-components {
         // margin-bottom: 3.25rem;
         .docs-featured-components-carousel-item {
@@ -71,11 +76,11 @@ h1 {
     }
   }
 
-  .avatar-wrapper {
+  .hero-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    text-align: center;
 
     a {
       margin: 8px;
@@ -190,8 +195,6 @@ h1 {
 
 @media (max-width: map-get($grid-breakpoints, sm)) {
   .background {
-    padding: 40px 0 0 0;
-
     h1 {
       line-height: 1em;
     }

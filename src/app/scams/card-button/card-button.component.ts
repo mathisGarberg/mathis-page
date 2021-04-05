@@ -5,7 +5,6 @@ import {
   Input,
   NgModule
 } from '@angular/core';
-import { SharedModule } from '@shared/shared.module';
 
 @Component({
   selector: 'app-card-button',
@@ -53,7 +52,7 @@ export class CardButtonComponent {
 }
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule],
   declarations: [CardButtonComponent],
   exports: [CardButtonComponent]
 })
