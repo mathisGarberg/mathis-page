@@ -13,7 +13,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { SharedModule } from '@shared/shared.module';
 import { AboutComponent } from './about.component';
-import { CarouselComponent } from '../scams/carousel/carousel';
+import { CarouselComponent } from '../scams/carousel/carousel.component';
 import { Input, Component } from '@angular/core';
 
 @Component({

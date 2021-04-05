@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CarouselComponent, CarouselItemDirective } from './carousel';
+import { CarouselComponent, CarouselItemDirective } from './carousel.component';
 
 @NgModule({
   imports: [CommonModule, MatIconModule, MatButtonModule],

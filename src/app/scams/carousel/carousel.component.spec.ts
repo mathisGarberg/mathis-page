@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing';
 import { Component, ViewChild } from '@angular/core';
 import { CarouselModule } from './carousel.module';
-import { CarouselComponent } from './carousel';
+import { CarouselComponent } from './carousel.component';
 
 describe('HorizontalCarousel', () => {
   let fixture: ComponentFixture<CarouselTestComponent>;
