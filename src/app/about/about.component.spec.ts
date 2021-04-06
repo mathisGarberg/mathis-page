@@ -4,8 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { provideMockStore } from '@ngrx/store/testing';
-import { CardButtonComponent } from './../scams/card-button/card-button.component';
-import { CardComponent } from './../scams/card/card.component';
+import {
+  CardButtonComponent,
+  CardButtonModule
+} from './../scams/card-button/card-button.component';
+import { CardComponent, CardModule } from './../scams/card/card.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -13,8 +16,9 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { SharedModule } from '@shared/shared.module';
 import { AboutComponent } from './about.component';
-import { CarouselComponent } from '../scams/carousel/carousel.component';
 import { Input, Component } from '@angular/core';
+import { CarouselModule } from '../scams/carousel/carousel.module';
+import { CarouselComponent } from '../scams/carousel/carousel.component';
 
 @Component({
   selector: 'app-mat-icon',
@@ -37,10 +41,13 @@ describe('AboutComponent', () => {
         RouterTestingModule,
         MatInputModule,
         MatCardModule,
+        CardModule,
+        CardButtonModule,
         NoopAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        CarouselModule
       ],
       declarations: [
         AboutComponent,
