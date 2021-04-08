@@ -6,28 +6,28 @@
         <h1>Mathis Garberg</h1>
 
         <div class="hero-wrapper" [ngClass]="routeAnimationsElements">
-          <a
-            href="https://itnext.io/@mathis.garberg"
-            aria-label="Avatar"
-            rel="noopener"
-            target="_blank"
-          >
-            <div class="avatar-container">
-              <div class="author-avatar">
+          <div class="avatar-container">
+            <div class="author-avatar">
+              <a
+                href="https://itnext.io/@mathis.garberg"
+                aria-label="Avatar"
+                rel="noopener"
+                target="_blank"
+              >
                 <img
                   class="avatar"
                   alt="avatar"
-                  width="200"
-                  height="200"
+                  width="170"
+                  height="170"
                   [src]="avatar"
                 />
-              </div>
-              <span class="hire-me">
-                Consulting at ICE Norway
-                <fa-icon [icon]="['fas', 'ban']"></fa-icon>
-              </span>
+              </a>
             </div>
-          </a>
+            <span class="hire-me">
+              Consulting at ICE Norway
+              <fa-icon [icon]="['fas', 'ban']"></fa-icon>
+            </span>
+          </div>
           <p>{{ 'app.about.short-desc' | translate | uppercase }}</p>
         </div>
 
@@ -36,18 +36,21 @@
             [ngClass]="routeAnimationsElements"
             [content]="'app.about.my-projects' | translate"
             [icon]=""
+            matColor="primary"
           ></app-card-button>
 
           <app-card-button
             [ngClass]="routeAnimationsElements"
             [content]="'app.about.change-theme' | translate"
             [icon]=""
+            matColor="accent"
           ></app-card-button>
 
           <app-card-button
             [ngClass]="routeAnimationsElements"
             [content]="'app.about.contact-me' | translate"
             [icon]=""
+            matColor="warn"
           ></app-card-button>
         </div>
         <h3 [ngClass]="routeAnimationsElements">
@@ -57,7 +60,7 @@
         <div
           class="docs-homepage-featured-components docs-homepage-carousel-row"
         >
-          <app-carousel [itemWidth]="370" aria-label="Featured articles">
+          <app-carousel [itemWidth]="260" aria-label="Featured articles">
             <a
               [ngClass]="routeAnimationsElements"
               *ngFor="let article of articles"
@@ -78,18 +81,21 @@
     </div>
   </div>
 </div>
-<div class="my-work-wrapper">
-  <!-- <div class="my-work" [ngClass]="routeAnimationsElements">
-    <span class="view-all">
-      <app-card-button
-        [content]="'View all blog posts'"
-        [icon]="'medium_icon'"
-        [isSmall]="true"
-      ></app-card-button>
-    </span>
-  </div> -->
-  <div class="about-me">
-    <!-- <span>
+<div class="container">
+  <div class="left-content"></div>
+  <div class="mid-content">
+    <div style="float: right" [ngClass]="routeAnimationsElements">
+      <span class="view-all">
+        <app-card-button
+          content="View all blog posts"
+          icon="medium_icon"
+          matColor="default"
+          [isSmall]="true"
+        ></app-card-button>
+      </span>
+    </div>
+    <div class="about-me">
+      <!-- <span>
       <h2>01. {{ 'app.about.about-me' | translate }}</h2>
       <div class="about-me-section">
         <app-card
@@ -99,9 +105,9 @@
         <img src="../../assets/images/1_pzkOXDV0FY3QkIROkVnwkA.png" alt="" />
       </div>
     </span> -->
-  </div>
-  <div class="projects">
-    <!-- <h2>02. Where I've Worked</h2>
+    </div>
+    <div class="projects">
+      <!-- <h2>02. Where I've Worked</h2>
     <div class="docs-homepage-featured-projects docs-about-carousel-row">
       <app-carousel [itemWidth]="500" [aria-label]="'Featured components'">
         <a
@@ -119,8 +125,10 @@
         </a>
       </app-carousel>
     </div> -->
+    </div>
+    <div class="contant">
+      <!-- <app-contact></app-contact> -->
+    </div>
   </div>
-  <div class="contant">
-    <!-- <app-contact></app-contact> -->
-  </div>
+  <div class="right-content"></div>
 </div>

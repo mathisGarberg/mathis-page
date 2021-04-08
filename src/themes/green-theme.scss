@@ -1,0 +1,9 @@
+$mathis-primary: mat-palette($mat-green, 400, 300, 900);
+$mathis-accent: mat-palette($mat-light-blue);
+$mathis-warn: mat-palette($mat-pink, 600);
+
+$mathis-green-theme: mat-light-theme(
+  $mathis-primary,
+  $mathis-accent,
+  $mathis-warn
+);

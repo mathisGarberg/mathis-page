@@ -10,7 +10,13 @@ import {
   selector: 'app-card-button',
   template: `
     <a
-      [ngClass]="{ 'card-small': isSmall }"
+      [ngClass]="{
+        'card-small': isSmall,
+        'card-primary': matColor === 'primary',
+        'card-accent': matColor === 'accent',
+        'card-warn': matColor === 'warn',
+        'card-default': matColor === 'default'
+      }"
       class="card"
       target="_blank"
       rel="noopener"

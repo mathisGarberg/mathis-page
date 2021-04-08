@@ -4,9 +4,44 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
-  .card {
+  .card svg.material-icons path {
+    fill: mat-color($primary, default-contrast);
+
+    &:hover {
+      fill: mat-color($primary, default-contrast);
+    }
+  }
+
+  .card-default {
     background-color: mat-color($primary);
-    border: 1px solid mat-color($primary, 50);
+    color: mat-color($primary, default-contrast);
+  }
+
+  .card-primary {
+    background-color: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+
+    &:hover {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+  .card-accent {
+    background-color: mat-color($accent);
+    color: mat-color($accent, default-contrast);
+
+    &:hover {
+      color: mat-color($accent, default-contrast);
+    }
+  }
+  .card-warn {
+    background-color: mat-color($warn);
+    color: mat-color($warn, default-contrast);
+
+    &:hover {
+      color: mat-color($warn, default-contrast);
+    }
   }
 }

@@ -4,9 +4,10 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
 
   .card-container {
-    background-color: mat-color($primary);
-    border: 1px solid mat-color($primary, 50);
+    background-color: mat-color($background, background);
   }
 }

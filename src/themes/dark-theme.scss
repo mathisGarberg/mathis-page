@@ -32,7 +32,7 @@ $mathis-dark-color: (
   )
 );
 
-$mathis-dark-primary: mat-palette($mat-grey, 900, 300, 900);
+$mathis-dark-primary: mat-palette($mathis-dark-color);
 $mathis-dark-accent: mat-palette($mat-red, 400);
 $mathis-dark-warn: mat-palette($mat-red, 500);
 

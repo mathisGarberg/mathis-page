@@ -32,7 +32,6 @@ import { SharedModule } from '@shared/shared.module';
   styles: [
     `
       .card-container {
-        box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.35);
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -41,6 +40,8 @@ import { SharedModule } from '@shared/shared.module';
         cursor: pointer;
         transition: all 0.2s ease-in-out;
         border-radius: 5px;
+        box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+          0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
       }
 
       .card-header {
@@ -63,8 +64,8 @@ import { SharedModule } from '@shared/shared.module';
       }
 
       .medium-size {
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
       }
       .large-size {
         width: 60px;

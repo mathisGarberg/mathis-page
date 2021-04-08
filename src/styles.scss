@@ -19,6 +19,7 @@ $custom-typography: mat-typography-config(
 @import './themes/light-theme.scss';
 @import './themes/dark-theme.scss';
 @import './themes/nature-theme.scss';
+@import './themes/green-theme.scss';
 
 @import 'styles/styles-reset.scss-theme';
 
@@ -57,4 +58,9 @@ $custom-typography: mat-typography-config(
 .nature-theme {
   @include angular-material-theme($mathis-nature-theme);
   @include custom-components-theme($mathis-nature-theme);
+}
+
+.green-theme {
+  @include angular-material-theme($mathis-green-theme);
+  @include custom-components-theme($mathis-green-theme);
 }

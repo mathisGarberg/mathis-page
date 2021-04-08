@@ -24,7 +24,7 @@ export const articles = [
     link: 'https://itnext.io/how-to-read-code-bf478c262932'
   },
   {
-    name: 'app.story.nordicjs-review.short',
+    name: 'app.story.nordic-js-review.short',
     link:
       'https://medium.com/@mathis.garberg/nordic-js-2019-a-personal-review-c1d702b464dd'
   }

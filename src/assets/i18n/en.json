@@ -12,8 +12,8 @@
   "app.story.folder-structure.short": "Structuring an Angular App",
   "app.story.folder-structure.desc": "",
 
-  "app.story.clean-code.long": "Clean Code Checklist in Angular",
-  "app.story.clean-code.short": "Clean Code Checklist in Angular",
+  "app.story.clean-code.long": "Clean Code Checklist",
+  "app.story.clean-code.short": "Clean Code Checklist",
   "app.story.clean-code.desc": "",
 
   "app.story.modal-forms.long": "Creating Forms Inside Modals with ng-bootstrap",
@@ -21,7 +21,7 @@
   "app.story.modal-forms.desc": "Creating forms inside modals has some great benefits. Using them along with valuable content might bring a lot of attraction to your project. With the emergence of ngx- and ng-bootstrap, we can easily integrate any Bootstrap components to our application.",
 
   "app.story.ngx-rocket.long": "Creating Enterprise Angular Apps With The ngx-rocket Generator",
-  "app.story.ngx-rocket.short": "Angular Apps With ngx-rocket",
+  "app.story.ngx-rocket.short": "Angular With ngx-rocket",
   "app.story.ngx-rocket.desc": "In this article, we will dive deep into a new Angular generator called ngX-Rocket. ngX-Rocket is an Angular 5+ enterprise project-generator based on the Angular-CLI with best practices from the community.",
 
   "app.story.how-to-read-code.long": "How To Read Code?",
@@ -29,7 +29,7 @@
   "app.story.how-to-read-code.desc": "When approaching a new and unfamiliar codebase, which techniques would get you up and running as quickly as possible? This article teaches you my personal recommendations for approaching an unfamiliar codebase.",
 
   "app.story.nordic-js-review.long": "NordicJS - A Personal Review",
-  "app.story.nordic-js-review.short": "NordicJS - A Personal Review",
+  "app.story.nordic-js-review.short": "NordicJS - Review",
   "app.story.nordic-js-review.desc": "",
 
   "app.story.choosing-the-right-structure-in-2020.long": "Choosing The Right File Structure for Angular in 2020 and Beyond!",
