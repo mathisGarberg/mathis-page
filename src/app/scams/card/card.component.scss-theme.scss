@@ -8,6 +8,6 @@
   $background: map-get($theme, background);
 
   .card-container {
-    background-color: mat-color($background, background);
+    background-color: mat-color($primary);
   }
 }

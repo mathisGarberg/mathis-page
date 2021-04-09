@@ -64,7 +64,7 @@ import { SharedModule } from '@shared/shared.module';
       }
 
       .medium-size {
-        width: 32px;
+        width: 40px;
         height: 32px;
       }
       .large-size {

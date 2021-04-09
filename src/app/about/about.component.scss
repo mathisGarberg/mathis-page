@@ -1,7 +1,14 @@
 @import '../../styles/styles-variables.scss';
 
-h1,
-h3 {
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+h2 {
+  opacity: 0.5;
   text-align: center;
 }
 
@@ -13,7 +20,7 @@ h3 {
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 220px));
     z-index: 1;
   }
 
@@ -72,12 +79,12 @@ h3 {
 
       .hire-me {
         position: absolute;
-        left: 50%;
+        left: 52%;
         bottom: 1rem;
-        border-radius: 6px;
+        border-radius: 50%;
         box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
         padding: 6px;
-        background-color: #d9534f;
+        background-color: #00acee;
         color: #fff;
       }
     }
@@ -86,6 +93,10 @@ h3 {
       display: inline-block;
       text-align: center;
       text-decoration: none;
+
+      img {
+        filter: grayscale(80%);
+      }
     }
   }
 }

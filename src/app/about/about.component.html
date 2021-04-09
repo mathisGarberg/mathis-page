@@ -4,6 +4,7 @@
       <span class="left-content"></span>
       <div class="mid-content">
         <h1>Mathis Garberg</h1>
+        <h2>I build things you use every day on the web.</h2>
 
         <div class="hero-wrapper" [ngClass]="routeAnimationsElements">
           <div class="avatar-container">
@@ -23,10 +24,6 @@
                 />
               </a>
             </div>
-            <span class="hire-me">
-              Consulting at ICE Norway
-              <fa-icon [icon]="['fas', 'ban']"></fa-icon>
-            </span>
           </div>
           <p>{{ 'app.about.short-desc' | translate | uppercase }}</p>
         </div>
@@ -52,30 +49,16 @@
             [icon]=""
             matColor="warn"
           ></app-card-button>
-        </div>
-        <h3 [ngClass]="routeAnimationsElements">
-          {{ 'app.about.or-check-out-blogs' | translate }}
-        </h3>
 
-        <div
-          class="docs-homepage-featured-components docs-homepage-carousel-row"
-        >
-          <app-carousel [itemWidth]="260" aria-label="Featured articles">
-            <a
-              [ngClass]="routeAnimationsElements"
-              *ngFor="let article of articles"
-              appCarouselItem
-              class="docs-featured-components-carousel-item"
-              routerLink="/components/{{ comp }}"
-            >
-              <app-card
-                [title]="article.name | translate"
-                icon="medium_icon"
-                iconSize="medium"
-              ></app-card>
-            </a>
-          </app-carousel>
+          <app-card-button
+            [ngClass]="routeAnimationsElements"
+            [content]="'app.about.contact-me' | translate"
+            [icon]=""
+            matColor="primary"
+          ></app-card-button>
         </div>
+
+        <div style="text-align: center;">or check out blog posts about</div>
       </div>
       <span class="right-content"></span>
     </div>
@@ -84,6 +67,23 @@
 <div class="container">
   <div class="left-content"></div>
   <div class="mid-content">
+    <div class="docs-homepage-featured-components docs-homepage-carousel-row">
+      <app-carousel [itemWidth]="260" aria-label="Featured articles">
+        <a
+          [ngClass]="routeAnimationsElements"
+          *ngFor="let article of articles"
+          appCarouselItem
+          class="docs-featured-components-carousel-item"
+          routerLink="/components/{{ comp }}"
+        >
+          <app-card
+            [title]="article.name | translate"
+            icon="medium_icon"
+            iconSize="medium"
+          ></app-card>
+        </a>
+      </app-carousel>
+    </div>
     <div style="float: right" [ngClass]="routeAnimationsElements">
       <span class="view-all">
         <app-card-button
