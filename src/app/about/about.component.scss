@@ -158,12 +158,20 @@ h2 {
     }
 
     .docs-homepage-featured-components {
-      // max-height: 250px;
       .docs-featured-components-carousel-item {
         text-decoration: none;
         padding: 15px;
       }
     }
+  }
+}
+.view-all {
+  display: flex;
+  justify-content: flex-end;
+}
+.projects {
+  h2 {
+    text-align: left;
   }
 }
 
@@ -206,25 +214,6 @@ h2 {
 //       display: grid;
 //       grid-template-columns: 3fr 2fr;
 //       gap: 50px;
-//     }
-//   }
-// }
-
-// .projects {
-//   max-width: 105rem;
-//   margin: 0 auto;
-//   margin-bottom: 5rem;
-//   .docs-homepage-featured-projects {
-//     .docs-featured-components-carousel-item {
-//       text-decoration: none;
-//       padding: 15px;
-
-//       .docs-homepage-img-container {
-//         overflow: hidden;
-//         width: 259px;
-//         height: 144px;
-//         margin-bottom: 10px;
-//       }
 //     }
 //   }
 // }

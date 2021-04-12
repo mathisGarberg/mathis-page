@@ -11,9 +11,9 @@ import { SharedModule } from '@shared/shared.module';
         <div class="folder-icon">
           <mat-icon
             [svgIcon]="icon"
-            [ngClass]="{
-              'medium-size': iconSize === 'medium',
-              'large-size': iconSize === 'large'
+            inline="true"
+            [ngStyle]="{
+              width: iconDimension.width + 'px'
             }"
           ></mat-icon>
         </div>
@@ -45,8 +45,8 @@ import { SharedModule } from '@shared/shared.module';
       }
 
       .card-header {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr auto;
         margin-bottom: 2rem;
       }
 
@@ -62,15 +62,6 @@ import { SharedModule } from '@shared/shared.module';
         align-items: flex-end;
         margin-top: 1rem;
       }
-
-      .medium-size {
-        width: 40px;
-        height: 32px;
-      }
-      .large-size {
-        width: 60px;
-        height: 40px;
-      }
     `
   ]
 })
@@ -78,6 +69,8 @@ export class CardComponent {
   @Input() title: string;
   @Input() icon: string;
   @Input() iconSize: string;
+  @Input() iconDimension: { width: number; height: number };
+  @Input() isBussinessCard: boolean;
 }
 
 @NgModule({

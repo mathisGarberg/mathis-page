@@ -80,51 +80,51 @@
             [title]="article.name | translate"
             icon="medium_icon"
             iconSize="medium"
+            [iconDimension]="{ height: 32, width: 42 }"
           ></app-card>
         </a>
       </app-carousel>
     </div>
-    <div style="float: right" [ngClass]="routeAnimationsElements">
-      <span class="view-all">
-        <app-card-button
-          content="View all blog posts"
-          icon="medium_icon"
-          matColor="default"
-          [isSmall]="true"
-        ></app-card-button>
-      </span>
+    <div class="view-all" [ngClass]="routeAnimationsElements">
+      <app-card-button
+        content="View all blog posts"
+        icon="medium_icon"
+        matColor="default"
+        [isSmall]="true"
+      ></app-card-button>
     </div>
-    <div class="about-me">
-      <!-- <span>
-      <h2>01. {{ 'app.about.about-me' | translate }}</h2>
-      <div class="about-me-section">
-        <app-card
-          [iconSize]="'medium'"
-          [title]="'app.about.p1' | translate"
-        ></app-card>
-        <img src="../../assets/images/1_pzkOXDV0FY3QkIROkVnwkA.png" alt="" />
-      </div>
-    </span> -->
-    </div>
-    <div class="projects">
-      <!-- <h2>02. Where I've Worked</h2>
-    <div class="docs-homepage-featured-projects docs-about-carousel-row">
-      <app-carousel [itemWidth]="500" [aria-label]="'Featured components'">
-        <a
-          [ngClass]="routeAnimationsElements"
-          *ngFor="let experience of experiences"
-          appCarouselItem
-          class="docs-featured-components-carousel-item"
-          routerLink="/components/{{ comp }}"
-        >
+    <!-- <div class="about-me">
+      <span>
+        <h2>01. {{ 'app.about.about-me' | translate }}</h2>
+        <div class="about-me-section">
           <app-card
-            [iconSize]="'large'"
-            [icon]="experience.icon"
-            [title]="experience.title"
+            [iconSize]="'medium'"
+            [title]="'app.about.p1' | translate"
           ></app-card>
-        </a>
-      </app-carousel>
+          <img src="../../assets/images/1_pzkOXDV0FY3QkIROkVnwkA.png" alt="" />
+        </div>
+      </span>
     </div> -->
+    <div class="projects">
+      <h2>01. Where I've Worked</h2>
+      <div class="docs-homepage-featured-components docs-homepage-carousel-row">
+        <app-carousel [itemWidth]="360" aria-label="Featured components">
+          <a
+            [ngClass]="routeAnimationsElements"
+            *ngFor="let experience of experiences"
+            appCarouselItem
+            class="docs-featured-components-carousel-item"
+            routerLink="/components/{{ comp }}"
+          >
+            <app-card
+              iconSize="large"
+              [icon]="experience.icon"
+              [title]="experience.title"
+              [iconDimension]="experience.iconDimension"
+            ></app-card>
+          </a>
+        </app-carousel>
+      </div>
     </div>
     <div class="contant">
       <!-- <app-contact></app-contact> -->
