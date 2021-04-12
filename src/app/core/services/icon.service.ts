@@ -69,6 +69,13 @@ export class IconService {
     );
 
     this.matIconRegistry.addSvgIcon(
+      'ice_icon_light',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/light-theme/ice-icon-light.svg'
+      )
+    );
+
+    this.matIconRegistry.addSvgIcon(
       'telenor_icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
         '../../../assets/icons/svg/telenor-icon.svg'
@@ -86,6 +93,20 @@ export class IconService {
       'dfind_icon',
       this.domSanitizer.bypassSecurityTrustResourceUrl(
         '../../../assets/icons/svg/dfind-icon.svg'
+      )
+    );
+
+    this.matIconRegistry.addSvgIcon(
+      'dfind_icon_light',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/light-theme/dfind-icon-light.svg'
+      )
+    );
+
+    this.matIconRegistry.addSvgIcon(
+      'gjoevik_icon',
+      this.domSanitizer.bypassSecurityTrustResourceUrl(
+        '../../../assets/icons/svg/gjoevik-icon.svg'
       )
     );
   }

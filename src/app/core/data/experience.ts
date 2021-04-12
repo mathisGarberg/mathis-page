@@ -1,12 +1,12 @@
 export const experiences = [
   {
-    icon: 'dfind_icon',
+    icon: 'dfind_icon_light',
     title: 'Dfind Consulting',
     description: 'During his time at Dfind Consulting',
     iconDimension: { width: 170, height: 40 }
   },
   {
-    icon: 'ice_icon',
+    icon: 'ice_icon_light',
     title: 'ICE Norge',
     description: 'During his time at ICE',
     iconDimension: { width: 70, height: 40 }
