@@ -2,8 +2,6 @@
 
 :host {
   width: 100%;
-  max-width: 75rem;
-  margin: 0 auto;
 }
 
 .container {
@@ -31,6 +29,10 @@
     margin: 0 0 0 20px;
     width: 40px;
     font-size: 14px;
+  }
+
+  .nav-button {
+    font-weight: normal;
   }
 }
 

@@ -1,8 +1,6 @@
 app-carousel {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 40px;
 }
 
 .docs-carousel-content {
@@ -22,9 +20,9 @@ app-carousel {
 }
 
 .docs-carousel-nav {
+  transform: translateY(-50%);
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
 }
 
 .docs-carousel-nav-prev {

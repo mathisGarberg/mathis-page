@@ -1,72 +1,65 @@
-<div class="background">
-  <div class="gradient">
-    <div class="container">
-      <span class="left-content"></span>
-      <div class="mid-content">
-        <h1>Mathis Garberg</h1>
-        <h2>I build things you use every day on the web.</h2>
+<section class="hero">
+  <div class="background">
+    <div class="gradient">
+      <main class="container">
+        <div>
+          <h1>Mathis Garberg</h1>
+          <h2>I build things you use every day on the web.</h2>
 
-        <div class="hero-wrapper" [ngClass]="routeAnimationsElements">
-          <div class="avatar-container">
-            <div class="author-avatar">
-              <a
-                href="https://itnext.io/@mathis.garberg"
-                aria-label="Avatar"
-                rel="noopener"
-                target="_blank"
-              >
-                <img
-                  class="avatar"
-                  alt="avatar"
-                  width="170"
-                  height="170"
-                  [src]="avatar"
-                />
-              </a>
+          <div class="hero-wrapper" [ngClass]="routeAnimationsElements">
+            <div class="avatar-container">
+              <div class="author-avatar">
+                <a
+                  href="https://itnext.io/@mathis.garberg"
+                  aria-label="Avatar"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  <img
+                    class="avatar"
+                    alt="avatar"
+                    width="170"
+                    height="170"
+                    [src]="avatar"
+                  />
+                </a>
+              </div>
             </div>
+            <p>{{ 'app.about.short-desc' | translate | uppercase }}</p>
           </div>
-          <p>{{ 'app.about.short-desc' | translate | uppercase }}</p>
+
+          <section class="page-actions">
+            <app-card-button
+              [ngClass]="routeAnimationsElements"
+              [content]="'app.about.my-projects' | translate"
+              matColor="primary"
+            ></app-card-button>
+
+            <app-card-button
+              [ngClass]="routeAnimationsElements"
+              [content]="'app.about.change-theme' | translate"
+              matColor="accent"
+            ></app-card-button>
+
+            <app-card-button
+              [ngClass]="routeAnimationsElements"
+              [content]="'app.about.about-me' | translate"
+              matColor="warn"
+            ></app-card-button>
+
+            <app-card-button
+              [ngClass]="routeAnimationsElements"
+              [content]="'app.about.contact-me' | translate"
+              matColor="primary"
+            ></app-card-button>
+          </section>
+
+          <div>or check out blog posts about</div>
         </div>
-
-        <div class="actions">
-          <app-card-button
-            [ngClass]="routeAnimationsElements"
-            [content]="'app.about.my-projects' | translate"
-            [icon]=""
-            matColor="primary"
-          ></app-card-button>
-
-          <app-card-button
-            [ngClass]="routeAnimationsElements"
-            [content]="'app.about.change-theme' | translate"
-            [icon]=""
-            matColor="accent"
-          ></app-card-button>
-
-          <app-card-button
-            [ngClass]="routeAnimationsElements"
-            [content]="'app.about.contact-me' | translate"
-            [icon]=""
-            matColor="warn"
-          ></app-card-button>
-
-          <app-card-button
-            [ngClass]="routeAnimationsElements"
-            [content]="'app.about.contact-me' | translate"
-            [icon]=""
-            matColor="primary"
-          ></app-card-button>
-        </div>
-
-        <div style="text-align: center;">or check out blog posts about</div>
-      </div>
-      <span class="right-content"></span>
+      </main>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="left-content"></div>
-  <div class="mid-content">
+  <div class="container">
     <div class="docs-homepage-featured-components docs-homepage-carousel-row">
       <app-carousel [itemWidth]="260" aria-label="Featured articles">
         <a
@@ -78,14 +71,16 @@
         >
           <app-card
             [title]="article.name | translate"
+            [createdAt]="article.createdAt"
             icon="medium_icon"
             iconSize="medium"
-            [iconDimension]="{ height: 32, width: 42 }"
-          ></app-card>
+            iconWidth="42"
+          >
+          </app-card>
         </a>
       </app-carousel>
     </div>
-    <div class="view-all" [ngClass]="routeAnimationsElements">
+    <div class="view-all-posts" [ngClass]="routeAnimationsElements">
       <app-card-button
         content="View all blog posts"
         icon="medium_icon"
@@ -93,41 +88,60 @@
         [isSmall]="true"
       ></app-card-button>
     </div>
-    <div class="projects">
-      <h2>01. Experience</h2>
-      <div class="docs-homepage-featured-components docs-homepage-carousel-row">
-        <app-carousel [itemWidth]="360" aria-label="Featured components">
-          <a
-            [ngClass]="routeAnimationsElements"
-            *ngFor="let experience of experiences"
-            appCarouselItem
-            class="docs-featured-components-carousel-item"
-            routerLink="/components/{{ comp }}"
-          >
-            <app-card
-              iconSize="large"
-              [icon]="experience.icon"
-              [title]="experience.title"
-              [iconDimension]="experience.iconDimension"
-            ></app-card>
-          </a>
-        </app-carousel>
-      </div>
-    </div>
-    <div class="about-me">
-      <h2>02. About Me</h2>
-      <div class="about-me-container">
-        <div class="about-me-description">
-          {{ 'app.about.description-1' | translate }}
-        </div>
-        <div class="about-me-image">
-          <img src="../../assets/images/mathis.png" alt="" />
-        </div>
-      </div>
-    </div>
-    <div class="contant">
-      <!-- <app-contact></app-contact> -->
-    </div>
   </div>
-  <div class="right-content"></div>
+</section>
+<div class="container">
+  <section class="projects">
+    <h2>01. Some Projects I've Contributed In</h2>
+    <div class="docs-homepage-featured-experiences docs-homepage-carousel-row">
+      <app-carousel [itemWidth]="360" aria-label="Experiences">
+        <a
+          [ngClass]="routeAnimationsElements"
+          *ngFor="let experience of experiences"
+          appCarouselItem
+          class="docs-featured-experiences-carousel-item"
+          routerLink="/components/{{ comp }}"
+        >
+          <img
+            src="https://i.vimeocdn.com/video/829514218.webp?mw=1400&mh=788"
+          />
+          <h3>{{ experience.title }}</h3>
+          <span>Premier League World 2020/21</span>
+        </a>
+      </app-carousel>
+    </div>
+  </section>
+
+  <!-- <div class="docs-homepage-featured-components docs-homepage-carousel-row">
+    <app-carousel [itemWidth]="360" aria-label="Featured components">
+      <a
+        [ngClass]="routeAnimationsElements"
+        *ngFor="let experience of experiences"
+        appCarouselItem
+        class="docs-featured-components-carousel-item"
+        routerLink="/components/{{ comp }}"
+      >
+        <app-card
+          iconSize="large"
+          [icon]="experience.icon"
+          [title]="experience.title"
+          [description]="experience.description"
+          [iconWidth]="experience.iconWidth"
+          createdAt="2018 - now"
+        ></app-card>
+      </a>
+    </app-carousel>
+  </div> -->
+
+  <section class="about">
+    <h2>02. About Me</h2>
+    <div class="about-container">
+      <div class="about-description">
+        <p>{{ 'app.about.description-1' | translate }}</p>
+      </div>
+      <div class="about-me-image">
+        <img src="../../assets/images/mathis.png" alt="" />
+      </div>
+    </div>
+  </section>
 </div>
