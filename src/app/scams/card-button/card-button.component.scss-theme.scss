@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 
 @mixin mathis-card-button-component-theme($theme) {
@@ -8,40 +9,40 @@
   $background: map-get($theme, background);
 
   .card svg.material-icons path {
-    fill: mat-color($primary, default-contrast);
+    fill: mat.get-color-from-palette($primary, default-contrast);
 
     &:hover {
-      fill: mat-color($primary, default-contrast);
+      fill: mat.get-color-from-palette($primary, default-contrast);
     }
   }
 
   .card-default {
-    background-color: mat-color($primary);
-    color: mat-color($primary, default-contrast);
+    background-color: mat.get-color-from-palette($primary);
+    color: mat.get-color-from-palette($primary, default-contrast);
   }
 
   .card-primary {
-    background-color: mat-color($primary);
-    color: mat-color($primary, default-contrast);
+    background-color: mat.get-color-from-palette($primary);
+    color: mat.get-color-from-palette($primary, default-contrast);
 
     &:hover {
-      color: mat-color($primary, default-contrast);
+      color: mat.get-color-from-palette($primary, default-contrast);
     }
   }
   .card-accent {
-    background-color: mat-color($accent);
-    color: mat-color($accent, default-contrast);
+    background-color: mat.get-color-from-palette($accent);
+    color: mat.get-color-from-palette($accent, default-contrast);
 
     &:hover {
-      color: mat-color($accent, default-contrast);
+      color: mat.get-color-from-palette($accent, default-contrast);
     }
   }
   .card-warn {
-    background-color: mat-color($warn);
-    color: mat-color($warn, default-contrast);
+    background-color: mat.get-color-from-palette($warn);
+    color: mat.get-color-from-palette($warn, default-contrast);
 
     &:hover {
-      color: mat-color($warn, default-contrast);
+      color: mat.get-color-from-palette($warn, default-contrast);
     }
   }
 }

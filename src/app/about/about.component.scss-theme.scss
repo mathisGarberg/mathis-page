@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~@angular/material/theming';
 
 @mixin mathis-about-component-theme($theme) {
@@ -8,16 +9,16 @@
 
   app-about {
     .background {
-      color: mat-color($foreground, text);
-      background-color: mat-color($background, background);
+      color: mat.get-color-from-palette($foreground, text);
+      background-color: mat.get-color-from-palette($background, background);
     }
 
     .gradient {
       &::before {
         background: linear-gradient(
           to bottom,
-          mat-color($background, background, 0) 0%,
-          mat-color($background, background, 1) 100%
+          mat.get-color-from-palette($background, background, 0) 0%,
+          mat.get-color-from-palette($background, background, 1) 100%
         );
       }
     }

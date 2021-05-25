@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @mixin carousel-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -6,7 +7,7 @@
   $foreground: map-get($theme, foreground);
 
   .docs-carousel-nav.mat-mini-fab {
-    background: mat-color($background, background);
-    color: mat-color($foreground, secondary-text);
+    background: mat.get-color-from-palette($background, background);
+    color: mat.get-color-from-palette($foreground, secondary-text);
   }
 }
