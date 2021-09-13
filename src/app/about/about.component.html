@@ -86,13 +86,14 @@
         icon="medium_icon"
         matColor="default"
         [isSmall]="true"
+        link="https://medium.com/@mathis.garberg"
       ></app-card-button>
     </div>
   </div>
 </section>
 <div class="container">
   <section class="projects">
-    <h2>01. Some Projects I've Contributed In</h2>
+    <h2>01. Work Experience</h2>
     <div class="docs-homepage-featured-experiences docs-homepage-carousel-row">
       <app-carousel [itemWidth]="360" aria-label="Experiences">
         <a
@@ -103,7 +104,7 @@
           routerLink="/components/{{ comp }}"
         >
           <img
-            src="https://i.vimeocdn.com/video/829514218.webp?mw=1400&mh=788"
+            [src]="experience.imageSource"
           />
           <h3>{{ experience.title }}</h3>
           <span>Premier League World 2020/21</span>

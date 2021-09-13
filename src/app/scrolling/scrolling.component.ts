@@ -6,7 +6,7 @@ import { rotateAnimation } from '@core/animations/animations';
   template: `
     <a class="box bounce-2" mat-fab color="primary" aria-label="Scroll to top">
       <mat-icon
-        [@rotatemat-icondState]="currentState"
+        [@rotatedState]="currentState"
         svgIcon="arrow_up_icon"
       ></mat-icon>
     </a>
