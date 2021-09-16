@@ -1,19 +1,20 @@
+@use '~@angular/material' as mat;
 @import './styles/styles-variables';
 @import './styles/styles-reset';
 
 @import '~@angular/material/theming';
 
 $heading-font-family: "'Work Sans', sans-serif";
-$custom-typography: mat-typography-config(
-  $display-4: mat-typography-level(7rem, $font-family: $heading-font-family),
-  $display-3: mat-typography-level(3.5rem, $font-family: $heading-font-family),
-  $display-2: mat-typography-level(2.8rem, $font-family: $heading-font-family),
-  $display-1: mat-typography-level(2rem, $font-family: $heading-font-family),
-  $headline: mat-typography-level(3.5rem, $font-family: $heading-font-family),
-  $title: mat-typography-level(1.5rem, $font-family: $heading-font-family)
+$custom-typography: mat.define-typography-config(
+  $display-4: mat.define-typography-level(7rem, $font-family: $heading-font-family),
+  $display-3: mat.define-typography-level(3.5rem, $font-family: $heading-font-family),
+  $display-2: mat.define-typography-level(2.8rem, $font-family: $heading-font-family),
+  $display-1: mat.define-typography-level(2rem, $font-family: $heading-font-family),
+  $headline: mat.define-typography-level(3.5rem, $font-family: $heading-font-family),
+  $title: mat.define-typography-level(1.5rem, $font-family: $heading-font-family)
 );
 
-@include mat-core($custom-typography);
+@include mat.core($custom-typography);
 
 @import './themes/default-theme.scss';
 @import './themes/light-theme.scss';
@@ -41,26 +42,26 @@ $custom-typography: mat-typography-config(
 }
 
 .default-theme {
-  @include angular-material-theme($mathis-default-theme);
+  @include mat.all-component-themes($mathis-default-theme);
   @include custom-components-theme($mathis-default-theme);
 }
 
 .light-theme {
-  @include angular-material-theme($mathis-light-theme);
+  @include mat.all-component-themes($mathis-light-theme);
   @include custom-components-theme($mathis-light-theme);
 }
 
 .dark-theme {
-  @include angular-material-theme($mathis-dark-theme);
+  @include mat.all-component-themes($mathis-dark-theme);
   @include custom-components-theme($mathis-dark-theme);
 }
 
 .nature-theme {
-  @include angular-material-theme($mathis-nature-theme);
+  @include mat.all-component-themes($mathis-nature-theme);
   @include custom-components-theme($mathis-nature-theme);
 }
 
 .green-theme {
-  @include angular-material-theme($mathis-green-theme);
+  @include mat.all-component-themes($mathis-green-theme);
   @include custom-components-theme($mathis-green-theme);
 }

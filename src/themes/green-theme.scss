@@ -1,8 +1,9 @@
-$mathis-primary: mat-palette($mat-green, 400, 300, 900);
-$mathis-accent: mat-palette($mat-light-blue);
-$mathis-warn: mat-palette($mat-pink, 600);
+@use '~@angular/material' as mat;
+$mathis-primary: mat.define-palette(mat.$green-palette, 400, 300, 900);
+$mathis-accent: mat.define-palette(mat.$light-blue-palette);
+$mathis-warn: mat.define-palette(mat.$pink-palette, 600);
 
-$mathis-green-theme: mat-light-theme(
+$mathis-green-theme: mat.define-light-theme(
   $mathis-primary,
   $mathis-accent,
   $mathis-warn

@@ -1,8 +1,9 @@
-$mathis-nature-primary: mat-palette($mat-brown, 700, 300, 900);
-$mathis-nature-accent: mat-palette($mat-deep-purple, 300);
-$mathis-nature-warn: mat-palette($mat-red, 600);
+@use '~@angular/material' as mat;
+$mathis-nature-primary: mat.define-palette(mat.$brown-palette, 700, 300, 900);
+$mathis-nature-accent: mat.define-palette(mat.$deep-purple-palette, 300);
+$mathis-nature-warn: mat.define-palette(mat.$red-palette, 600);
 
-$mathis-nature-theme: mat-light-theme(
+$mathis-nature-theme: mat.define-light-theme(
   $mathis-nature-primary,
   $mathis-nature-accent,
   $mathis-nature-warn

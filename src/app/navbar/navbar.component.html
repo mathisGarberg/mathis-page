@@ -23,11 +23,11 @@
       <button
         mat-button
         class="nav-button"
-        *ngFor="let item of navigation"
+        *ngFor="let item of navigation; let i = index"
         [routerLink]="[item.link]"
         routerLinkActive="active"
       >
-        {{ item.label | translate }}
+        {{ i+1 + '. ' + (item.label | translate) }}
       </button>
       <ng-container *appNoShellRender>
         <ng-container *ngIf="isAuthenticated; else showLoginButton">

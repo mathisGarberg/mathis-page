@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 $mathis-dark-color: (
   50: #e0e0e0,
   100: #b3b3b3,
@@ -32,11 +33,11 @@ $mathis-dark-color: (
   )
 );
 
-$mathis-dark-primary: mat-palette($mathis-dark-color, 900, 300, 700);
-$mathis-dark-accent: mat-palette($mat-red, 400);
-$mathis-dark-warn: mat-palette($mat-red, 500);
+$mathis-dark-primary: mat.define-palette($mathis-dark-color, 900, 300, 700);
+$mathis-dark-accent: mat.define-palette(mat.$red-palette, 400);
+$mathis-dark-warn: mat.define-palette(mat.$red-palette, 500);
 
-$mathis-dark-theme: mat-dark-theme(
+$mathis-dark-theme: mat.define-dark-theme(
   $mathis-dark-primary,
   $mathis-dark-accent,
   $mathis-dark-warn
