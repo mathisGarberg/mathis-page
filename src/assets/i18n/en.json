@@ -3,10 +3,23 @@
   "app.about.my-projects": "My Projects",
   "app.about.contact-me": "Contact Me",
   "app.about.about-me": "About Me",
-  "app.about.or-check-out-blogs": "or check out blog posts about",
-  "app.about.short-desc": "Fullstack developer at Dfind Consulting, tech. blogger & web development enthusiast",
+  "app.about.or-check-out-blogs": "or check out awesome blogs about",
+  "app.about.short-desc": [
+    "Fullstack developer at ",
+    "Dfind Consulting",
+    ", ",
+    "tech. blogger",
+    ", ",
+    "YouTuber",
+    " & web development enthusiast"
+  ],
   "app.about.view-resume": "View resumé",
   "app.about.unavailable-for-hire": "Unavailable for hire",
+  "app.about.hero.subheading": "I build cool things you use every day on the web.",
+
+  "app.heading.experience": "Experience",
+
+  "app.buttons.view-all-blog-posts": "View all blog posts",
 
   "app.story.folder-structure.long": "How to define a highly scalable folder structure for your Angular project",
   "app.story.folder-structure.short": "Structuring an Angular App",
@@ -17,7 +30,7 @@
   "app.story.clean-code.desc": "",
 
   "app.story.modal-forms.long": "Creating Forms Inside Modals with ng-bootstrap",
-  "app.story.modal-forms.short": "Angular Modal Forms",
+  "app.story.modal-forms.short": "Modal Driven Forms",
   "app.story.modal-forms.desc": "Creating forms inside modals has some great benefits. Using them along with valuable content might bring a lot of attraction to your project. With the emergence of ngx- and ng-bootstrap, we can easily integrate any Bootstrap components to our application.",
 
   "app.story.ngx-rocket.long": "Creating Enterprise Angular Apps With The ngx-rocket Generator",
@@ -36,7 +49,7 @@
   "app.story.choosing-the-right-structure-in-2020.short": "Structuring Angular Apps in 2020",
   "app.story.choosing-the-right-structure-in-2020.desc": "",
 
-  "app.menu.about": "01. About",
+  "app.menu.about": "About Me",
   "app.menu.projects": "Projects",
   "app.menu.contact": "Contact",
   "app.menu.settings": "Settings",

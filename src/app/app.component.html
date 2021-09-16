@@ -33,6 +33,7 @@
     <mat-sidenav-content class="sidenav-content" cdkScrollable>
       <div class="content-wrapper">
         <div
+          *ngIf="isScrollingUpwards"
           class="toolbar"
           [@slideInOutAnimation]
           [style.position]="(stickyHeader$ | async) ? 'fixed' : 'inherit'"
@@ -58,7 +59,10 @@
           <router-outlet #o="outlet"></router-outlet>
 
           <app-connect></app-connect>
-          <app-scrolling></app-scrolling>
+          <app-scrolling
+            [currentState]="currentState"
+            (scrollClick)="onScrollToTop()"
+          ></app-scrolling>
         </main>
 
         <footer class="footer">
@@ -71,7 +75,7 @@
                 target="_blank"
                 rel="noopener"
               >
-                <fa-icon [icon]="['fab', mediaContent.icon]"></fa-icon>
+                <fa-icon [icon]="['fab', 'unsplash']"></fa-icon>
                 <span>&nbsp; {{ mediaContent.name }}</span>
               </a>
             </div>

@@ -1,20 +1,15 @@
-// .main-heading {
-//   margin: 0 0 20px 0;
-//   margin-top: 4rem;
-// }
-// mat-card {
-//   margin-bottom: 20px;
-// }
-// .buttons {
-//   margin: 20px 0px;
-// }
+.main-heading {
+  margin: 0 0 20px 0;
+  margin-top: 4rem;
+}
+mat-card {
+  margin-bottom: 20px;
+}
 
-// .container {
-//   max-width: 50rem;
-//   margin: 0 auto;
-// }
+.buttons {
+  display: flex;
+}
 
-// .buttons {
-//   display: flex;
-//   justify-content: space-between;
-// }
+.full-width-field {
+  width: 100%;
+}

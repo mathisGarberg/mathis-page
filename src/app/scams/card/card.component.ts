@@ -18,17 +18,18 @@ import { SharedModule } from '@shared/shared.module';
           ></mat-icon>
         </div>
         <div class="article-link">
-          <code>{{ createdAt }}^</code>
+          <code>
+            <small>{{ createdAt }}</small>
+          </code>
         </div>
       </header>
       <section class="card-content">
-        <h3>{{ title }}</h3>
-        <span>{{ description }}</span>
+        <h3 class="card-heading">{{ title }}</h3>
+        <p>{{ description }}</p>
       </section>
       <footer class="card-footer">
-        <span>Angular 12+</span>
-        <span>NodeJS</span>
-        <span>TypeScript</span>
+        <span> <fa-icon [icon]="['fab', 'angular']"></fa-icon> Docs.</span>
+        <span> <fa-icon [icon]="['fab', 'medium-m']"></fa-icon> Guide</span>
       </footer>
     </div>
   `,

@@ -41,8 +41,8 @@ export interface Connection {
       a,
       a[mat-fab] {
         position: fixed;
-        left: 3.5rem;
-        bottom: 3rem;
+        right: 3.5rem;
+        bottom: 2rem;
 
         svg {
           height: 1.8rem;

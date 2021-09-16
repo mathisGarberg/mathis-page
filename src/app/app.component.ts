@@ -1,6 +1,7 @@
 import browser from 'browser-detect';
 import {
   AfterViewInit,
+  ChangeDetectorRef,
   Component,
   Inject,
   Injectable,
@@ -93,6 +94,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     private store: Store<AppState>,
     private scroll: ScrollDispatcher,
     private iconService: IconService,
+    private changeDetection: ChangeDetectorRef,
     private animationCompleteCallbackService: AnimationCompleteCallbackService
   ) {
     this.iconService.init();
@@ -166,6 +168,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.currentState = 'default';
     }
+
+    this.changeDetection.detectChanges();
 
     if (this.lastOffset > scrollTop) {
       this.isAutoScrollButtonVisible = false;

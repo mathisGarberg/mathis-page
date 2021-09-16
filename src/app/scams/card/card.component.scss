@@ -1,6 +1,6 @@
 .card-container {
   display: grid;
-  row-gap: 2rem;
+  row-gap: 1.5rem;
   padding: 1.75rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -21,11 +21,15 @@
     }
   }
   .card-footer {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
+    column-gap: 0.5rem;
     span {
       opacity: 0.7;
-      font-size: 12px;
+      font-size: 14px;
     }
   }
+}
+.card-heading {
+  opacity: 0.8;
+  text-transform: uppercase;
 }

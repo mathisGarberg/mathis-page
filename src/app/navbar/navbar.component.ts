@@ -1,5 +1,6 @@
 import { WebFlowPaths } from './../core/enums/paths';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class NavbarComponent {
   @Input() language: string;
-  @Input() navigation: string[];
+  @Input() navigation: { link: string; label: string }[];
   @Input() isAuthenticated: boolean;
 
   @Output() openSidenav = new EventEmitter();
@@ -16,4 +17,8 @@ export class NavbarComponent {
   logo = '../../assets/icons/logo/logo-resized.png';
   webFlowPaths = WebFlowPaths;
   languages = ['en', 'no'];
+
+  onLogoutClick() {}
+
+  onLanguageSelect(language: MatSelectChange) {}
 }

@@ -1,23 +1,24 @@
 @import '../../styles/styles-variables.scss';
 
-h1 {
+.hero-heading {
   text-transform: uppercase;
   font-weight: 600;
   opacity: 0.8;
 }
 
-h2 {
+.hero-subheading {
   opacity: 0.5;
 }
 
 .hero {
   height: 100vh;
 
-  .background {
-    padding: 100px 0 0 0;
+  .background-overlay {
+    padding: 110px 0 0 0;
     position: relative;
 
     .page-actions {
+      margin-top: 1rem;
       display: grid;
       justify-content: center;
       grid-template-columns: repeat(auto-fit, minmax(240px, 220px));
@@ -36,7 +37,7 @@ h2 {
       content: '';
     }
 
-    .gradient {
+    .gradient-overlay {
       text-align: center;
       &::before {
         position: absolute;
@@ -69,7 +70,7 @@ h2 {
           0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       }
 
-      a {
+      .avatar-link {
         margin: 8px;
         display: inline-block;
         text-align: center;
@@ -90,7 +91,7 @@ h2 {
   flex-direction: column;
   margin: 0 auto;
 
-  .projects {
+  .experience {
     padding: 100px 0;
   }
 
@@ -106,25 +107,35 @@ h2 {
     a {
       text-decoration: none;
     }
-    h3 {
-      padding: 0;
-      margin: 0;
+    .featuted-experiences-description {
+      margin-left: 0.5rem;
+      h3 {
+        padding: 0;
+        margin: 0;
+      }
+
+      .technologies {
+        font-size: 12px;
+      }
     }
     img {
       width: 100%;
       filter: grayscale(80%);
       border-radius: 8px;
-      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-      transition: all 1s ease;
-      &:hover {
-        filter: grayscale(0%);
-      }
+      box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
     }
     .docs-featured-experiences-carousel-item {
       display: grid;
       row-gap: 0.5rem;
       padding: 0.75rem;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: translateY(-3px);
+
+        img {
+          filter: grayscale(0%);
+        }
+      }
     }
   }
   .view-all-posts {
@@ -135,7 +146,7 @@ h2 {
 
 .about {
   padding: 100px 0;
-  max-width: 52rem;
+  max-width: 48rem;
   margin: 0 auto;
 
   .about-container {

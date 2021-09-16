@@ -1,3 +1,4 @@
+import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -38,7 +40,8 @@ import { CarouselModule } from './scams/carousel/carousel.module';
     AboutComponent,
     ScrollingComponent,
     ConnectComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContactComponent
   ],
   imports: [
     // angular
@@ -71,6 +74,7 @@ import { CarouselModule } from './scams/carousel/carousel.module';
     MatTooltipModule,
     MatCardModule,
     MatInputModule,
+    MatSlideToggleModule,
 
     AppRoutingModule
   ],

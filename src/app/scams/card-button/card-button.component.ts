@@ -20,7 +20,7 @@ import {
       class="card"
       target="_blank"
       rel="noopener"
-      href="https://angular.io/tutorial"
+      [href]="link"
     >
       <svg
         class="material-icons"
@@ -55,6 +55,7 @@ export class CardButtonComponent {
   @Input() content: string;
   @Input() matColor: string;
   @Input() isSmall = false;
+  @Input() link: string;
 }
 
 @NgModule({
