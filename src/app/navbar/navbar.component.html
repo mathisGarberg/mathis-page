@@ -1,4 +1,4 @@
-<div class="container" fxLayout="row">
+<div class="container">
   <div>
     <button
       fxShow="true"
@@ -18,44 +18,43 @@
       <img alt="logo" [src]="logo" width="28" height="28" />
     </span>
   </div>
-  <div fxShow="true" fxHide.lt-md="true">
-    <span class="d-none d-md-inline">
-      <button
-        mat-button
-        class="nav-button"
-        *ngFor="let item of navigation; let i = index"
-        [routerLink]="[item.link]"
-        routerLinkActive="active"
-      >
-        {{ i+1 + '. ' + (item.label | translate) }}
-      </button>
-      <ng-container *appNoShellRender>
-        <ng-container *ngIf="isAuthenticated; else showLoginButton">
-          <button
-            mat-button
-            class="nav-button"
-            [routerLink]="webFlowPaths.Admin"
-            routerLinkActive="active"
-          >
-            Admin Panel
-          </button>
-          <button mat-button class="nav-button" (click)="onLogoutClick()">
-            Logout
-          </button>
-        </ng-container>
-        <ng-template #showLoginButton>
-          <button
-            mat-button
-            class="nav-button"
-            [routerLink]="webFlowPaths.Login"
-            routerLinkActive="active"
-          >
-            Login
-          </button>
-        </ng-template>
+  <span class="d-none d-md-inline">
+    <button
+      mat-button
+      class="nav-button"
+      *ngFor="let item of navigation; let i = index"
+      [routerLink]="[item.link]"
+      routerLinkActive="active"
+    >
+      {{ i + 1 + '. ' + (item.label | translate) }}
+    </button>
+    <ng-container *appNoShellRender>
+      <ng-container *ngIf="isAuthenticated; else showLoginButton">
+        <button
+          mat-button
+          class="nav-button"
+          [routerLink]="webFlowPaths.Admin"
+          routerLinkActive="active"
+        >
+          Admin Panel
+        </button>
+        <button mat-button class="nav-button" (click)="onLogoutClick()">
+          Logout
+        </button>
       </ng-container>
-    </span>
-
+      <ng-template #showLoginButton>
+        <button
+          mat-button
+          class="nav-button"
+          [routerLink]="webFlowPaths.Login"
+          routerLinkActive="active"
+        >
+          Login
+        </button>
+      </ng-template>
+    </ng-container>
+  </span>
+  <div fxShow="true" fxHide.lt-md="true">
     <button
       mat-icon-button
       [routerLink]="webFlowPaths.Settings"
@@ -75,7 +74,7 @@
       rel="noopener"
       target="_blank"
     >
-      View
+      <fa-icon [icon]="['fab', 'github']"></fa-icon>
     </a>
 
     <span *ngIf="language">
