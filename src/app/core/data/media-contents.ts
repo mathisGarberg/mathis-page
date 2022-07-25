@@ -1,3 +1,11 @@
+import { IconName } from '@fortawesome/fontawesome-svg-core';
+
+export interface MediaLink {
+  link: string;
+  name: string;
+  icon: IconName;
+}
+
 export const mediaContents = [
   {
     link: 'https://www.linkedin.com/in/mathis-garberg-451672144/',
@@ -24,4 +32,4 @@ export const mediaContents = [
     name: 'Unsplash',
     icon: 'unsplash'
   }
-];
+] as MediaLink[];
