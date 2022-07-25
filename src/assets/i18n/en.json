@@ -82,7 +82,7 @@
   "app.contact.description": "Description",
   "app.contact.description.error.required": "Description is required",
 
-  "app.about.description-1": "Mathis started as web developer for Telenor in 2017, and has through experience in both work and education, worked up a strong professional experience in a range of web-, design- and security related subjects. His a team player, structured in his work and has is good at solving complex problems.",
+  "app.about.description-1": "Mathis is an experienced developer with a broad expertise within several central aspects of the software developer phase. He went to school at NTNU, where he received a Bachelor in web development. During his career as a developer, Mathis have acquired knowledge within several popular client-side frameworks and other technologies like MVC, ASP.NET Core and SQL Server. Mathis is a responsible person whose comfortable working alone as well as in a team, which makes him a valuable resource in every project his involved in. He's well structured and good at finding understandable solutions to complex problems.",
   "app.about.description-2": "His has a passion for development, and spend a lot of time developing his skill set in the entire development process. This contributes to that his solutions is up to date, user friendly and secure. Mathis does is also engaged in open source development, and has written several articles on Medium.",
 
   "app.about.what-i-do.user-interface.description": "By creating a clear user interface, where the page enables people to interact with the system by communicating meaning and function.",
