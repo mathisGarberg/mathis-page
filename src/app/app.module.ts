@@ -31,7 +31,6 @@ import { CoreModule } from './core/core.module';
 import { CardButtonModule } from './scams/card-button/card-button.component';
 import { CardModule } from './scams/card/card.component';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { CarouselModule } from './scams/carousel/carousel.module';
 
 @NgModule({
@@ -58,9 +57,6 @@ import { CarouselModule } from './scams/carousel/carousel.module';
     CardButtonModule,
     CardModule,
     CarouselModule,
-
-    // external
-    FlexLayoutModule,
 
     // material
     MatFormFieldModule,

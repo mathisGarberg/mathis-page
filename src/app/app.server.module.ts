@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { translateServerLoaderFactory } from './translate-server.loader';
 import { TransferState } from '@angular/platform-browser';
-import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 
 const routes: Routes = [{ path: 'shell', component: AppShellComponent }];
 
@@ -16,7 +15,6 @@ const routes: Routes = [{ path: 'shell', component: AppShellComponent }];
   imports: [
     AppModule,
     ServerModule,
-    FlexLayoutServerModule,
     RouterModule.forRoot(routes),
     TranslateModule.forRoot({
       loader: {

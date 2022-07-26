@@ -6,19 +6,20 @@
   "app.about.or-check-out-blogs": "eller sjekk ut bloggposter om",
   "app.about.short-desc": [
     "Fullstack developer at ",
-    "Dfind Consulting, ",
+    "Dfind Consulting",
+    ", ",
     "tech. blogger",
     ", ",
     "YouTuber",
-    " & web development enthusiast"
+    " & webutviklingsentusiast"
   ],
   "app.about.view-resume": "Vis resumé",
   "app.unavailable-for-hire": "Utilgjengelig for oppdrag",
-  "app.about.hero.subheading": "Jeg lager ting du bruker til daglig på nettet",
+  "app.about.hero.subheading": "Jeg lager ting du bruker hver dag på nettet",
 
-  "app.heading.experience": "Erfaring",
+  "app.heading.experience": "Arbeidserfaring",
 
-  "app.buttons.view-all-blog-posts": "Sjekk ut andre artikler",
+  "app.buttons.view-all-blog-posts": "Sjekk ut alle",
 
   "app.story.folder-structure.long": "Hvordan definere en høyst skalerbar struktur for dine Angular prosjekter",
   "app.story.folder-structure.short": "Strukturering av Angular Applikasjoner",
