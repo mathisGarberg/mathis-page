@@ -1,7 +1,7 @@
 {
   "app.about.change-theme": "Endre Tema",
   "app.about.my-projects": "Mine Prosjekter",
-  "app.about.contact-me": "Kontakt Meg",
+  "app.about.contact-me": "Kontakt",
   "app.about.about-me": "Om Meg",
   "app.about.or-check-out-blogs": "eller sjekk ut bloggposter om",
   "app.about.short-desc": [
@@ -73,7 +73,7 @@
   "app.settings.themes.title": "Fargetema",
 
   "app.contact.subject": "Emne",
-  "app.contact.reset-form": "Tilbakestill Skjema",
+  "app.contact.reset-form": "Tilbakestill",
   "app.contact.subject.error.required": "Vennligst skriv inn emne",
   "app.contact.subject.error.invalid": "Vennligst skriv inn et gyldig emne",
   "app.contact.description": "Beskrivelse",
@@ -86,5 +86,7 @@
   "app.about.what-i-do.communication.description": "Jeg verdsetter kommunikasjon og synes det er viktig å få en god forståelse for kundens product for å lage gode, tilpassede løsninger.",
 
   "app.auth.login.username": "Brukernavn",
-  "app.auth.login.password": "Passord"
+  "app.auth.login.password": "Passord",
+
+  "app.form.autosave": "Autosave"
 }

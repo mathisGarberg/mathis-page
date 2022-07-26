@@ -89,5 +89,7 @@
   "app.about.what-i-do.communication.description": "I value communication and think it's important to get a clear understanding of the customers product, to create good solutions.",
 
   "app.auth.login.username": "Username",
-  "app.auth.login.password": "Password"
+  "app.auth.login.password": "Password",
+
+  "app.form.autosave": "Autosave"
 }
