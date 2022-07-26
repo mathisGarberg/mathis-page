@@ -45,10 +45,6 @@
 //     this.settings$ = this.store.pipe(select(selectSettingsState));
 //   }
 
-//   onLanguageSelect({ value: language }) {
-//     this.store.dispatch(ActionSettingsChangeLanguage({ language }));
-//   }
-
 //   onThemeSelect({ value: theme }) {
 //     this.store.dispatch(ActionSettingsChangeTheme({ theme }));
 //   }

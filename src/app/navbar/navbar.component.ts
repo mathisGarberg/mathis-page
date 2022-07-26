@@ -1,6 +1,8 @@
+import { Store } from '@ngrx/store';
 import { WebFlowPaths } from './../core/enums/paths';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
+import { ActionSettingsChangeLanguage } from '@core/states/settings/settings.actions';
 
 @Component({
   selector: 'app-navbar',
@@ -18,7 +20,9 @@ export class NavbarComponent {
   webFlowPaths = WebFlowPaths;
   languages = ['en', 'no'];
 
-  onLogoutClick() {}
+  constructor(private store: Store) {}
 
-  onLanguageSelect(language: MatSelectChange) {}
+  onLanguageSelect({ value: language }: MatSelectChange) {
+    this.store.dispatch(ActionSettingsChangeLanguage({ language }));
+  }
 }
