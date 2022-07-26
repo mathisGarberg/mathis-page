@@ -82,6 +82,8 @@
           [ngClass]="routeAnimationsElements"
           *ngFor="let article of articles"
           appCarouselItem
+          [href]="article.link"
+          target="_blank"
           class="docs-featured-components-carousel-item"
         >
           <app-card
