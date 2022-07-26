@@ -8,8 +8,15 @@ mat-card {
 
 .buttons {
   display: flex;
+  justify-content: space-between;
 }
 
 .full-width-field {
   width: 100%;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 40rem;
+  justify-content: center;
 }
