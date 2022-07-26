@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import {
   ActionReducerMap,
   MetaReducer,
@@ -12,6 +13,8 @@ import { FormState } from '@core/states/form/form.model';
 import { settingsReducer } from './states/settings/settings.reducer';
 import { SettingsState } from './states/settings/settings.model';
 import { formReducer } from './states/form/form.reducer';
+import { initStateFromLocalStorage } from './states/meta-reducers/init-from-local-storage.reducer';
+import { debug } from './states/meta-reducers/debug.reducer';
 
 export const reducers: ActionReducerMap<any> = {
   router: routerReducer,
@@ -20,7 +23,15 @@ export const reducers: ActionReducerMap<any> = {
   form: formReducer
 };
 
-export const metaReducers: MetaReducer<AppState>[] = [];
+export const metaReducers: MetaReducer<AppState>[] = [
+  initStateFromLocalStorage
+];
+
+if (!environment.production) {
+  if (!environment.test) {
+    metaReducers.unshift(debug);
+  }
+}
 
 export const selectRouterState = createFeatureSelector<
   AppState,

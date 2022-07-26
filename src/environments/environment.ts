@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  appName: 'Mathis Application',
+  envName: 'DEV',
   production: false,
-  i18nPrefix: ''
+  test: false
 };
 
 /*

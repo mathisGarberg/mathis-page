@@ -49,14 +49,17 @@ export class LocalStorageService {
                 )
                 .join('')
             );
+
           let currentStateRef = state;
           stateKeys.forEach((key, index) => {
             if (index === stateKeys.length - 1) {
               currentStateRef[key] = JSON.parse(
                 localStorage.getItem(storageKey)
               );
+
               return;
             }
+
             currentStateRef[key] = currentStateRef[key] || {};
             currentStateRef = currentStateRef[key];
           });

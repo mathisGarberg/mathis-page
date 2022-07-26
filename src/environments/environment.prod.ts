@@ -1,4 +1,6 @@
 export const environment = {
+  appName: 'Mathis App',
+  envName: 'DEV',
   production: true,
-  i18nPrefix: ''
+  test: false
 };

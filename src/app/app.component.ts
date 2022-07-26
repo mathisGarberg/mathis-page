@@ -1,3 +1,4 @@
+import { LocalStorageService } from './core/local-storage/local-storage.service';
 import browser from 'browser-detect';
 import {
   AfterViewInit,
@@ -19,10 +20,7 @@ import { map } from 'rxjs/operators';
 
 import { select, Store } from '@ngrx/store';
 
-import {
-  ActionSettingsChangeAnimationsPageDisabled,
-  ActionSettingsChangeLanguage
-} from './core/states/settings/settings.actions';
+import { ActionSettingsChangeAnimationsPageDisabled } from './core/states/settings/settings.actions';
 import {
   selectEffectiveTheme,
   selectSettingsLanguage,
@@ -142,10 +140,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         .getElementRef()
         .nativeElement.scrollTo({ top: 550, behavior: 'smooth' });
     }
-  }
-
-  onLanguageSelect({ value: language }) {
-    this.store.dispatch(ActionSettingsChangeLanguage({ language }));
   }
 
   onLogoutClick() {
