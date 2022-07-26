@@ -64,10 +64,10 @@
             ></app-card-button>
 
             <!-- <app-card-button
-              [ngClass]="routeAnimationsElements"
-              [content]="'app.about.change-theme' | translate"
-              matColor="accent"
-            ></app-card-button> -->
+                [ngClass]="routeAnimationsElements"
+                [content]="'app.about.change-theme' | translate"
+                matColor="accent"
+              ></app-card-button> -->
           </section>
 
           <p>{{ 'app.about.or-check-out-blogs' | translate | uppercase }}</p>
@@ -110,22 +110,25 @@
     </a>
   </div>
 </section>
+
 <div class="container">
-  <section class="about">
-    <h2>About Mathis</h2>
-    <div class="about-container">
-      <div class="about-description">
-        <p>{{ 'app.about.description-1' | translate }}</p>
-        <p>{{ 'app.about.description-2' | translate }}</p>
+  <a fragment="about">
+    <section class="about">
+      <h2>About Mathis</h2>
+      <div class="about-container">
+        <div class="about-description">
+          <p>{{ 'app.about.description-1' | translate }}</p>
+          <p>{{ 'app.about.description-2' | translate }}</p>
+        </div>
+        <div class="about-me-image">
+          <img
+            src="../../assets/images/mathis.png"
+            alt="image of Mathis Garberg"
+          />
+        </div>
       </div>
-      <div class="about-me-image">
-        <img
-          src="../../assets/images/mathis.png"
-          alt="image of Mathis Garberg"
-        />
-      </div>
-    </div>
-  </section>
+    </section>
+  </a>
 
   <section class="experience">
     <h2>{{ 'app.heading.experience' | translate }}</h2>

@@ -1,8 +1,10 @@
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { WebFlowPaths } from './../core/enums/paths';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
 import { ActionSettingsChangeLanguage } from '@core/states/settings/settings.actions';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +22,11 @@ export class NavbarComponent {
   webFlowPaths = WebFlowPaths;
   languages = ['en', 'no'];
 
-  constructor(private store: Store) {}
+  constructor(
+    private store: Store,
+    private scroller: ViewportScroller,
+    private router: Router
+  ) {}
 
   onLanguageSelect({ value: language }: MatSelectChange) {
     this.store.dispatch(ActionSettingsChangeLanguage({ language }));
