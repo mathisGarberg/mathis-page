@@ -33,6 +33,8 @@ import { CardModule } from './scams/card/card.component';
 
 import { CarouselModule } from './scams/carousel/carousel.module';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +73,8 @@ import { CarouselModule } from './scams/carousel/carousel.module';
     MatCardModule,
     MatInputModule,
     MatSlideToggleModule,
+
+    FlexLayoutModule,
 
     AppRoutingModule
   ],
