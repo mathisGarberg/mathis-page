@@ -1,0 +1,95 @@
+{
+  "app.about.change-theme": "Change Theme",
+  "app.about.my-projects": "My Projects",
+  "app.about.contact-me": "Contact Me",
+  "app.about.about-me": "About Me",
+  "app.about.or-check-out-blogs": "or check out awesome blogs about",
+  "app.about.short-desc": [
+    "Fullstack developer at ",
+    "Dfind Consulting",
+    ", ",
+    "tech. blogger",
+    ", ",
+    "YouTuber",
+    " & web development enthusiast"
+  ],
+  "app.about.view-resume": "View resumé",
+  "app.about.unavailable-for-hire": "Unavailable for hire",
+  "app.about.hero.subheading": "I build cool things you use every day on the web.",
+
+  "app.heading.experience": "Experience",
+
+  "app.buttons.view-all-blog-posts": "View all blog posts",
+
+  "app.story.folder-structure.long": "How to define a highly scalable folder structure for your Angular project",
+  "app.story.folder-structure.short": "Structuring an Angular App",
+  "app.story.folder-structure.desc": "",
+
+  "app.story.clean-code.long": "Clean Code Checklist",
+  "app.story.clean-code.short": "Clean Code Checklist",
+  "app.story.clean-code.desc": "",
+
+  "app.story.modal-forms.long": "Creating Forms Inside Modals with ng-bootstrap",
+  "app.story.modal-forms.short": "Modal Driven Forms",
+  "app.story.modal-forms.desc": "Creating forms inside modals has some great benefits. Using them along with valuable content might bring a lot of attraction to your project. With the emergence of ngx- and ng-bootstrap, we can easily integrate any Bootstrap components to our application.",
+
+  "app.story.ngx-rocket.long": "Creating Enterprise Angular Apps With The ngx-rocket Generator",
+  "app.story.ngx-rocket.short": "Angular With ngx-rocket",
+  "app.story.ngx-rocket.desc": "In this article, we will dive deep into a new Angular generator called ngX-Rocket. ngX-Rocket is an Angular 5+ enterprise project-generator based on the Angular-CLI with best practices from the community.",
+
+  "app.story.how-to-read-code.long": "How To Read Code?",
+  "app.story.how-to-read-code.short": "How To Read Code?",
+  "app.story.how-to-read-code.desc": "When approaching a new and unfamiliar codebase, which techniques would get you up and running as quickly as possible? This article teaches you my personal recommendations for approaching an unfamiliar codebase.",
+
+  "app.story.nordic-js-review.long": "NordicJS - A Personal Review",
+  "app.story.nordic-js-review.short": "NordicJS - Review",
+  "app.story.nordic-js-review.desc": "",
+
+  "app.story.choosing-the-right-structure-in-2020.long": "Choosing The Right File Structure for Angular in 2020 and Beyond!",
+  "app.story.choosing-the-right-structure-in-2020.short": "Structuring Angular Apps in 2020",
+  "app.story.choosing-the-right-structure-in-2020.desc": "",
+
+  "app.menu.about": "About Me",
+  "app.menu.projects": "Projects",
+  "app.menu.contact": "Contact",
+  "app.menu.settings": "Settings",
+  "app.menu.admin": "Admin",
+  "app.menu.security": "Security",
+
+  "app.settings.title": "Settings",
+  "app.settings.animations.elements": "Navigation page elements slide up",
+  "app.settings.animations.page": "Navigation whole page transition",
+  "app.settings.animations.title": "Animations",
+  "app.settings.general.title": "General",
+  "app.settings.general.placeholder": "Language",
+  "app.settings.general.language.no": "Norwegian",
+  "app.settings.general.language.en": "English",
+
+  "app.settings.themes.blue": "Blue",
+  "app.settings.themes.dark": "Dark",
+  "app.settings.themes.light": "Light",
+  "app.settings.themes.nature": "Nature",
+  "app.settings.themes.night-mode": "Auto night mode (from 21:00 to 7:00)",
+  "app.settings.themes.os-mode": "Theme based on operating system mode",
+  "app.settings.themes.placeholder": "Color Theme",
+  "app.settings.themes.sticky-header": "Sticky header",
+  "app.settings.themes.title": "Themes",
+
+  "app.contact.subject": "Subject",
+  "app.contact.reset-form": "Reset Form",
+  "app.contact.subject.error.required": "Subject is required",
+  "app.contact.subject.error.invalid": "Subject should be valid",
+  "app.contact.description": "Description",
+  "app.contact.description.error.required": "Description is required",
+
+  "app.about.description-1": "Mathis is an experienced developer with a broad expertise within several central aspects of the software developer phase. He went to school at NTNU, where he received a Bachelor in web development. During his career as a developer, Mathis have acquired knowledge within several popular client-side frameworks and other technologies like MVC, ASP.NET Core and SQL Server. Mathis is a responsible person whose comfortable working alone as well as in a team, which makes him a valuable resource in every project his involved in. He's well structured and good at finding understandable solutions to complex problems.",
+  "app.about.description-2": "His has a passion for development, and spend a lot of time developing his skill set in the entire development process. This contributes to that his solutions is up to date, user friendly and secure. Mathis does is also engaged in open source development, and has written several articles on Medium.",
+
+  "app.about.what-i-do.user-interface.description": "By creating a clear user interface, where the page enables people to interact with the system by communicating meaning and function.",
+  "app.about.what-i-do.communication.description": "I value communication and think it's important to get a clear understanding of the customers product, to create good solutions.",
+
+  "app.auth.login.username": "Username",
+  "app.auth.login.password": "Password",
+
+  "app.form.autosave": "Autosave"
+}

@@ -1,0 +1,93 @@
+{
+  "app.about.change-theme": "Endre Tema",
+  "app.about.my-projects": "Mine Prosjekter",
+  "app.about.contact-me": "Kontakt",
+  "app.about.about-me": "Om Meg",
+  "app.about.or-check-out-blogs": "eller sjekk ut bloggposter om",
+  "app.about.short-desc": [
+    "Fullstack developer at ",
+    "Dfind Consulting",
+    ", ",
+    "tech. blogger",
+    ", ",
+    "YouTuber",
+    " & webutviklingsentusiast"
+  ],
+  "app.about.view-resume": "Vis resumé",
+  "app.unavailable-for-hire": "Utilgjengelig for oppdrag",
+  "app.about.hero.subheading": "Jeg lager ting du bruker hver dag på nettet",
+
+  "app.heading.experience": "Arbeidserfaring",
+
+  "app.buttons.view-all-blog-posts": "Sjekk ut alle",
+
+  "app.story.folder-structure.long": "Hvordan definere en høyst skalerbar struktur for dine Angular prosjekter",
+  "app.story.folder-structure.short": "Strukturering av Angular Applikasjoner",
+  "app.story.folder-structure.desc": "",
+
+  "app.story.clean-code.long": "Sjekkliste for vedlikeholdbar kode i Angular",
+  "app.story.clean-code.short": "Vedlikeholdbar kode i Angular",
+  "app.story.clean-code.desc": "",
+
+  "app.story.modal-forms.long": "Skjemaer i Modaler med ng-bootstrap",
+  "app.story.modal-forms.short": "Skjemaer i Modaler med ng-bootstrap",
+  "app.story.modal-forms.desc": "Å legge skjemaer i modaler har noen klare fordeler. Bruk av dem sammen med meningsfylt innhold kan bringe stor oppmerksomhet til prosjektene dine. Med inntoget av ngx-bootstrap kan du enkelt integrere denne funksjonaliteten i dine web-applikasjoner.",
+
+  "app.story.ngx-rocket.long": "Opprett Enterprise Løsninger med ngx-rocket",
+  "app.story.ngx-rocket.short": "Opprett Enterprise Løsninger med ngx-rocket",
+  "app.story.ngx-rocket.desc": "",
+
+  "app.story.how-to-read-code.long": "Hvordan Lese Kode?",
+  "app.story.how-to-read-code.short": "Hvordan Lese Kode?",
+  "app.story.how-to-read-code.desc": "Når du møter en ny og fremmed kodebase, hvilke teknikker tar du i bruk for finne ut av hvordan ting henger sammen? Denne artikkelen beskriver mine personlige teknikker for finne dette ut.",
+
+  "app.story.nordic-js-review.long": "NordicJS - En Personlig Anmeldelse",
+  "app.story.nordic-js-review.short": "NordicJS - En Personlig Anmeldelse",
+  "app.story.nordic-js-review.desc": "",
+
+  "app.story.choosing-the-right-structure-in-2020.long": "Bestemme seg for en Angular filstruktur i 2020 og utover",
+  "app.story.choosing-the-right-structure-in-2020.short": "Strukturering av Angular applikasjoner i 2020",
+  "app.story.choosing-the-right-structure-in-2020.desc": "",
+
+  "app.menu.about": "Om",
+  "app.menu.projects": "Prosjekter",
+  "app.menu.settings": "Innstillinger",
+  "appp.menu.admin": "Admin",
+  "app.security": "Sikkerhet",
+
+  "app.settings.title": "Innstillinger",
+  "app.settings.animations.elements": "Navigasjonselementene sklir opp",
+  "app.settings.animations.page": "Animasjoner ved sidenavigering",
+  "app.settings.animations.title": "Animasjoner",
+  "app.settings.general.placeholder": "Språk",
+  "app.settings.general.language.no": "Norsk",
+  "app.settings.general.language.en": "Engelsk",
+
+  "app.settings.themes.blue": "Blå",
+  "app.settings.themes.dark": "Mørkt",
+  "app.settings.themes.light": "Lyst",
+  "app.settings.themes.nature": "Natur",
+  "app.settings.themes.night-mode": "Nattmodus (fra 21:00 til 7:00)",
+  "app.settings.themes.os-mode": "Tema etter operativsystem-modus",
+  "app.settings.themes.placeholder": "Fargetema",
+  "app.settings.themes.sticky-header": "Fiksert header",
+  "app.settings.themes.title": "Fargetema",
+
+  "app.contact.subject": "Emne",
+  "app.contact.reset-form": "Tilbakestill",
+  "app.contact.subject.error.required": "Vennligst skriv inn emne",
+  "app.contact.subject.error.invalid": "Vennligst skriv inn et gyldig emne",
+  "app.contact.description": "Beskrivelse",
+  "app.contact.description.error.required": "Vennligst skriv inn beskrivelse",
+
+  "app.about.description-1": "Mathis er en erfaren utvikler med bred erfaring innen flere sentrale deler av utviklingsløpet. Han er utdannet ved NTNU, hvor han har en Bachelor i webutvikling. Gjennom karrieren sin som utvikler har Mathis opparbeidet seg kunnskap innen flere populære klient side biblioteker og andre teknologier som MVC, ASP.NET Core og SQL Server. Mathis er en ansvarsfull person som er komfortabel med å jobbe selvstendig vel som i team, noe som gjør han til en verdifull ressurs i alle prosjektene han tar del i. Han er strukturert i sitt arbeid, og er god på å finne gode løsninger på kompliserte problemer.",
+  "app.about.description-2": "Han brenner for utvikling og bruker mye av tiden sin på å forbedre ferdighetene sine innen hele utviklingsløpet. Dette bidrar til at løsningene han utvikler er oppdaterte, brukervennlige, robuste og sikre. Mathis er også sterkt engasjert i open source utvikling og har skrevet en rekke fagartikler på publiseringsplattformen Medium.",
+
+  "app.about.what-i-do.user-interface.description": "Ved å lage et gjennomført brukergrensesnitt, hvor siden tillater oss å interagere med systemet ved å kommunisere mening og funksjon",
+  "app.about.what-i-do.communication.description": "Jeg verdsetter kommunikasjon og synes det er viktig å få en god forståelse for kundens product for å lage gode, tilpassede løsninger.",
+
+  "app.auth.login.username": "Brukernavn",
+  "app.auth.login.password": "Passord",
+
+  "app.form.autosave": "Autosave"
+}
