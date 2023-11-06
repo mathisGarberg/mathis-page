@@ -27,9 +27,4 @@ export const mediaContents = [
     name: 'Stack Overflow',
     icon: 'stack-overflow'
   },
-  {
-    link: 'https://unsplash.com/@pi_mathis',
-    name: 'Unsplash',
-    icon: 'unsplash'
-  }
 ] as MediaLink[];

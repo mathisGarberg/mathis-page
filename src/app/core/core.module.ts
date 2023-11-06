@@ -22,6 +22,14 @@ import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-has-loaded-o
   imports: [
     HttpClientModule,
 
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: translateBrowserLoaderFactory,
+        deps: [HttpClient, TransferState]
+      }
+    }),
+
     // ngrx
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -40,13 +48,6 @@ import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-has-loaded-o
 
     // other
     ScrollingModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: translateBrowserLoaderFactory,
-        deps: [HttpClient, TransferState]
-      }
-    })
   ],
   providers: [TransferState],
   exports: [TranslateModule]

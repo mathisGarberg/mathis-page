@@ -28,8 +28,7 @@ import { SharedModule } from '@shared/shared.module';
         <p>{{ description }}</p>
       </section>
       <footer class="card-footer">
-        <span> <fa-icon [icon]="['fab', 'angular']"></fa-icon> Docs.</span>
-        <span> <fa-icon [icon]="['fab', 'medium-m']"></fa-icon> Guide</span>
+        <span> <fa-icon [icon]="['fas', 'hands-clapping']"></fa-icon> 5300+</span>
       </footer>
     </div>
   `,
@@ -41,7 +40,7 @@ export class CardComponent {
   @Input() icon: string;
   @Input() createdAt: string;
   @Input() iconWidth: string;
-  @Input() isBussinessCard: boolean;
+  @Input() isBusinessCard: boolean;
 }
 
 @NgModule({
